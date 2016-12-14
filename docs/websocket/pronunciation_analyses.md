@@ -39,8 +39,8 @@ nl.itslanguage.pronunciation.init_challenge
 ## Fetch reference alignment
 
 The challenge that will be done is registered with a reference audio file to
-compare your speech with. This will need to be fetched before being able to send
-audio. This reference alignment will be given back to you as an intermediate result.
+compare the student's speech with. This will need to be fetched before being able to send
+audio. This reference alignment will be given back to the caller as an intermediate result.
 
 ### URI
 
