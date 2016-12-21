@@ -53,7 +53,6 @@ Content-Type: application/json
   "firstName": "Najat",
   "infix": "van der",
   "lastName": "Lee",
-  "organisationId": null,
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -87,7 +86,6 @@ Content-Type: application/json
     "firstName": "Najat",
     "infix": "van der",
     "lastName": "Lee",
-    "organisationId": "org",
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
   },
@@ -96,7 +94,6 @@ Content-Type: application/json
     "firstName": "Chrissy",
     "infix": null,
     "lastName": "Haagen",
-    "organisationId": "org",
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
   }
