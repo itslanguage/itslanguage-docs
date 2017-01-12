@@ -1,4 +1,4 @@
-# Cagegories
+# Categories
 
 Categorize Speech Challenges or categories.
 
@@ -21,7 +21,7 @@ Accept: application/json
 
 ### Response
 
-The resonse is a JSON list with categories.
+The response is a JSON list with categories.
 
 ```http
 HTTP/1.1 200 OK
