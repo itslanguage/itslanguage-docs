@@ -1,0 +1,265 @@
+# Cagegories
+
+Categorize Speech Challenges or categories.
+
+## List all top level categories
+
+List all top level categories which do not have a parent category.
+
+### URL
+
+```http
+GET /categories HTTP/1.1
+```
+
+### Request
+
+```http
+GET /categories HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+The resonse is a JSON list with categories.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": "category_1",
+    "created": "2017-01-12T09:35:20Z",
+    "updated": "2017-01-12T09:35:20Z",
+    "name": "Category 1",
+    "description": "Some awesome description.",
+    "color": "#00f",
+    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "categories": ["category_1_1", "category_1_2"],
+    "speechChallenges": [],
+    "progress": {
+      "done": 1,
+      "total": 2
+    }
+  },
+  {
+    "id": "category_2",
+    "created": "2017-01-12T09:36:20Z",
+    "updated": "2017-01-12T09:36:20Z",
+    "name": "Category 2",
+    "description": "Another awesome description.",
+    "color": "#0f0",
+    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "categories": ["category_2_1", "category_2_2", "category_2_3"],
+    "speechChallenges": [],
+    "progress": {
+      "done": 1,
+      "total": 3
+    }
+  }
+]
+```
+
+# Get a single category
+
+### URL
+
+```http
+GET /category/:category HTTP/1.1
+```
+
+* `category` - **Required** The category identifier.
+
+### Request
+
+```http
+GET /category/category_1_1 HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "category_1_1",
+  "created": "2017-01-12T09:38:20Z",
+  "updated": "2017-01-12T09:38:20Z",
+  "name": "Category 1.1",
+  "description": "Super duper.",
+  "color": "",
+  "imageUrl": "",
+  "iconUrl": "",
+  "categories": [],
+  "speechChallenges": [
+    {
+      "id": "speech_1",
+      "created": "2014-01-28T21:25:10Z",
+      "updated": "2014-01-28T21:25:10Z",
+      "topic": "What do you know about babies?",
+      "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+      "srtUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+      "imageUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe"
+    },
+    {
+      "id": "12",
+      "created": "2014-01-28T21:25:10Z",
+      "updated": "2014-01-28T21:25:10Z",
+      "topic": "Book",
+      "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+      "srtUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+      "imageUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe"
+    }
+  ],
+  "progress": {
+    "done": 1,
+    "total": 2
+  }
+}
+```
+
+### Create a catetory
+
+### URL
+
+```http
+POST /categories/category HTTP/1.1
+```
+
+### Request parameters
+
+Name               | Type      | Description
+-------------------|-----------|------------
+`id`               | `string`  | **Optional** The category identifier. If none is given, one is generated.
+`name`             | `string`  | **Optional** A name for the category.
+`description`      | `string`  | **Optional** A possible more verbose description about the category.
+`color`            | `string`  | **Optional** A color, preferably in RGB format.
+`image`            | `blob`    | **Optional** An image to show with the category.
+`icon`             | `blob`    | **Optional** An icon to show with the category.
+`categories`       | `object`  | **Optional** An array with category identifiers for nesting categories in a category.
+`speechChallenges` | `object`  | **Optional** An array of Speech Challenges identifiers categorized in the category.
+
+#### Request
+
+```http
+POST /categories/category HTTP/1.1
+Accept: application/json
+Content-Type: multipart/form-data; boundary=jhgd87g7Gy3d78
+
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="id"
+
+category_3
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="name"
+
+Category 3
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="description"
+
+Category three. Winner of all categories. Yes.
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="color"
+
+#e3e3e3
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="image"; filename="img.png"
+Content-Type: image/png
+
+<blob>
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="icon"; filename="icon.png"
+Content-Type: image/png
+
+<blob>
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="speechChallenges"
+Content-Type: application/json
+
+["speech_1", "speech_2", "speech_3"]
+--jhgd87g7Gy3d78--
+```
+
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: https://api.itslanguage.nl/categories/category_3
+
+{
+  "id": "category_3",
+  "created": "2017-01-12T09:50:20Z",
+  "updated": "2017-01-12T09:50:20Z",
+  "name": "Category 3",
+  "description": "Category three. Winner of all categories. Yes.",
+  "color": "#e3e3e3",
+  "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+  "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+  "categories": [],
+  "speechChallenges": ["speech_1", "speech_2", "speech_3"]
+}
+```
+
+## Update a category
+
+### URL
+
+```http
+PUT /categories/:category HTTP/1.1
+```
+
+* `category` - **Required** The category identifier.
+
+Update one or more properties of an existing category
+
+### Request parameters
+
+Name               | Type      | Description
+-------------------|-----------|------------
+`name`             | `string`  | **Optional** A name for the category.
+`description`      | `string`  | **Optional** A possible more verbose description about the category.
+`color`            | `string`  | **Optional** A color, preferably in RGB format.
+`image`            | `blob`    | **Optional** An image to show with the category.
+`icon`             | `blob`    | **Optional** An icon to show with the category.
+`categories`       | `object`  | **Optional** An array with category identifiers for nesting categories in a category.
+`speechChallenges` | `object`  | **Optional** An array of Speech Challenges identifiers categorized in the category.
+
+## Request
+
+```http
+PUT /categories/category_3 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "categories": ["categorie_3_1"]
+}
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Location: https://api.itslanguage.nl/categories/category_3
+
+{
+  "id": "category_3",
+  "created": "2017-01-12T09:50:20Z",
+  "updated": "2017-01-12T09:50:20Z",
+  "name": "Category 3",
+  "description": "Category three. Winner of all categories. Yes.",
+  "color": "#e3e3e3",
+  "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+  "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+  "categories": ["category_3_1"],
+  "speechChallenges": ["speech_1", "speech_2", "speech_3"]
+}
+```
