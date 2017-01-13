@@ -56,12 +56,64 @@ Content-Type: application/json
 ]
 ```
 
-# Get a single category
+## Listing all categories with same parent
+
+A category can be parent of another category (nesting). In order to get all categories with the same parent, this url can be used.
 
 ### URL
 
 ```http
-GET /category/:category HTTP/1.1
+GET /categories/:category/categories HTTP/1.1
+```
+
+### Request
+
+```http
+GET /categories/category_1/categories HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": "category_1_1",
+    "parent": "category_1",
+    "created": "2017-01-13T09:35:20Z",
+    "updated": "2017-01-13T09:35:20Z",
+    "name": "Category 1.1",
+    "description": "Some awesome description.",
+    "color": "#00f",
+    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "categories": ["category_1_1", "category_1_2"],
+    "speechChallenges": ["speech_x"]
+  },
+  {
+    "id": "category_1_2",
+    "parent": "category_1",
+    "created": "2017-01-13T09:36:20Z",
+    "updated": "2017-01-13T09:36:20Z",
+    "name": "Category 1.2",
+    "description": "Another awesome description.",
+    "color": "#0f0",
+    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "speechChallenges": ["speech_y", "speech_w"]
+  }
+]
+```
+
+## Get a single category
+
+### URL
+
+```http
+GET /categories/:category HTTP/1.1
 ```
 
 * `category` - **Required** The category identifier.
@@ -69,7 +121,7 @@ GET /category/:category HTTP/1.1
 ### Request
 
 ```http
-GET /category/category_1_1 HTTP/1.1
+GET /categories/category_1_1 HTTP/1.1
 Accept: application/json
 ```
 
@@ -89,30 +141,11 @@ Content-Type: application/json
   "color": null,
   "imageUrl": null,
   "iconUrl": null,
-  "speechChallenges": [
-    {
-      "id": "speech_1",
-      "created": "2014-01-28T21:25:10Z",
-      "updated": "2014-01-28T21:25:10Z",
-      "topic": "What do you know about babies?",
-      "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-      "srtUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-      "imageUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe"
-    },
-    {
-      "id": "12",
-      "created": "2014-01-28T21:25:10Z",
-      "updated": "2014-01-28T21:25:10Z",
-      "topic": "Book",
-      "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-      "srtUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-      "imageUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe"
-    }
-  ]
+  "speechChallenges": ["speech_1", "12"]
 }
 ```
 
-### Create a catetory
+## Create a catetory
 
 ### URL
 
@@ -133,7 +166,7 @@ Name               | Type      | Description
 `icon`             | `blob`    | **Optional** An icon to show with the category.
 `speechChallenges` | `object`  | **Optional** An array of Speech Challenges identifiers categorized in the category.
 
-#### Request
+### Request
 
 ```http
 POST /categories/category HTTP/1.1
@@ -219,7 +252,7 @@ Name               | Type      | Description
 `icon`             | `blob`    | **Optional** An icon to show with the category.
 `speechChallenges` | `object`  | **Optional** An array of Speech Challenges identifiers categorized in the category.
 
-## Request
+### Request
 
 ```http
 PUT /categories/category_3_1 HTTP/1.1
