@@ -24,7 +24,6 @@ POST /users HTTP/1.1
 Name         | Type       | Description
 -------------|------------|------------
 id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
-profile      | `object`   | **Optional** The profile containing information about the user.
 roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
