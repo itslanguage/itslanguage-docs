@@ -8,13 +8,46 @@ together with a User.
 ### URL
 
 ```http
-GET /profiles/:profile HTTP/1.1
+GET /users/:userId/profile HTTP/1.1
 ```
 
 ### Request
 
 ```http
-GET /profiles/profile_23 HTTP/1.1
+GET /users/user_23/profile HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": "profile_23",
+  "firstName": "Juriaan",
+  "infix": null,
+  "lastName": "Winkens",
+  "gender": "Male",
+  "birthDate":"1996-16-07T00:00:00Z",
+  "created": "2017-01-03T12:16:55Z",
+  "updated": "2017-01-03T12:16:55Z"
+}
+```
+
+## Get the profile of the current user
+
+### URL
+
+```http
+GET /user/profile/ HTTP/1.1
+```
+
+### Request
+
+```http
+GET /user/profile/ HTTP/1.1
 Accept: application/json
 ```
 
