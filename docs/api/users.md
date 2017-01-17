@@ -25,7 +25,6 @@ Name         | Type       | Description
 -------------|------------|------------
 id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
 profile      | `object`   | **Optional** The profile containing information about the user.
-groups       | `string[]` | **Optional** The groups this user is part of.
 roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
@@ -43,7 +42,6 @@ Content-Type: application/json
     "gender": "Male",
     "birthDate": "1996-16-07T00:00:00Z"
   },
-  "groups": ['GROUP_1'],
   "roles": ['ADMIN']
 }
 ```
@@ -63,7 +61,6 @@ Content-Type: application/json
     "gender": "Male",
     "birthDate": "1996-16-07T00:00:00Z"
   },
-  "groups": ['GROUP_1'],
   "roles": ['ADMIN'],
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
@@ -102,7 +99,6 @@ Content-Type: application/json
       "gender": "Male",
       "birthDate": "1996-16-07T00:00:00Z"
     },
-    "groups": ['GROUP_1'],
     "roles": ['STUDENT']
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
@@ -116,7 +112,6 @@ Content-Type: application/json
       "gender": "Male",
       "birthDate": "1996-16-07T00:00:00Z"
     },
-    "groups": ['GROUP_1'],
     "roles": ["TEACHER"],
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
@@ -155,7 +150,6 @@ Content-Type: application/json
     "gender": "Male",
     "birthDate": "1996-16-07T00:00:00Z"
   },
-  "groups": ['GROUP_1'],
   "roles": ["STUDENT"],
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
