@@ -92,13 +92,13 @@ Content-Type: application/json
 ### URL
 
 ```http
-GET /user/profile/ HTTP/1.1
+GET /user/profile HTTP/1.1
 ```
 
 ### Request
 
 ```http
-GET /user/profile/ HTTP/1.1
+GET /user/profile HTTP/1.1
 Accept: application/json
 ```
 
