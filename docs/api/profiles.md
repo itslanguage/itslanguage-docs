@@ -16,7 +16,6 @@ POST /users/:userId/profile HTTP/1.1
 
 Name         | Type       | Description
 -------------|------------|------------
-id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
 firstName    | `object`   | **Optional** The profile containing information about the user.
 lastName     | `string`   | **Optional** The groups this user is part of.
 infix        | `string`   | **Optional** The names of roles to grant the user.
@@ -46,7 +45,6 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "id": "sdcjb823jhguys5j",
   "firstName": "Najat",
   "infix": "van der",
   "lastName": "Lee",
@@ -79,7 +77,6 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "id": "profile_23",
   "firstName": "Juriaan",
   "infix": null,
   "lastName": "Winkens",
@@ -112,7 +109,6 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "id": "profile_23",
   "firstName": "Juriaan",
   "infix": null,
   "lastName": "Winkens",
