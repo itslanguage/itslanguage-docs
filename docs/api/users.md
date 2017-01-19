@@ -27,6 +27,7 @@ id           | `string`   | **Optional** A unique identifier. If none is given, 
 firstName    | `string`   | **Required** The first name of the user.
 infix        | `string`   | **Required** The infix of the user.
 lastName     | `string`   | **Required** The last name of the user.
+groups       | `string[]` | **Optional** Groups the user resides in.
 roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
@@ -40,6 +41,7 @@ Content-Type: application/json
   "firstName": "Najat",
   "infix": "van der",
   "lastName": "Lee",
+  "groups": ["group_1"],
   "roles": ["ADMIN"]
 }
 ```
@@ -56,6 +58,7 @@ Content-Type: application/json
   "infix": "van der",
   "lastName": "Lee",
   "roles": ["ADMIN"],
+  "groups": ["group_1"],
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -89,6 +92,7 @@ Content-Type: application/json
     "firstName": "Najat",
     "infix": "van der",
     "lastName": "Lee",
+    "groups": ["first_grade"],
     "roles": ["STUDENT"],
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
@@ -98,6 +102,7 @@ Content-Type: application/json
     "firstName": "Chrissy",
     "infix": null,
     "lastName": "Haagen",
+    "groups": ["first_grade", "second_grade"],
     "roles": ["TEACHER"],
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
@@ -132,6 +137,7 @@ Content-Type: application/json
   "firstName": "Juriaan",
   "infix": null,
   "lastName": "Winkens",
+  "groups": ["group_6"],
   "roles": ["STUDENT"],
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
