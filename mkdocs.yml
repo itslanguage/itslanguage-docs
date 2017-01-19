@@ -24,6 +24,7 @@ pages:
     - 'Speech Recognition': 'api/recognitions.md'
     - 'Category': 'api/categories.md'
     - 'Tenants': 'api/tenants.md'
+    - 'Profiles': 'api/profiles.md'
     - Users:
         - 'Users': 'api/users.md'
         - 'Basic authentication': 'api/basicauths.md'

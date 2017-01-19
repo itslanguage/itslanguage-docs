@@ -24,9 +24,6 @@ POST /users HTTP/1.1
 Name         | Type       | Description
 -------------|------------|------------
 id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
-firstName    | `string`   | **Required** The first name of the user.
-infix        | `string`   | **Required** The infix of the user.
-lastName     | `string`   | **Required** The last name of the user.
 roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
@@ -37,10 +34,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstName": "Najat",
-  "infix": "van der",
-  "lastName": "Lee",
-  "roles": ["ADMIN"]
+  "profile": {
+    "firstName": "Najat",
+    "infix": "van der",
+    "lastName": "Lee",
+    "gender": "Male",
+    "birthDate": "1996-16-07T00:00:00Z"
+  },
+  "roles": ['ADMIN']
 }
 ```
 
@@ -52,10 +53,14 @@ Content-Type: application/json
 
 {
   "id": "sdcjb823jhguys5j",
-  "firstName": "Najat",
-  "infix": "van der",
-  "lastName": "Lee",
-  "roles": ["ADMIN"],
+  "profile": {
+    "firstName": "Najat",
+    "infix": "van der",
+    "lastName": "Lee",
+    "gender": "Male",
+    "birthDate": "1996-16-07T00:00:00Z"
+  },
+  "roles": ['ADMIN'],
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -86,18 +91,26 @@ Content-Type: application/json
 [
   {
     "id": "sdcjb823jhguys5j",
-    "firstName": "Najat",
-    "infix": "van der",
-    "lastName": "Lee",
-    "roles": ["STUDENT"],
+    "profile": {
+      "firstName": "Najat",
+      "infix": "van der",
+      "lastName": "Lee",
+      "gender": "Male",
+      "birthDate": "1996-16-07T00:00:00Z"
+    },
+    "roles": ['STUDENT']
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
   },
   {
     "id": "iosdhrfd893ufg",
-    "firstName": "Chrissy",
-    "infix": null,
-    "lastName": "Haagen",
+    "profile": {
+      "firstName": "Chrissy",
+      "infix": null,
+      "lastName": "Haagen",
+      "gender": "Male",
+      "birthDate": "1996-16-07T00:00:00Z"
+    },
     "roles": ["TEACHER"],
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
@@ -129,9 +142,13 @@ Content-Type: application/json
 
 {
   "id": "bgfg83bjdg62j",
-  "firstName": "Juriaan",
-  "infix": null,
-  "lastName": "Winkens",
+  "profile": {
+    "firstName": "Juriaan",
+    "infix": null,
+    "lastName": "Winkens",
+    "gender": "Male",
+    "birthDate": "1996-16-07T00:00:00Z"
+  },
   "roles": ["STUDENT"],
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
