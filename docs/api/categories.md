@@ -38,7 +38,6 @@ Content-Type: application/json
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
     "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
-    "categories": ["category_1_1", "category_1_2"],
     "speechChallenges": []
   },
   {
@@ -90,7 +89,6 @@ Content-Type: application/json
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
     "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
-    "categories": ["category_1_1", "category_1_2"],
     "speechChallenges": ["speech_x"]
   },
   {
@@ -133,7 +131,7 @@ Content-Type: application/json
 
 {
   "id": "category_1_1",
-  "parent": "category_1"
+  "parent": "category_1",
   "created": "2017-01-12T09:38:20Z",
   "updated": "2017-01-12T09:38:20Z",
   "name": "Category 1.1",
