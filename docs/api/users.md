@@ -124,7 +124,7 @@ The following [filters](filters.md) may be applied:
 
 Name | Description
 -----|------------
-role | The role that a user should have.
+role | The id of the role that a user should be in.
 
 
 ## Get current user
