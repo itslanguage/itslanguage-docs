@@ -130,9 +130,10 @@ Content-Type: application/json
 
 The following [filters](filters.md) may be applied:
 
-Name | Description
------|------------
-role | The id of the role that a user should be in.
+Name  | Description
+------|------------
+group | The id of the group that a user should be in.
+role  | The id of the role that a user should be in.
 
 
 ## Get current user
