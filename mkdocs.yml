@@ -11,6 +11,7 @@ pages:
       - 'Roles': 'api/roles.md'
       - 'Permissions': 'api/permissions.md'
     - 'Error handling': 'api/errors.md'
+    - 'Filters': 'api/filters.md'
 - REST API:
     - 'OAuth2': 'api/oauth2.md'
     - 'Organisations': 'api/organisations.md'
