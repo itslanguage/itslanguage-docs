@@ -118,6 +118,14 @@ Content-Type: application/json
 ]
 ```
 
+### Filters
+
+The following [filters](filters.md) may be applied:
+
+Name | Description
+-----|------------
+role | The role that a user should have.
+
 
 ## Get current user
 
