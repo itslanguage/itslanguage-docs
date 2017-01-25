@@ -24,6 +24,10 @@ POST /users HTTP/1.1
 Name         | Type       | Description
 -------------|------------|------------
 id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
+firstName    | `string`   | **Required** The first name of the user.
+infix        | `string`   | **Required** The infix of the user.
+lastName     | `string`   | **Required** The last name of the user.
+groups       | `string[]` | **Optional** Groups the user resides in.
 roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
@@ -34,6 +38,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
+  "groups": ["group_1"],
   "profile": {
     "firstName": "Najat",
     "infix": "van der",
@@ -53,6 +58,7 @@ Content-Type: application/json
 
 {
   "id": "sdcjb823jhguys5j",
+  "groups": ["group_1"],
   "profile": {
     "firstName": "Najat",
     "infix": "van der",
@@ -91,6 +97,7 @@ Content-Type: application/json
 [
   {
     "id": "sdcjb823jhguys5j",
+    "groups": ["first_grade"],
     "profile": {
       "firstName": "Najat",
       "infix": "van der",
@@ -104,6 +111,7 @@ Content-Type: application/json
   },
   {
     "id": "iosdhrfd893ufg",
+    "groups": ["first_grade", "second_grade"],
     "profile": {
       "firstName": "Chrissy",
       "infix": null,
@@ -122,9 +130,10 @@ Content-Type: application/json
 
 The following [filters](filters.md) may be applied:
 
-Name | Description
------|------------
-role | The id of the role that a user should be in.
+Name  | Description
+------|------------
+group | The id of the group that a user should be in.
+role  | The id of the role that a user should be in.
 
 
 ## Get current user
@@ -150,6 +159,7 @@ Content-Type: application/json
 
 {
   "id": "bgfg83bjdg62j",
+  "groups": ["group_6"],
   "profile": {
     "firstName": "Juriaan",
     "infix": null,
