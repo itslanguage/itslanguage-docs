@@ -162,7 +162,7 @@ Name               | Type      | Description
 `color`            | `string`  | **Optional** A color, preferably in RGB format.
 `image`            | `blob`    | **Optional** An image to show with the category.
 `icon`             | `blob`    | **Optional** An icon to show with the category.
-`speechChallenges` | `object`  | **Optional** An array of Speech Challenges identifiers categorized in the category.
+`speechChallenges` | `string`  | **Optional** Speech Challenge identifiers categorized in the category.
 
 ### Request
 
@@ -199,9 +199,16 @@ Content-Type: image/png
 <blob>
 --jhgd87g7Gy3d78
 Content-Disposition: form-data; name="speechChallenges"
-Content-Type: application/json
 
-["speech_1", "speech_2", "speech_3"]
+speech_1
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="speechChallenges"
+
+speech_2
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="speechChallenges"
+
+speech_3
 --jhgd87g7Gy3d78--
 ```
 
