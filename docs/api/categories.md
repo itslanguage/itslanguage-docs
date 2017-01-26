@@ -148,7 +148,7 @@ Content-Type: application/json
 ### URL
 
 ```http
-POST /categories/category HTTP/1.1
+POST /categories HTTP/1.1
 ```
 
 ### Request parameters
@@ -167,7 +167,7 @@ Name               | Type      | Description
 ### Request
 
 ```http
-POST /categories/category HTTP/1.1
+POST /categories HTTP/1.1
 Accept: application/json
 Content-Type: multipart/form-data; boundary=jhgd87g7Gy3d78
 
