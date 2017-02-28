@@ -55,3 +55,17 @@ Content-Type: application/json
     }
 ]
 ```
+
+
+## Get progress of a category for multiple users
+
+Getting progress for multiple users is possible by supplying groups when
+requesting progress. Progress is then fetched for users in the selected groups.
+
+Groups can be selected by using the `group` query param. The param can be given
+multiple times to select multiple groups.
+
+```http
+GET /categories/:category/progress?group=group_1&group=group_2 HTTP/1.1
+Accept: application/json
+```
