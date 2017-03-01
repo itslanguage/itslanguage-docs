@@ -69,3 +69,11 @@ multiple times to select multiple groups.
 GET /categories/:category/progress?group=group_1&group=group_2 HTTP/1.1
 Accept: application/json
 ```
+
+### Filters
+
+The following [filters](filters.md) may be applied:
+
+Name  | Description
+------|------------
+role  | The id of the role that a user should be in.
