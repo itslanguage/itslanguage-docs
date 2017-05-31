@@ -27,8 +27,7 @@ grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
 !!! note
-    The scope is optional and it is best omitted when not
-    [impersonating](#impersonation).
+    The scope is best omitted when not [impersonating](#impersonation).
 
 !!! note
     The scope **is required** when authenticating as a user in an organisation,
