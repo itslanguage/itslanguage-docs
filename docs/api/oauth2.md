@@ -27,8 +27,16 @@ grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
 !!! note
-    The scope is optional and it is best omitted when not
-    [impersonating](#impersonation).
+    The scope is best omitted when not [impersonating](#impersonation).
+
+!!! note
+    The scope **is required** when authenticating as a user in an organisation,
+    using a username and password. This is because a user is only unique within
+    the organisation and there is no way of determining the organisation from
+    the username alone. For a user with the username `bob` in the organisation
+    `org` in tenant `ten` the scope should be
+    `tenant/ten/organisation/org/user/bob`.
+    When using email authentication, passing the scope is not neccesary.
 
 !!! note
     The `Content-Type` of the request is different from the response.
