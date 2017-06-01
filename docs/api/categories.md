@@ -9,15 +9,13 @@ List all top level categories which do not have a parent category.
 ### URL
 
 ```http
-GET /groups/:group/categories HTTP/1.1
+GET /categories HTTP/1.1
 ```
-
-* `group` - **Required** The group identifier.
 
 ### Request
 
 ```http
-GET /groups/:group/categories HTTP/1.1
+GET /categories HTTP/1.1
 Accept: application/json
 ```
 
@@ -64,16 +62,15 @@ A category can be parent of another category (nesting). In order to get all cate
 ### URL
 
 ```http
-GET /groups/:group/categories/:category/categories HTTP/1.1
+GET /categories/:category/categories HTTP/1.1
 ```
 
 * `category` - **Required** The category identifier.
-* `group` - **Required** The group identifier.
 
 ### Request
 
 ```http
-GET /groups/:group/categories/category_1/categories HTTP/1.1
+GET /categories/category_1/categories HTTP/1.1
 Accept: application/json
 ```
 
@@ -116,16 +113,15 @@ Content-Type: application/json
 ### URL
 
 ```http
-GET /groups/:group/categories/:category HTTP/1.1
+GET /categories/:category HTTP/1.1
 ```
 
 * `category` - **Required** The category identifier.
-* `group` - **Required** The group identifier.
 
 ### Request
 
 ```http
-GET /groups/:group/categories/category_1_1 HTTP/1.1
+GET /categories/category_1_1 HTTP/1.1
 Accept: application/json
 ```
 
@@ -154,10 +150,8 @@ Content-Type: application/json
 ### URL
 
 ```http
-POST /groups/:group/categories HTTP/1.1
+POST /categories HTTP/1.1
 ```
-
-* `group` - **Required** The group identifier.
 
 ### Request parameters
 
@@ -175,7 +169,7 @@ Name               | Type      | Description
 ### Request
 
 ```http
-POST /groups/:group/categories HTTP/1.1
+POST /categories HTTP/1.1
 Accept: application/json
 Content-Type: multipart/form-data; boundary=jhgd87g7Gy3d78
 
@@ -246,11 +240,10 @@ Location: https://api.itslanguage.nl/categories/category_3
 ### URL
 
 ```http
-PUT /groups/:group/categories/:category HTTP/1.1
+PUT /categories/:category HTTP/1.1
 ```
 
 * `category` - **Required** The category identifier.
-* `group` - **Required** The group identifier.
 
 Update one or more properties of an existing category
 
@@ -269,7 +262,7 @@ Name               | Type      | Description
 ### Request
 
 ```http
-PUT /groups/:group/categories/category_3_1 HTTP/1.1
+PUT /categories/category_3_1 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
