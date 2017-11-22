@@ -2,6 +2,14 @@
 
 Performing a choice recognition is broken up into various calls.
 
+To perform a choice recognition a number of steps have to be made:
+
+1. [Initialising a choice recognition](#initialising-a-choice-recognition)
+2. [Initialise choice challenge](#initialise-choice-challenge)
+3. [Register audio procedure](#register-audio-procedure)
+4. [Perform the recognition](#perform-the-recognition)
+
+
 ## Initialising a choice recognition
 
 This is the starting point for a choice recognition. A unique recognition id
