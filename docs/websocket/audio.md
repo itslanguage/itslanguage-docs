@@ -30,7 +30,4 @@ The [SoX documentation][1] elaborates on this in more technical details.
 Basically, any self-describing audio format *should* work, however only WAVE is
 supported.
 
-To support streams, WAVE for example omits the length of the audio in the
-header.
-
 [1]: http://sox.sourceforge.net/AudioFormats-6.html
