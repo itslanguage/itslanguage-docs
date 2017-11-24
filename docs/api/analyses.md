@@ -27,8 +27,8 @@ Name        | Type       | Description
 ------------|------------|------------
 id          | `string`   | **Optional** A unique identifier for the analysis.
 audio       | `blob`     | **Required** The actual audio. (Ogg Opus or WAV)
-score       | `float`    | **Optional** The overall score of the pronunciation between 0 and 1. Required if ``words`` is given.
-words       | `json`     | **Optional** A JSON encoded list of analysed words, forming the spoken sentence. Required if ``score`` is given.
+score       | `float`    | **Optional** The overall score of the pronunciation between 0 and 1. Required if `words` is given.
+words       | `json`     | **Optional** A JSON encoded list of analysed words, forming the spoken sentence. Required if `score` is given.
 
 A word is represented as a list of graphemes. Each grapheme contains of the
 following attributes:
