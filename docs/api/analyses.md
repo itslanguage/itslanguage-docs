@@ -38,7 +38,7 @@ Name      | Type       | Description
 graphemes | `string`   | **Required** A string containing the assessed graphemes.
 phonemes  | `object[]` | **Required** A list of phonemes found in the assessed grapheme.
 score     | `float`    | **Required** The score of the assessed graphemes between 0 and 1.
-verdict   | `string`   | **Required** The textual representation of the score. This should be `bad`, `good` or `moderate,
+verdict   | `string`   | **Required** The textual representation of the score. This should be `bad`, `good` or `moderate`.
 
 Each phoneme should have the following properties:
 
