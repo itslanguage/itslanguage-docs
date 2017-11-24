@@ -222,8 +222,8 @@ GET /challenges/pronunciation/:challenge/analyses HTTP/1.1
 
 ### Request parameters
 
-Name        | Type      | Description
-------------|-----------|------------
+Name     | Type      | Description
+---------|-----------|------------
 `userId` | `string`  | **Optional** The id of the user that supplied the audio.
 
 ### Request
