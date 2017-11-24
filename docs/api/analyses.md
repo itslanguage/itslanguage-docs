@@ -1,6 +1,7 @@
 # Analyses
 
-Speech analyses can be applied to user submitted audio using the ITSLanguage Speech API.
+Speech analyses can be applied to user submitted audio using the ITSLanguage
+Speech API.
 
 Type            | Usage
 ----------------|------
@@ -239,7 +240,8 @@ The response is a JSON list with pronunciation analyses of `userId` '24'.
 Note:
 
 * The apostrophe in *Bob's* is included in the `graphemes` field of the *s*.
-* When a phoneme represents more than one grapheme like *yo* in *your*, they're grouped in the same `graphemes` field.
+* When a phoneme represents more than one grapheme like *yo* in *your*, they're
+  grouped in the same `graphemes` field.
 * The *c* in *uncle* exists of two phonemes. The `score` and `verdict` are shown
   per phoneme, along with the `ipa` notation.
 
