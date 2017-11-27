@@ -9,9 +9,6 @@
         style=rounded
       ]
 
-      Tenant [label="Tenant"]
-      Student [label="Student"]
-
       subgraph clusterGoogleCloud {
         label="Google cloud"
         subgraph clusterGoogleAppEngine {
@@ -28,27 +25,22 @@
 
       edge [arrowhead=none]
 
-      Student -> {API, Tenant, WSS}
-      {Tenant, WSS} -> API -> {GCS, NDB}
+      Client -> {API, WSS}
+      WSS -> API -> {GCS, NDB}
     }
 %}
 
 ## Components and actors
 
-### Tenant
+### Client
 
-A client corporation using the ITSLanguage REST API to perform CRUD
-operations on organisations, students, challenges.
+A client is any client application that interacts with the ITSLanguage
+environment.
+A client can use the [Rest API](#api) to perform CRUD operations.
+A client can also use the [Websocket API](#websocket-server) to submit recorded
+audio.
 
-### Student
-
-An actor performing the audio recordings. A student belongs to an organisation
-(a school). This organisation is a client corporation of the tenant.
-
-A student connects with the:
-
-* REST API to retrieve challenge metadata (e.g. reference audio).
-* Websocket API to submit recorded audio.
+A client is typically used by a student, organisation (admin) or tenant (admin).
 
 ### Websocket server
 
