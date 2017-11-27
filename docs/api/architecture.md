@@ -1,28 +1,27 @@
 # Steaming cloud architecture
 
-{% aafigure --textual --scale=.6 %}
-                                                                    +------------------------+
-                                                                    |                        |
-                                                                    | Google Cloud Storage   |
-                                                                    |                        |
-                                                                    +---+--------------------+
-                                                                        |
-                                                      +-----------------+
-                                                      |
-+--------------------+            +-------------------+--+          +------------------------+
-|                    |            |                      |          |                        |
-| Tenant             +------------+ Google App Engine    +----------+ Google Cloud Datastore |
-|                    |            |                      |          |                        |
-+--+-----------------+            +-+-----------------+--+          +------------------------+
-   |                                |                 |
-   |               +----------------+                 |
-   |               |                                  |
-+--+---------------+-+            +-------------------+--+
-|                    |            |                      |
-| Student            +------------+ Google Managed VMs   |
-|                    |            |                      |
-+--------------------+            +----------------------+
-{% endaafigure %}
+{% dot architecture.svg
+    digraph Architecture {
+      splines=ortho // Only straight lines (horizontal/vertical)
+      nodesep=1 // Prevent line overlapping
+      node [
+        shape=record
+        style=rounded
+      ]
+
+      GCS [label="Google Cloud Storage"]
+      GAE [label="Google App Engine"]
+      Tenant [label="Tenant"]
+      Student [label="Student"]
+      GCE [label="Google Managed VMs"]
+      NDB [label="Google Cloud Datastore"]
+
+      edge [arrowhead=none]
+
+      Student -> {GAE, GCE, Tenant}
+      {GCE, Tenant} -> GAE -> {GCS, NDB}
+    }
+%}
 
 ## Components and actors
 

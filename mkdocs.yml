@@ -50,3 +50,4 @@ markdown_extensions:
     - toc:
         anchorlink: True
     - admonition:
+    - inline_graphviz
