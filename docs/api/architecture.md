@@ -9,17 +9,27 @@
         style=rounded
       ]
 
-      GCS [label="Google Cloud Storage"]
-      GAE [label="Google App Engine"]
       Tenant [label="Tenant"]
       Student [label="Student"]
-      GCE [label="Google Managed VMs"]
-      NDB [label="Google Cloud Datastore"]
+
+      subgraph clusterGoogleCloud {
+        label="Google cloud"
+        subgraph clusterGoogleAppEngine {
+          label="Google App Engine"
+          API [label="Rest API"]
+        }
+        subgraph clusterGoogleComputeEngine {
+          label="Google Compute Engine"
+          WSS [label="Websocket server"]
+        }
+        GCS [label="Google Cloud Storage"]
+        NDB [label="Google Cloud Datastore"]
+      }
 
       edge [arrowhead=none]
 
-      Student -> {GAE, GCE, Tenant}
-      {GCE, Tenant} -> GAE -> {GCS, NDB}
+      Student -> {API, Tenant, WSS}
+      {Tenant, WSS} -> API -> {GCS, NDB}
     }
 %}
 
@@ -40,13 +50,16 @@ A student connects with the:
 * REST API to retrieve challenge metadata (e.g. reference audio).
 * Websocket API to submit recorded audio.
 
-### Google Managed VMs
+### Websocket server
 
-* Websocket server listening for students connecting to receive and process audio.
+The websocket server is listening for connections to receive and process audio.
+The websocket server is located in the Google cloud and is hosted using Google
+Compute Engine.
 
-### Google App Engine
+### API
 
-REST API to interface with tenants and students performing administrative tasks.
+The Rest API provides endpoints to perform administrative tasks.
+Students, organisations, tenants and admins all use the API.
 
 ### Google Cloud Storage
 
