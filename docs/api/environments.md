@@ -9,22 +9,22 @@ characteristics:
 The latest features may be tested in the development environment:
 `https://api-dot-dev.itslanguage.nl`.
 
-!!! warning
-    This environment may become unstable and data may be reset at any time.
-
 This documentation matching this environment is available at:
 `https://help-dot-dev.itslanguage.nl`.
+
+!!! warning
+    This environment may become unstable and data may be reset at any time.
 
 ## Testing
 
 More mature features may be tested in the test environment:
 `https://api-dot-test.itslanguage.nl`.
 
-!!! warning
-    This environment may become unstable and data may be reset at any time.
-
 This documentation matching this environment is available at:
 `https://help-dot-test.itslanguage.nl`.
+
+!!! warning
+    This environment may become unstable and data may be reset at any time.
 
 ## Production
 
