@@ -9,7 +9,7 @@ characteristics:
 The latest features may be tested in the development environment:
 `https://api-dot-dev.itslanguage.nl`.
 
-This documentation matching this environment is available at:
+The documentation matching this environment is available at:
 `https://help-dot-dev.itslanguage.nl`.
 
 !!! warning
@@ -20,7 +20,7 @@ This documentation matching this environment is available at:
 More mature features may be tested in the test environment:
 `https://api-dot-test.itslanguage.nl`.
 
-This documentation matching this environment is available at:
+The documentation matching this environment is available at:
 `https://help-dot-test.itslanguage.nl`.
 
 !!! warning
@@ -28,10 +28,9 @@ This documentation matching this environment is available at:
 
 ## Production
 
-Stable features may be used in the production environment:
+This environment will store data it receives for a longer time and provides
+stable features. The production environment can be found here:
 `https://api.itslanguage.nl`.
 
-This environment will store data it receives for a longer time.
-
-This documentation matching this environment is available at:
+The documentation matching this environment is available at:
 `https://help.itslanguage.nl`.
