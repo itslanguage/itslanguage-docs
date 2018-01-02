@@ -1,27 +1,32 @@
 # Request and Response Format
 
-All endpoints accept and return JSON, with the exception of a few special cases that require submitting blobs.
+Most endpoints accept and return [JSON](#json). Some endpoints accept
+[multipart form data](#multipart-form-data) to support submitting binary data
+(files for example). All endpoints should return [JSON](#json) for ease of
+processing.
 
 ## JSON
 
-All endpoints accept and return JSON, with the exception of a few special cases designed for use from a web browser or containing blobs.
-
 As described in [RFC 4627](http://www.ietf.org/rfc/rfc4627.txt):
-*JSON text SHALL be encoded in Unicode. The default encoding is UTF-8.*
-Therefore, specifying the encoding with `charset=utf-8` in the header is optional, it's an implicit default.
+> JSON text SHALL be encoded in Unicode. The default encoding is UTF-8.
 
-When sending JSON the appropriate Content-Type header needs to be set.
+Therefore, specifying the encoding with `charset=utf-8` in the header is
+optional, it's an implicit default.
+
+When sending JSON the `Content-Type` header needs to be set to
+`application/json`. Example using curl:
 
 ```bash
-curl -d '{"name": "sheffield"}' -H "Content-Type: application/json" https://api.itslanguage.nl/organisations
+curl -d '{"name": "sheffield"}' -H "Content-Type: application/json" \
+  https://api.itslanguage.nl/organisations
 ```
 
 Blank fields are included as `null` instead of being omitted.
 
 ## Multipart form data
 
-When submitted forms contains binary data like audio fragments, this request format needs to be used.
-An example form POST looks like this:
+When submitting binary data, like audio fragments, this request format needs to
+be used. An example form POST looks like this:
 
 ```http
 POST /organisation/crimson/challenges/choice HTTP/1.1
@@ -51,14 +56,5 @@ Content-Type: audio/wav
 
 Repeated fieldnames are accepted and transformed as lists in the given order.
 
-## URL encoded forms
-
-This content type is unsupported for most API calls, it may be supported for legacy reasons.
-
-```http
-POST /organisations/crimson/challenges/choice HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-
-question=The%20Pitcairn%20Islands%20are%20...%20in%20the%20South%20Pacific%20Ocean&choices=located&choices=sited&choices=stationed&choices=settled
-```
+More information about this format can be found in
+[RFC 2388](https://www.ietf.org/rfc/rfc2388.txt).
