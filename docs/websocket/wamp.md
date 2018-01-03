@@ -1,4 +1,4 @@
-# Websocket API
+# WAMP
 
 The websocket API is implemented using [WAMP] (Web Application Messaging
 Protocol). This allows for RPCs over websockets.

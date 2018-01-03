@@ -41,7 +41,7 @@ pages:
         - 'Basic authentication': 'api/basicauths.md'
         - 'Email authentication': 'api/emailauth.md'
 - Websocket API:
-    - 'Websocket API': 'websocket/index.md'
+    - 'WAMP': 'websocket/wamp.md'
     - 'Speech Recording': 'websocket/speech_recording.md'
     - 'Pronunciation Analyses': 'websocket/pronunciation_analyses.md'
     - 'Choice Recognitions': 'websocket/choice_recognitions.md'
