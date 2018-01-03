@@ -5,3 +5,6 @@ env:
   global:
   - ENCRYPTION_LABEL: "980e848ecaba"
   - COMMIT_AUTHOR_EMAIL: "loek@d-centralize.nl"
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y graphviz

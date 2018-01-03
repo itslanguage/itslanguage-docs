@@ -5,13 +5,21 @@ pages:
 - Home:
     - 'ITSLanguage Speech API': 'index.md'
 - REST API basics:
-    - 'The REST API': 'api/index.md'
     - 'Authentication': 'api/authentication.md'
+    - 'Cross Origin Resource Sharing': 'api/cors.md'
+    - 'Data representation': 'api/data_representation.md'
+    - 'Environments': 'api/environments.md'
+    - 'JSON-P Callbacks': 'api/jsonp.md'
+    - 'Pagination': 'api/pagination.md'
+    - 'Parameters': 'api/parameters.md'
+    - 'Request and response format': 'api/request_response_format.md'
     - 'Security':
       - 'Roles': 'api/roles.md'
       - 'Permissions': 'api/permissions.md'
+      - 'SSL': 'api/ssl.md'
     - 'Error handling': 'api/errors.md'
     - 'Filters': 'api/filters.md'
+    - 'URLs': 'api/urls.md'
 - REST API:
     - 'OAuth2': 'api/oauth2.md'
     - 'Organisations': 'api/organisations.md'
@@ -47,6 +55,7 @@ use_directory_urls: false
 strict: true
 
 markdown_extensions:
+    - inline_graphviz
     - toc:
         anchorlink: True
-    - admonition:
+    - admonition

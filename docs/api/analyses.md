@@ -1,6 +1,7 @@
 # Analyses
 
-Speech analyses can be applied to user submitted audio using the ITSLanguage Speech API.
+Speech analyses can be applied to user submitted audio using the ITSLanguage
+Speech API.
 
 Type            | Usage
 ----------------|------
@@ -22,12 +23,16 @@ POST /challenges/pronunciation/:challenge/analyses HTTP/1.1
 
 ### Request parameters
 
-Name        | Type       | Description
-------------|------------|------------
-id          | `string`   | **Optional** A unique identifier for the analysis.
-audio       | `blob`     | **Required** The actual audio. (Ogg Opus or WAV)
-score       | `float`    | **Optional** The overall score of the pronunciation between 0 and 1. Required if ``words`` is given.
-words       | `json`     | **Optional** A JSON encoded list of analysed words, forming the spoken sentence. Required if ``score`` is given.
+[//]: <> (XXX Elaborate on console and pruning level, they may not be accurate any more.)
+
+Name         | Type       | Description
+-------------|------------|------------
+id           | `string`   | **Optional** A unique identifier for the analysis.
+audio        | `blob`     | **Required** The actual audio. (Ogg Opus or WAV)
+console      | `string`   | **Optional** Debugging information supplied by the analysis back-end.
+pruningLevel | `int`      | **Optional** A measurement of how well the alignment process succeeded. Higher values indicate a worse alignment, leading to less reliable measurements per phoneme.
+score        | `float`    | **Optional** The overall score of the pronunciation between 0 and 1. Required if `words` is given.
+words        | `json`     | **Optional** A JSON encoded list of analysed words, forming the spoken sentence. Required if `score` is given.
 
 A word is represented as a list of graphemes. Each grapheme contains of the
 following attributes:
@@ -37,7 +42,7 @@ Name      | Type       | Description
 graphemes | `string`   | **Required** A string containing the assessed graphemes.
 phonemes  | `object[]` | **Required** A list of phonemes found in the assessed grapheme.
 score     | `float`    | **Required** The score of the assessed graphemes between 0 and 1.
-verdict   | `string`   | **Required** The textual representation of the score. This should be `bad`, `good` or `moderate,
+verdict   | `string`   | **Required** The textual representation of the score. This should be `bad`, `good` or `moderate`.
 
 Each phoneme should have the following properties:
 
@@ -221,8 +226,8 @@ GET /challenges/pronunciation/:challenge/analyses HTTP/1.1
 
 ### Request parameters
 
-Name        | Type      | Description
-------------|-----------|------------
+Name     | Type      | Description
+---------|-----------|------------
 `userId` | `string`  | **Optional** The id of the user that supplied the audio.
 
 ### Request
@@ -236,12 +241,12 @@ Accept: application/json
 
 The response is a JSON list with pronunciation analyses of `userId` '24'.
 
-Note:
-
-* The apostrophe in *Bob's* is included in the `graphemes` field of the *s*.
-* When a phoneme represents more than one grapheme like *yo* in *your*, they're grouped in the same `graphemes` field.
-* The *c* in *uncle* exists of two phonemes. The `score` and `verdict` are shown
-  per phoneme, along with the `ipa` notation.
+!!! note
+    * The apostrophe in *Bob's* is included in the `graphemes` field of the *s*.
+    * When a phoneme represents more than one grapheme like *yo* in *your*, they're
+      grouped in the same `graphemes` field.
+    * The *c* in *uncle* exists of two phonemes. The `score` and `verdict` are shown
+      per phoneme, along with the `ipa` notation.
 
 
 ```http
