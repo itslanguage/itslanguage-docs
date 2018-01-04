@@ -112,6 +112,12 @@ The RPC can return various errors:
 
 It's possible to get feedback while recording. After every sentence feedback is
 provided indicating whether or not the sentence was read well.
+To perform a recording with feedback the following calls have to be made:
+
+1. [Initialise the recording](#initialise-a-recording)
+2. [Initialise the challenge](#initialise-recording-challenge)
+3. [Register audio procedure](wamp.md#register-audio-procedure)
+4. [Perform recording with feedback](#feedback)
 
 ### URI
 
