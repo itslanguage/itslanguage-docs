@@ -1,0 +1,94 @@
+# Speech feedback
+
+It's possible to get feedback while recording. After every sentence feedback is
+provided indicating whether or not the sentence was read well.
+To perform a recording with feedback the following calls have to be made:
+
+1. [Prepare the speech feedback](#prepare)
+2. [Register audio procedure for streaming](wamp.md#register-audio-procedure)
+3. [Start listening for audio](#listen)
+
+
+## Prepare
+
+Prepare a new speech feedback. This RPC should be called for each new speech
+feedback. A unique id is generated for a speech feedback and a speech challenge
+is prepared.
+
+### URI
+
+```
+nl.itslanguage.feedback.prepare
+```
+
+### Parameters
+
+Name            | Type     | Description
+----------------|----------|------------
+challenge_id    | `string` | **Required** The id of the speech challenge to prepare.
+
+### Response
+
+The id of the new speech recording is returned as a string.
+
+
+## Start listening
+
+In order to receive feedback the server needs to listen for audio on the
+registered audio rpc. While listening the server will reply using progressive
+results.
+The server will stop listening when the audio rpc returns.
+
+### URI
+
+```
+nl.itslanguage.feedback.listen_and_reply
+```
+
+### Parameters
+
+Name         | Type     | Description
+-------------|----------|------------
+recording_id | `string` | **Required** The unique id of the speech recording.
+rpc          | `string` | **Required** The URI of a [registered audio rpc](wamp.md#register-audio-procedure).
+
+### Response
+
+The rpc returns progressive results for realtime feadback. After every sentence
+the following json is sent as a progressive result:
+
+```json
+{
+  "sentence": 0,
+  "feedback": true
+}
+```
+
+Name     | Type   | Description
+---------|--------|------------
+sentence | `int`  | The index of the sentence, starting at `0`.
+feedback | `bool` | Feedback score, `false` means bad and `true` means good.
+
+When the recording is finished a recording with feedback is returned:
+
+```json
+{
+  "id": "recording_1",
+  "created": "2014-01-28T21:25:10Z",
+  "updated": "2014-01-28T21:25:10Z",
+  "audioUrl": "https://api.itslanguage.nl/download/audio.wav",
+  "feedback": [
+    false,
+    true,
+    true
+  ]
+}
+```
+
+Name     | Type     | Description
+---------|----------|------------
+id       | `string` | The id of the recording.
+created  | `string` | The timestamp when the recording was created.
+updated  | `string` | The timestamp when the recording was last updated.
+audioUrl | `string` | The url to fetch the recorded audio.
+feedback | `array`  | A list containing feedback (`bool`) per sentence.
