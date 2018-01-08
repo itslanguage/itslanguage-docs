@@ -92,3 +92,40 @@ created  | `string` | The timestamp when the recording was created.
 updated  | `string` | The timestamp when the recording was last updated.
 audioUrl | `string` | The url to fetch the recorded audio.
 feedback | `array`  | A list containing feedback (`bool`) per sentence.
+
+
+## Pause
+
+When desired the feedback recording can be paused. Doing so will stop the
+server from processing the audio stream and returning feedback.
+
+### URI
+
+```
+nl.itslanguage.feedback.pause
+```
+
+### Parameters
+
+Name | Type     | Description
+-----|----------|------------
+id   | `string` | **Required** The id of the feedback to pause.
+
+
+## Resume
+
+A paused feedback can be resumed using this RPC. After this the audio stream is
+again processed by the server.
+
+### URI
+
+```
+nl.itslanguage.feedback.resume
+```
+
+### Parameters
+
+Name        | Type     | Description
+------------|----------|------------
+id          | `string` | **Required** The id of the feedback to pause.
+sentence_id | `int`    | **Required** The id of the sentence (starting with `0`) to resume on.
