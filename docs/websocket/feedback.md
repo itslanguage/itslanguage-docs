@@ -127,5 +127,5 @@ nl.itslanguage.feedback.resume
 
 Name        | Type     | Description
 ------------|----------|------------
-id          | `string` | **Required** The id of the feedback to pause.
+id          | `string` | **Required** The id of the feedback to resume.
 sentence_id | `int`    | **Required** The id of the sentence (starting with `0`) to resume on.
