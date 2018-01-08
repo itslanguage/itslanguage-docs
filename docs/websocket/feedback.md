@@ -39,6 +39,9 @@ registered audio rpc. While listening the server will reply using progressive
 results.
 The server will stop listening when the audio rpc returns.
 
+!!! note
+    The server will only stop processing the audio when the audio rpc returns.
+
 ### URI
 
 ```
@@ -98,6 +101,10 @@ feedback | `array`  | A list containing feedback (`bool`) per sentence.
 
 When desired the feedback recording can be paused. Doing so will stop the
 server from processing the audio stream and returning feedback.
+
+!!! note
+    Pausing the feedback will not stop the feedback. See
+    [the note on audio processing](#start-listening) how to stop it.
 
 ### URI
 
