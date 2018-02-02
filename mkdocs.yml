@@ -30,6 +30,7 @@ pages:
       - 'Choice': 'api/choice_challenges.md'
     - 'Progress': 'api/progress.md'
     - 'Speech Recordings': 'api/recordings.md'
+    - 'Speech Feedback': 'api/feedback.md'
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
     - 'Category': 'api/categories.md'
