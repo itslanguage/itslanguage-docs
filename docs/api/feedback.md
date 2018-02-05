@@ -9,7 +9,7 @@ The feedback is created for the current user.
 ### URL
 
 ```http
-POST /challenges/speech/:challenge/feedbacks HTTP/1.1
+POST /challenges/speech/:challenge/feedback HTTP/1.1
 ```
 
 * challenge - **Required** The id of the speech challenge used to perform the feedback.
@@ -29,7 +29,7 @@ The request should be a `multipart/form-data`.
 Example:
 
 ```http
-POST /challenges/speech/test/feedbacks HTTP/1.1
+POST /challenges/speech/test/feedback HTTP/1.1
 Accept: application/json
 Content-Type: multipart/form-data; boundary="YvHKkjjzXfysYJVHMoOAoNczae"
 
