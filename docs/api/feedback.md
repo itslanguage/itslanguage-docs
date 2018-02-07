@@ -14,12 +14,12 @@ POST /feedback HTTP/1.1
 
 ### Request parameters
 
-Name      | Type     | Description
-----------|----------|------------
-id        | `string` | **Optional** The id of the feedback. If none is given, one is generated.
-audio     | `blob`   | **Required** The recorded audio.
-challenge | `string` | **Required** The id of the speech challenge used to perform the feedback.
-feedback  | `bool`   | **Required** The feedback as received per sentence.
+Name        | Type     | Description
+------------|----------|------------
+id          | `string` | **Optional** The id of the feedback. If none is given, one is generated.
+audio       | `blob`   | **Required** The recorded audio.
+challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
+feedback    | `bool`   | **Required** The feedback as received per sentence.
 
 ### Request
 
@@ -33,7 +33,7 @@ Accept: application/json
 Content-Type: multipart/form-data; boundary="YvHKkjjzXfysYJVHMoOAoNczae"
 
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="challenge"
+Content-Disposition: form-data; name="challengeId"
 
 chal
 --YvHKkjjzXfysYJVHMoOAoNczae
@@ -66,7 +66,7 @@ Content-Type: application/json
   "updated": "2018-02-20T09:39:40Z",
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "challenge": "chal",
+  "challengeId": "chal",
   "feedback": [
     true,
     false
@@ -111,7 +111,7 @@ Content-Type: application/json
   "updated": "2018-02-20T09:39:40Z",
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "challenge": "chal",
+  "challengeId": "chal",
   "feedback": [
     true,
     false
