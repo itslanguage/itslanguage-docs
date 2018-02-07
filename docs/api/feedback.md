@@ -74,3 +74,48 @@ Content-Type: application/json
   "userId": "24"
 }
 ```
+
+
+## Get feedback by id
+
+A previously stored feedback can be fetched using a `GET` request.
+Feedback can only be get by the owning user or by a user with the `TEACHER`
+role.
+
+### URL
+
+```http
+POST /feedback/:id HTTP/1.1
+```
+
+* id - **Required** The id of the feedback to get.
+
+### Request
+
+A `GET` request should be made, `application/json` should be accepted as a
+valid return format. (All formats are accepted by default.)
+
+```http
+GET /feedback/34788437 HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": "34",
+  "updated": "2018-02-20T09:39:40Z",
+  "created": "2018-02-20T09:39:37Z",
+  "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "challenge": "chal",
+  "feedback": [
+    true,
+    false
+  ],
+  "userId": "24"
+}
+```
