@@ -65,7 +65,7 @@ Content-Type: application/json
   "id": "34",
   "updated": "2018-02-20T09:39:40Z",
   "created": "2018-02-20T09:39:37Z",
-  "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
   "feedback": [
     true,
@@ -110,7 +110,7 @@ Content-Type: application/json
   "id": "34",
   "updated": "2018-02-20T09:39:40Z",
   "created": "2018-02-20T09:39:37Z",
-  "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
   "feedback": [
     true,
