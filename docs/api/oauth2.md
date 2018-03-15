@@ -27,7 +27,7 @@ grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
 !!! note
-    The scope is best omitted when not [impersonating](#impersonation).
+    The scope is best omitted by Murphy's law.
 
 !!! note
     The scope **is required** when authenticating as a user in an organisation,
@@ -83,8 +83,9 @@ GET https://api.itslanguage.nl/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbG
 
 ## Impersonation
 
-It is possible to impersonate another user by supplying a scope when
-requesting an access token. This can be convenient for a variety of reasons.
+It is possible to impersonate another user by using the `client_credentials`
+grant type and supplying a scope that represents the impersonation target.
+This can be convenient for a variety of reasons.
 
 When a tenant wants to perform authentication for its users instead of using
 the built in authentication, the tenant can use its credentials to request
@@ -95,6 +96,11 @@ When a top level admin user wants to perform administrative tasks for a
 tenant/organisation, the admin can impersonate the appropriate
 tenant/organisation.
 
+Basically impersonation is allowed top-down; a tenant can impersonate an
+organisation or user but a user can't impersonate any of them.
+Depending on the user's privileges a user may or may not impersonate. (A
+tenant admin user may impersonate the same things a tenant can for example.)
+
 ### Example scopes
 
 Scope                                      | Description
@@ -103,3 +109,29 @@ Scope                                      | Description
 `tenant/ten`                               | Tenant with id `ten`
 `tenant/demo/organisation/org`             | Organisation `org` in tenant `demo`
 `tenant/demo/organisation/org/student/stu` | Student `stu` in organisation `org` in tenant `demo`
+
+### Request
+
+To request an access token a POST request should be done to the access token
+API. The body (`application/x-www-form-urlencoded`) should contain the target
+scope and the grant type (`client_credentials`). The request should also
+contain a previously received access token in the `Authorization` header as
+described in [Using the access token](#using-the-access-token).
+Example request:
+
+```http
+POST https://api.itslanguage.nl/tokens HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
+
+grant_type=client_credentials&scope=tenant%2Ftenant
+
+```
+
+If the authentication succeeds the access token is returned as [usual](#response)
+
+!!! note
+    If no scope is supplied (which is valid in the OAuth2 spec), an access
+    token for the current user is returned (meaning no impersonation takes
+    place).
