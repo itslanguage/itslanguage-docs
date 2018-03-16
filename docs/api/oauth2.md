@@ -27,9 +27,6 @@ grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
 !!! note
-    The scope is best omitted by Murphy's law.
-
-!!! note
     The scope **is required** when authenticating as a user in an organisation,
     using a username and password. This is because a user is only unique within
     the organisation and there is no way of determining the organisation from
@@ -96,10 +93,10 @@ When a top level admin user wants to perform administrative tasks for a
 tenant/organisation, the admin can impersonate the appropriate
 tenant/organisation.
 
-Basically impersonation is allowed top-down; a tenant can impersonate an
+Impersonation is allowed top-down; a tenant can impersonate an
 organisation or user but a user can't impersonate any of them.
 Depending on the user's privileges a user may or may not impersonate. (A
-tenant admin user may impersonate the same things a tenant can for example.)
+tenant admin user may impersonate the same way a tenant can for example.)
 
 ### Example scopes
 
@@ -125,7 +122,7 @@ Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
 
-grant_type=client_credentials&scope=tenant%2Ftenant
+grant_type=client_credentials&scope=tenant%2Facmecorp
 
 ```
 
