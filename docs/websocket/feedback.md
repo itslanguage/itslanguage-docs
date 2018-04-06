@@ -101,7 +101,11 @@ feedback | `array`  | A list containing feedback (`bool`) per sentence.
 ## Pause
 
 When desired the feedback recording can be paused. Doing so will stop the
-server from processing the audio stream and returning feedback.
+server from processing the audio stream and returning feedback. Do note that
+**the audio recording isn't paused when the feedback is paused**. To pause the
+recording the audio RPC needs to stop sending data. For practical reasons it is
+recommended to stop sending audio when the feedback is paused. Also see the
+[Resume](#resume) docs for more info.
 
 !!! note
     Pausing the feedback will not stop the feedback. See
@@ -124,6 +128,16 @@ id   | `string` | **Required** The id of the feedback to pause.
 
 A paused feedback can be resumed using this RPC. After this the audio stream is
 again processed by the server.
+Currently **it is required to re-send the audio header when resuming
+feedback**. Failing to do so will fail the feedback as the server can't
+recognise the audio format without a header.
+
+!!! note
+    It appears to be valid to have a wave file with multiple headers.
+
+!!! warning
+    It is required to re-send the audio header upon resume. The audio
+    processing will fail if the header isn't re-sent.
 
 ### URI
 
