@@ -63,7 +63,14 @@ the following json is sent as a progressive result:
 ```json
 {
   "sentence": 0,
-  "feedback": true
+  "feedback": true,
+  "words": [
+    {
+      "expected": "gif",
+      "recognized": "jif",
+      "correct": false
+    }
+  ]
 }
 ```
 
@@ -71,6 +78,15 @@ Name     | Type   | Description
 ---------|--------|------------
 sentence | `int`  | The index of the sentence, starting at `0`.
 feedback | `bool` | Feedback score, `false` means bad and `true` means good.
+words    | `list` | The expected and recognized words in the sentence.
+
+The list of words each contain the following fields:
+
+Name       | Type     | Description
+-----------|----------|------------
+correct    | `bool`   | Whether the word was pronounced correctly.
+expected   | `string` | The word as it was expected to be pronounced.
+recognized | `string` | The recognized result. If nothing is recognized this field is `null`.
 
 When the recording is finished a recording with feedback is returned:
 
