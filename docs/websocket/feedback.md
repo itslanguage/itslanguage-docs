@@ -85,7 +85,7 @@ Name     | Type   | Description
 ---------|--------|------------
 sentence | `int`  | The index of the sentence, starting at `0`.
 feedback | `bool` | Feedback score, `false` means bad and `true` means good.
-words    | `list` | The expected and recognized words in the sentence.
+words    | `list` | All expected and recognized words in the sentence.
 
 The list of words each contain the following fields:
 
