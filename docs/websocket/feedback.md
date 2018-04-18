@@ -67,10 +67,11 @@ the following json is sent as a progressive result:
 }
 ```
 
-Name     | Type   | Description
----------|--------|------------
-sentence | `int`  | The index of the sentence, starting at `0`.
-feedback | `bool` | Feedback score, `false` means bad and `true` means good.
+Name        | Type     | Description
+------------|----------|------------
+feedback_id | `string` | The unique id of the feedback this results belongs to.
+sentence    | `int`    | The index of the sentence, starting at `0`.
+feedback    | `bool`   | Feedback score, `false` means bad and `true` means good.
 
 When the recording is finished a recording with feedback is returned:
 
