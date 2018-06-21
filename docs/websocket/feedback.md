@@ -135,10 +135,6 @@ recognise the audio format without a header.
 !!! note
     It appears to be valid to have a wave file with multiple headers.
 
-!!! warning
-    It is required to re-send the audio header upon resume. The audio
-    processing will fail if the header isn't re-sent.
-
 ### URI
 
 ```
