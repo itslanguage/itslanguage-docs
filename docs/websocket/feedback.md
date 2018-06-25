@@ -62,6 +62,7 @@ the following json is sent as a progressive result:
 
 ```json
 {
+  "feedback_id": "recording_1",
   "sentence": 0,
   "feedback": true
 }
