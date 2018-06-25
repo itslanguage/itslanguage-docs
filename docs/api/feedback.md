@@ -19,7 +19,7 @@ Name        | Type     | Description
 id          | `string` | **Optional** The id of the feedback. If none is given, one is generated.
 audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
-feedback    | `bool`   | **Required** The feedback as received per sentence.
+errors      | `int`    | **Required** The amount of errors made per sentence.
 
 ### Request
 
@@ -42,13 +42,13 @@ Content-Type: audio/ogg
 
 <audio blob>
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="feedback"
+Content-Disposition: form-data; name="errors"
 
-True
+0
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="feedback"
+Content-Disposition: form-data; name="errors"
 
-False
+2
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -67,9 +67,9 @@ Content-Type: application/json
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
-  "feedback": [
-    true,
-    false
+  "errors": [
+    0,
+    1
   ],
   "userId": "24"
 }
@@ -112,9 +112,9 @@ Content-Type: application/json
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
-  "feedback": [
-    true,
-    false
+  "errors": [
+    0,
+    2
   ],
   "userId": "24"
 }
