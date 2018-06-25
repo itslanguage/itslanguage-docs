@@ -81,11 +81,12 @@ the following json is sent as a progressive result:
 }
 ```
 
-Name     | Type   | Description
----------|--------|------------
-sentence | `int`  | The index of the sentence, starting at `0`.
-feedback | `bool` | Feedback score, `false` means bad and `true` means good.
-words    | `list` | All expected and recognized words in the sentence.
+Name        | Type     | Description
+------------|----------|------------
+feedback_id | `string` | The unique id of the feedback this results belongs to.
+sentence    | `int`    | The index of the sentence, starting at `0`.
+feedback    | `bool`   | Feedback score, `false` means bad and `true` means good.
+words       | `list`   | All expected and recognized words in the sentence.
 
 The list of words each contain the following fields:
 
