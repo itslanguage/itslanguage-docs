@@ -62,8 +62,9 @@ the following json is sent as a progressive result:
 
 ```json
 {
+  "feedback_id": "recording_1",
   "sentence": 0,
-  "feedback": true,
+ "errors": 0
   "words": [
     {
       "expected": "funny",
@@ -85,7 +86,7 @@ Name        | Type     | Description
 ------------|----------|------------
 feedback_id | `string` | The unique id of the feedback this results belongs to.
 sentence    | `int`    | The index of the sentence, starting at `0`.
-feedback    | `bool`   | Feedback score, `false` means bad and `true` means good.
+errors      | `int`    | Amount of errors made.
 words       | `list`   | All expected and recognized words in the sentence.
 
 The list of words each contain the following fields:
@@ -113,10 +114,10 @@ When the recording is finished a recording with feedback is returned:
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/audio.wav",
-  "feedback": [
-    false,
-    true,
-    true
+  "errors": [
+    2,
+    0,
+    0
   ]
 }
 ```
@@ -127,7 +128,7 @@ id       | `string` | The id of the recording.
 created  | `string` | The timestamp when the recording was created.
 updated  | `string` | The timestamp when the recording was last updated.
 audioUrl | `string` | The url to fetch the recorded audio.
-feedback | `array`  | A list containing feedback (`bool`) per sentence.
+errors   | `array`  | A list containing the amount of errors made per sentence.
 
 
 ## Pause
