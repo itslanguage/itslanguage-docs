@@ -64,7 +64,21 @@ the following json is sent as a progressive result:
 {
   "feedback_id": "recording_1",
   "sentence": 0,
-  "errors": 0
+ "errors": 0
+  "words": [
+    {
+      "expected": "funny",
+      "recognized": "funny",
+      "error": null,
+      "correct": true
+    },
+    {
+      "expected": "gif",
+      "recognized": "jif",
+      "error": "substitution",
+      "correct": false
+    }
+  ]
 }
 ```
 
@@ -73,6 +87,24 @@ Name        | Type     | Description
 feedback_id | `string` | The unique id of the feedback this results belongs to.
 sentence    | `int`    | The index of the sentence, starting at `0`.
 errors      | `int`    | Amount of errors made.
+words       | `list`   | All expected and recognized words in the sentence.
+
+The list of words each contain the following fields:
+
+Name       | Type     | Description
+-----------|----------|------------
+correct    | `bool`   | Whether the word was pronounced correctly.
+error      | `string` | The kind of error that was detected.
+expected   | `string` | The word as it was expected to be pronounced.
+recognized | `string` | The recognized result. If nothing is recognized this field is `null`.
+
+When an error is detected it is included as a string. Possible values are:
+
+Value          | Description
+---------------|------------
+`deletion`     | Nothing was recognized.
+`substitution` | Something got recognized but not what was expected.
+`repetition`   | The word was recognized correctly but multiple times.
 
 When the recording is finished a recording with feedback is returned:
 
