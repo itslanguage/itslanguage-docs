@@ -64,7 +64,7 @@ the following json is sent as a progressive result:
 {
   "feedback_id": "recording_1",
   "sentence": 0,
- "errors": 0
+  "errors": 0,
   "words": [
     {
       "expected": "funny",
