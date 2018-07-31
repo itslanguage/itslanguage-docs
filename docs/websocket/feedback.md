@@ -114,21 +114,54 @@ When the recording is finished a recording with feedback is returned:
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/audio.wav",
-  "errors": [
-    2,
-    0,
-    0
+  "sentences": [
+    {
+      "sentence": 0,
+      "errors": 1,
+      "words": [
+        {
+          "expected": "hello",
+          "recognized": "hello",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "there",
+          "recognized": "their",
+          "error": "substitution",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "sentence": 1,
+      "errors": 0,
+      "words": [
+        {
+          "expected": "general",
+          "recognized": "general",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "kenobi",
+          "recognized": "kenobi",
+          "error": null,
+          "correct": true
+        }
+      ]
+    }
   ]
 }
 ```
 
-Name     | Type     | Description
----------|----------|------------
-id       | `string` | The id of the recording.
-created  | `string` | The timestamp when the recording was created.
-updated  | `string` | The timestamp when the recording was last updated.
-audioUrl | `string` | The url to fetch the recorded audio.
-errors   | `array`  | A list containing the amount of errors made per sentence.
+Name      | Type     | Description
+----------|----------|------------
+id        | `string` | The id of the recording.
+created   | `string` | The timestamp when the recording was created.
+updated   | `string` | The timestamp when the recording was last updated.
+audioUrl  | `string` | The url to fetch the recorded audio.
+sentences | `array`  | A list containing the feedback per sentence.
 
 
 ## Pause

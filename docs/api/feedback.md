@@ -42,13 +42,49 @@ Content-Type: audio/ogg
 
 <audio blob>
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="errors"
+Content-Disposition: form-data; name="sentences"
+Content-Type: application/json
 
-0
+{
+  "sentence": 0,
+  "errors": 1,
+  "words": [
+    {
+      "expected": "hello",
+      "recognized": "hello",
+      "error": null,
+      "correct": true
+    },
+    {
+      "expected": "there",
+      "recognized": "their",
+      "error": "substitution",
+      "correct": false
+    }
+  ]
+}
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="errors"
+Content-Disposition: form-data; name="sentences"
+Content-Type: application/json
 
-2
+{
+  "sentence": 1,
+  "errors": 0,
+  "words": [
+    {
+      "expected": "general",
+      "recognized": "general",
+      "error": null,
+      "correct": true
+    },
+    {
+      "expected": "kenobi",
+      "recognized": "kenobi",
+      "error": null,
+      "correct": true
+    }
+  ]
+}
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -67,9 +103,43 @@ Content-Type: application/json
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
-  "errors": [
-    0,
-    1
+  "sentences": [
+    {
+      "sentence": 0,
+      "errors": 1,
+      "words": [
+        {
+          "expected": "hello",
+          "recognized": "hello",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "there",
+          "recognized": "their",
+          "error": "substitution",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "sentence": 1,
+      "errors": 0,
+      "words": [
+        {
+          "expected": "general",
+          "recognized": "general",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "kenobi",
+          "recognized": "kenobi",
+          "error": null,
+          "correct": true
+        }
+      ]
+    }
   ],
   "userId": "24"
 }
