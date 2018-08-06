@@ -19,7 +19,7 @@ Name        | Type     | Description
 id          | `string` | **Optional** The id of the feedback. If none is given, one is generated.
 audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
-errors      | `int`    | **Required** The amount of errors made per sentence.
+sentences   | `json`   | **Required** The feedback per sentence.
 
 ### Request
 
