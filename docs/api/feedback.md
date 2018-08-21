@@ -20,6 +20,7 @@ id          | `string` | **Optional** The id of the feedback. If none is given, 
 audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
 errors      | `int`    | **Required** The amount of errors made per sentence.
+extra       | `json`   | **Optional** Extra data to store.
 
 ### Request
 
@@ -49,6 +50,11 @@ Content-Disposition: form-data; name="errors"
 Content-Disposition: form-data; name="errors"
 
 2
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name="extra"
+Content-Type: application/json
+
+{'note': 'cheap microphone'}
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -71,6 +77,9 @@ Content-Type: application/json
     0,
     1
   ],
+  "extra": {
+    "note": "cheap microphone"
+  },
   "userId": "24"
 }
 ```
@@ -116,6 +125,9 @@ Content-Type: application/json
     0,
     2
   ],
+  "extra": {
+    "note": "cheap microphone"
+  },
   "userId": "24"
 }
 ```
