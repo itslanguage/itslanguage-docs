@@ -101,6 +101,7 @@ Name             | Type     | Description
 `referenceAudio` | `blob`   | **Optional** The reference audio fragment.
 `srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.
 `image`          | `blob`   | **Optional** An image to show with the challenge.
+`metadata`       | `string` | **Optional** Client specific properties that are not validated nor filtered.
 
 
 #### Request
