@@ -40,15 +40,24 @@ Content-Type: application/json
             {
                 "id": "chal_1",
                 "audioUrl": "http://example.com/audio.mp3",
-                "recording": {
-                    "id": "rec_2",
-                    "audioUrl": "http://example.com/audio.mp3"
+                "recordingSet": {
+                  "id": "5600160f578c4db6b7b0327e16e42153",
+                  "recordings": [
+                    {
+                      "id": "rec_1",
+                      "audioUrl": "http://example.com/audio.mp3"
+                    },
+                    {
+                      "id": "rec_2",
+                      "audioUrl": "http://example.com/audio.mp3"
+                    }
+                  ]
                 }
             },
             {
                 "id": "chal_2",
                 "audioUrl": "http://example.com/audio.mp3",
-                "recording": null
+                "recordingSet": null
             }
         ]
 
