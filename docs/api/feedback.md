@@ -21,7 +21,7 @@ audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
 errors      | `int`    | **Required** The amount of errors made per sentence.
 extra       | `json`   | **Optional** Extra data to store.
-resultSetId | `string` | **Required** The id of the result set the feedback belongs to. This should be a unique string.
+resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](recordings.md#recording-result-set).
 
 ### Request
 
