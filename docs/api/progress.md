@@ -42,7 +42,7 @@ Content-Type: application/json
                 "audioUrl": "http://example.com/audio.mp3",
                 "recordingSet": {
                   "id": "5600160f578c4db6b7b0327e16e42153",
-                  "audioUrl": "http://example.com/fullaudio.mp3",
+                  "combinedAudioUrl": "http://example.com/fullaudio.mp3",
                   "recordings": [
                     {
                       "id": "rec_1",

@@ -149,7 +149,7 @@ Content-Type: application/json
 
 In order to group recordings together a result set is used. The result set
 contains multiple recordings and an audio file containing all the audio files
-of its recordings.
+of its recordings combined.
 
 A result set is created automatically whenever a recording is created with
 a non-existing `resultSetId`. When the `resultSetId` does exist the recording
