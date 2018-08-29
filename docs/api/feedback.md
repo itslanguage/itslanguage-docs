@@ -85,7 +85,10 @@ Content-Type: application/json
   "extra": {
     "note": "cheap microphone"
   },
-  "resultSetId": "5600160f578c4db6b7b0327e16e42153",
+  "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
   "userId": "24"
 }
 ```
@@ -134,7 +137,10 @@ Content-Type: application/json
   "extra": {
     "note": "cheap microphone"
   },
-  "resultSetId": "5600160f578c4db6b7b0327e16e42153",
+  "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
   "userId": "24"
 }
 ```

@@ -38,6 +38,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+    "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
     "userId": "24"
   },
   {
@@ -45,6 +49,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
+    "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
     "userId": "24"
   }
 ]
@@ -80,6 +88,10 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "5600160f578c4db6b7b0327e16e42153",
+    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+  },
   "userId": "24"
 }
 ```
@@ -140,6 +152,10 @@ Content-Type: application/json
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "5600160f578c4db6b7b0327e16e42153",
+    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+  },
   "userId": "24"
 }
 ```
