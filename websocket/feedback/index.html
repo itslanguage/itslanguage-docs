@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Speech Feedback - ITSLanguage API</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Speech Feedback";
+    var mkdocs_page_input_path = "websocket/feedback.md";
+    var mkdocs_page_url = "/websocket/feedback/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> ITSLanguage API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Home</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../index.html">ITSLanguage Speech API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API basics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/authentication/index.html">Authentication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/cors/index.html">Cross Origin Resource Sharing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/data_representation/index.html">Data representation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/environments/index.html">Environments</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/jsonp/index.html">JSON-P Callbacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/pagination/index.html">Pagination</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/parameters/index.html">Parameters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/request_response_format/index.html">Request and response format</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Security</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/roles/index.html">Roles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/permissions/index.html">Permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/ssl/index.html">SSL</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/errors/index.html">Error handling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/filters/index.html">Filters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/urls/index.html">URLs</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/oauth2/index.html">OAuth2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/organisations/index.html">Organisations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/students/index.html">Students</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Challenges</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/speech_challenges/index.html">Speech</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/pronunciation_challenges/index.html">Pronunciation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/choice_challenges/index.html">Choice</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/progress/index.html">Progress</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/recordings/index.html">Speech Recordings</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/feedback/index.html">Speech Feedback</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/analyses/index.html">Speech Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/recognitions/index.html">Speech Recognition</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/categories/index.html">Category</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/tenants/index.html">Tenants</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/groups/index.html">Groups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/profiles/index.html">Profiles</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Users</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/users/index.html">Users</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/basicauths/index.html">Basic authentication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/emailauth/index.html">Email authentication</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Websocket API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../wamp/index.html">WAMP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Speech Feedback</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#speech-feedback">Speech feedback</a></li>
+                
+                    <li><a class="toctree-l4" href="#prepare">Prepare</a></li>
+                
+                    <li><a class="toctree-l4" href="#start-listening">Start listening</a></li>
+                
+                    <li><a class="toctree-l4" href="#pause">Pause</a></li>
+                
+                    <li><a class="toctree-l4" href="#resume">Resume</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../speech_recording/index.html">Speech Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../pronunciation_analyses/index.html">Pronunciation Analyses</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../choice_recognitions/index.html">Choice Recognitions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../audio/index.html">Audio</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Internal API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/permissions/index.html">Permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/architecture/index.html">Infrastructure Architecture</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ITSLanguage API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Websocket API &raquo;</li>
+        
+      
+    
+    <li>Speech Feedback</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/websocket/feedback.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="speech-feedback"><a class="toclink" href="#speech-feedback">Speech feedback</a></h1>
+<p>It's possible to get feedback while recording. After every sentence feedback is
+provided indicating whether or not the sentence was read well.
+To perform a recording with feedback the following calls have to be made:</p>
+<ol>
+<li><a href="#prepare">Prepare the speech feedback</a></li>
+<li><a href="../wamp/index.html#register-audio-procedure">Register audio procedure for streaming</a></li>
+<li><a href="#listen">Start listening for audio</a></li>
+</ol>
+<h2 id="prepare"><a class="toclink" href="#prepare">Prepare</a></h2>
+<p>Prepare a new speech feedback. This RPC should be called for each new speech
+feedback. A unique id is generated for a speech feedback and a speech challenge
+is prepared.</p>
+<h3 id="uri"><a class="toclink" href="#uri">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.prepare
+</code></pre>
+
+<h3 id="parameters"><a class="toclink" href="#parameters">Parameters</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>challenge_id</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The id of the speech challenge to prepare.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
+<p>The id of the new speech recording is returned as a string.</p>
+<h2 id="start-listening"><a class="toclink" href="#start-listening">Start listening</a></h2>
+<p>In order to receive feedback the server needs to listen for audio on the
+registered audio rpc. While listening the server will reply using progressive
+results.
+The server will stop listening when the audio rpc returns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server will only stop processing the audio when the audio rpc returns.</p>
+</div>
+<h3 id="uri_1"><a class="toclink" href="#uri_1">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.listen_and_reply
+</code></pre>
+
+<h3 id="parameters_1"><a class="toclink" href="#parameters_1">Parameters</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>recording_id</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique id of the speech recording.</td>
+</tr>
+<tr>
+<td>rpc</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The URI of a <a href="../wamp/index.html#register-audio-procedure">registered audio rpc</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<p>The rpc returns progressive results for realtime feadback. After every sentence
+the following json is sent as a progressive result:</p>
+<pre><code class="json">{
+  &quot;feedback_id&quot;: &quot;recording_1&quot;,
+  &quot;sentence&quot;: 0,
+  &quot;errors&quot;: 0,
+  &quot;words&quot;: [
+    {
+      &quot;expected&quot;: &quot;funny&quot;,
+      &quot;recognized&quot;: &quot;funny&quot;,
+      &quot;error&quot;: null,
+      &quot;correct&quot;: true
+    },
+    {
+      &quot;expected&quot;: &quot;gif&quot;,
+      &quot;recognized&quot;: &quot;jif&quot;,
+      &quot;error&quot;: &quot;substitution&quot;,
+      &quot;correct&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feedback_id</td>
+<td><code>string</code></td>
+<td>The unique id of the feedback this results belongs to.</td>
+</tr>
+<tr>
+<td>sentence</td>
+<td><code>int</code></td>
+<td>The index of the sentence, starting at <code>0</code>.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td><code>int</code></td>
+<td>Amount of errors made.</td>
+</tr>
+<tr>
+<td>words</td>
+<td><code>list</code></td>
+<td>All expected and recognized words in the sentence.</td>
+</tr>
+</tbody>
+</table>
+<p>The list of words each contain the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>correct</td>
+<td><code>bool</code></td>
+<td>Whether the word was pronounced correctly.</td>
+</tr>
+<tr>
+<td>error</td>
+<td><code>string</code></td>
+<td>The kind of error that was detected.</td>
+</tr>
+<tr>
+<td>expected</td>
+<td><code>string</code></td>
+<td>The word as it was expected to be pronounced.</td>
+</tr>
+<tr>
+<td>recognized</td>
+<td><code>string</code></td>
+<td>The recognized result. If nothing is recognized this field is <code>null</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>When an error is detected it is included as a string. Possible values are:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deletion</code></td>
+<td>Nothing was recognized.</td>
+</tr>
+<tr>
+<td><code>substitution</code></td>
+<td>Something got recognized but not what was expected.</td>
+</tr>
+<tr>
+<td><code>repetition</code></td>
+<td>The word was recognized correctly but multiple times.</td>
+</tr>
+</tbody>
+</table>
+<p>When the recording is finished a recording with feedback is returned:</p>
+<pre><code class="json">{
+  &quot;id&quot;: &quot;recording_1&quot;,
+  &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;audioUrl&quot;: &quot;https://api.itslanguage.nl/download/audio.wav&quot;,
+  &quot;errors&quot;: [
+    2,
+    0,
+    0
+  ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+<td>The id of the recording.</td>
+</tr>
+<tr>
+<td>created</td>
+<td><code>string</code></td>
+<td>The timestamp when the recording was created.</td>
+</tr>
+<tr>
+<td>updated</td>
+<td><code>string</code></td>
+<td>The timestamp when the recording was last updated.</td>
+</tr>
+<tr>
+<td>audioUrl</td>
+<td><code>string</code></td>
+<td>The url to fetch the recorded audio.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td><code>array</code></td>
+<td>A list containing the amount of errors made per sentence.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pause"><a class="toclink" href="#pause">Pause</a></h2>
+<p>When desired the feedback recording can be paused. Doing so will stop the
+server from processing the audio stream and returning feedback. Do note that
+<strong>the audio recording isn't paused when the feedback is paused</strong>. To pause the
+recording the audio RPC needs to stop sending data. For practical reasons it is
+recommended to stop sending audio when the feedback is paused. Also see the
+<a href="#resume">Resume</a> docs for more info.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pausing the feedback will not stop the feedback. See
+<a href="#start-listening">the note on audio processing</a> how to stop it.</p>
+</div>
+<h3 id="uri_2"><a class="toclink" href="#uri_2">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.pause
+</code></pre>
+
+<h3 id="parameters_2"><a class="toclink" href="#parameters_2">Parameters</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The id of the feedback to pause.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resume"><a class="toclink" href="#resume">Resume</a></h2>
+<p>A paused feedback can be resumed using this RPC. After this the audio stream is
+again processed by the server.
+Currently <strong>it is required to re-send the audio header when resuming
+feedback</strong>. Failing to do so will fail the feedback as the server can't
+recognise the audio format without a header.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It appears to be valid to have a wave file with multiple headers.</p>
+</div>
+<h3 id="uri_3"><a class="toclink" href="#uri_3">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.resume
+</code></pre>
+
+<h3 id="parameters_3"><a class="toclink" href="#parameters_3">Parameters</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The id of the feedback to resume.</td>
+</tr>
+<tr>
+<td>sentence_id</td>
+<td><code>int</code></td>
+<td><strong>Required</strong> The id of the sentence (starting with <code>0</code>) to resume on.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../speech_recording/index.html" class="btn btn-neutral float-right" title="Speech Recording">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../wamp/index.html" class="btn btn-neutral" title="WAMP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2013-2015</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itslanguage/itslanguage-docs/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../wamp/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../speech_recording/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Infrastructure Architecture - ITSLanguage API</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Infrastructure Architecture";
+    var mkdocs_page_input_path = "api/architecture.md";
+    var mkdocs_page_url = "/api/architecture/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> ITSLanguage API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Home</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../index.html">ITSLanguage Speech API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API basics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../authentication/index.html">Authentication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cors/index.html">Cross Origin Resource Sharing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../data_representation/index.html">Data representation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../environments/index.html">Environments</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../jsonp/index.html">JSON-P Callbacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../pagination/index.html">Pagination</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../parameters/index.html">Parameters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../request_response_format/index.html">Request and response format</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Security</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../roles/index.html">Roles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../permissions/index.html">Permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ssl/index.html">SSL</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../errors/index.html">Error handling</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../filters/index.html">Filters</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../urls/index.html">URLs</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../oauth2/index.html">OAuth2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../organisations/index.html">Organisations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../students/index.html">Students</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Challenges</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../speech_challenges/index.html">Speech</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../pronunciation_challenges/index.html">Pronunciation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../choice_challenges/index.html">Choice</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../progress/index.html">Progress</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../recordings/index.html">Speech Recordings</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../feedback/index.html">Speech Feedback</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../analyses/index.html">Speech Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../recognitions/index.html">Speech Recognition</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../categories/index.html">Category</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tenants/index.html">Tenants</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../groups/index.html">Groups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../profiles/index.html">Profiles</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Users</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../users/index.html">Users</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../basicauths/index.html">Basic authentication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../emailauth/index.html">Email authentication</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Websocket API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/wamp/index.html">WAMP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/feedback/index.html">Speech Feedback</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/speech_recording/index.html">Speech Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/pronunciation_analyses/index.html">Pronunciation Analyses</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/choice_recognitions/index.html">Choice Recognitions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/audio/index.html">Audio</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Internal API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../permissions/index.html">Permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Infrastructure Architecture</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#steaming-cloud-architecture">Steaming cloud architecture</a></li>
+                
+                    <li><a class="toctree-l4" href="#components-and-actors">Components and actors</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ITSLanguage API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Internal API &raquo;</li>
+        
+      
+    
+    <li>Infrastructure Architecture</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/architecture.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="steaming-cloud-architecture"><a class="toclink" href="#steaming-cloud-architecture">Steaming cloud architecture</a></h1>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.36.0 (20140111.2315)
+ -->
+<!-- Title: Architecture Pages: 1 -->
+<svg width="399pt" height="329pt"
+ viewBox="0.00 0.00 399.00 329.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 325)">
+<title>Architecture</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-325 395,-325 395,4 -4,4"/>
+<g id="clust1" class="cluster"><title>clusterGoogleCloud</title>
+<polygon fill="none" stroke="black" points="8,-8 8,-275 383,-275 383,-8 8,-8"/>
+<text text-anchor="middle" x="195.5" y="-259.8" font-family="Times,serif" font-size="14.00">Google cloud</text>
+</g>
+<g id="clust2" class="cluster"><title>clusterGoogleAppEngine</title>
+<polygon fill="none" stroke="black" points="39,-82 39,-159 164,-159 164,-82 39,-82"/>
+<text text-anchor="middle" x="101.5" y="-143.8" font-family="Times,serif" font-size="14.00">Google App Engine</text>
+</g>
+<g id="clust3" class="cluster"><title>clusterGoogleComputeEngine</title>
+<polygon fill="none" stroke="black" points="94,-167 94,-244 246,-244 246,-167 94,-167"/>
+<text text-anchor="middle" x="170" y="-228.8" font-family="Times,serif" font-size="14.00">Google Compute Engine</text>
+</g>
+<!-- API -->
+<g id="node1" class="node"><title>API</title>
+<path fill="none" stroke="black" d="M73,-91C73,-91 115,-91 115,-91 121,-91 127,-97 127,-103 127,-103 127,-115 127,-115 127,-121 121,-127 115,-127 115,-127 73,-127 73,-127 67,-127 61,-121 61,-115 61,-115 61,-103 61,-103 61,-97 67,-91 73,-91"/>
+<text text-anchor="middle" x="94" y="-105.3" font-family="Times,serif" font-size="14.00">Rest API</text>
+</g>
+<!-- GCS -->
+<g id="node3" class="node"><title>GCS</title>
+<path fill="none" stroke="black" d="M28,-17C28,-17 142,-17 142,-17 148,-17 154,-23 154,-29 154,-29 154,-41 154,-41 154,-47 148,-53 142,-53 142,-53 28,-53 28,-53 22,-53 16,-47 16,-41 16,-41 16,-29 16,-29 16,-23 22,-17 28,-17"/>
+<text text-anchor="middle" x="85" y="-31.3" font-family="Times,serif" font-size="14.00">Google Cloud Storage</text>
+</g>
+<!-- API&#45;&gt;GCS -->
+<g id="edge4" class="edge"><title>API&#45;&gt;GCS</title>
+<path fill="none" stroke="black" d="M94,-90.7079C94,-79.2375 94,-64.512 94,-53.0817"/>
+</g>
+<!-- NDB -->
+<g id="node4" class="node"><title>NDB</title>
+<path fill="none" stroke="black" d="M238.5,-17C238.5,-17 363.5,-17 363.5,-17 369.5,-17 375.5,-23 375.5,-29 375.5,-29 375.5,-41 375.5,-41 375.5,-47 369.5,-53 363.5,-53 363.5,-53 238.5,-53 238.5,-53 232.5,-53 226.5,-47 226.5,-41 226.5,-41 226.5,-29 226.5,-29 226.5,-23 232.5,-17 238.5,-17"/>
+<text text-anchor="middle" x="301" y="-31.3" font-family="Times,serif" font-size="14.00">Google Cloud Datastore</text>
+</g>
+<!-- API&#45;&gt;NDB -->
+<g id="edge5" class="edge"><title>API&#45;&gt;NDB</title>
+<path fill="none" stroke="black" d="M127.278,-109C185.828,-109 301.125,-109 301.125,-109 301.125,-109 301.125,-75.2057 301.125,-53.2921"/>
+</g>
+<!-- WSS -->
+<g id="node2" class="node"><title>WSS</title>
+<path fill="none" stroke="black" d="M125,-176C125,-176 215,-176 215,-176 221,-176 227,-182 227,-188 227,-188 227,-200 227,-200 227,-206 221,-212 215,-212 215,-212 125,-212 125,-212 119,-212 113,-206 113,-200 113,-200 113,-188 113,-188 113,-182 119,-176 125,-176"/>
+<text text-anchor="middle" x="170" y="-190.3" font-family="Times,serif" font-size="14.00">Websocket server</text>
+</g>
+<!-- WSS&#45;&gt;API -->
+<g id="edge3" class="edge"><title>WSS&#45;&gt;API</title>
+<path fill="none" stroke="black" d="M120,-175.974C120,-161.549 120,-141.418 120,-127"/>
+</g>
+<!-- Client -->
+<g id="node5" class="node"><title>Client</title>
+<path fill="none" stroke="black" d="M72,-284C72,-284 102,-284 102,-284 108,-284 114,-290 114,-296 114,-296 114,-308 114,-308 114,-314 108,-320 102,-320 102,-320 72,-320 72,-320 66,-320 60,-314 60,-308 60,-308 60,-296 60,-296 60,-290 66,-284 72,-284"/>
+<text text-anchor="middle" x="87" y="-298.3" font-family="Times,serif" font-size="14.00">Client</text>
+</g>
+<!-- Client&#45;&gt;API -->
+<g id="edge1" class="edge"><title>Client&#45;&gt;API</title>
+<path fill="none" stroke="black" d="M78.3333,-283.843C78.3333,-247.059 78.3333,-164.111 78.3333,-127.249"/>
+</g>
+<!-- Client&#45;&gt;WSS -->
+<g id="edge2" class="edge"><title>Client&#45;&gt;WSS</title>
+<path fill="none" stroke="black" d="M95.6667,-283.679C95.6667,-252.866 95.6667,-194 95.6667,-194 95.6667,-194 102.926,-194 112.907,-194"/>
+</g>
+</g>
+</svg>
+
+<h2 id="components-and-actors"><a class="toclink" href="#components-and-actors">Components and actors</a></h2>
+<h3 id="client"><a class="toclink" href="#client">Client</a></h3>
+<p>A client is any client application that interacts with the ITSLanguage
+environment.
+A client can use the <a href="#api">Rest API</a> to perform CRUD operations.
+A client can also use the <a href="#websocket-server">Websocket API</a> to submit recorded
+audio.</p>
+<p>A client is typically used by a student, organisation (admin) or tenant (admin).</p>
+<h3 id="websocket-server"><a class="toclink" href="#websocket-server">Websocket server</a></h3>
+<p>The websocket server is listening for connections to receive and process audio.
+The websocket server is located in the Google cloud and is hosted using Google
+Compute Engine.</p>
+<h3 id="api"><a class="toclink" href="#api">API</a></h3>
+<p>The Rest API provides endpoints to perform administrative tasks.
+Students, organisations, tenants and admins all use the API.</p>
+<h3 id="google-cloud-storage"><a class="toclink" href="#google-cloud-storage">Google Cloud Storage</a></h3>
+<p>Storage for submitted audio.</p>
+<h3 id="google-cloud-datastore"><a class="toclink" href="#google-cloud-datastore">Google Cloud Datastore</a></h3>
+<p>NoSQL datastore for all non-binary data.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../permissions/index.html" class="btn btn-neutral" title="Permissions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2013-2015</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itslanguage/itslanguage-docs/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../permissions/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
