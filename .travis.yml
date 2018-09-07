@@ -1,8 +1,7 @@
 language: python
 python: '3.5'
 
-stages:
-  - deploy
+script: echo "no test needed"
 
 env:
   global:
