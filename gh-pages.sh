@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 #!/bin/bash
 
 # Script to update the ITSLanguage GitHub pages website.
