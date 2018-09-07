@@ -1,2 +1,2 @@
-git+https://github.com/sprin/markdown-inline-graphviz.git@9664863b3002d88243c9ee5e14c195e037e54618#egg=markdown-inline-graphviz
+markdown-inline-graphviz == 1.0
 mkdocs == 0.16.0
