@@ -1,2 +1,2 @@
-markdown-inline-graphviz
+markdown-inline-graphviz == 1.0
 mkdocs == 0.16.0
