@@ -1,6 +1,9 @@
 language: python
 python: '3.5'
 
+stages:
+  - deploy
+
 env:
   global:
   - COMMIT_AUTHOR_NAME: ITSLanguage Bot
