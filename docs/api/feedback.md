@@ -1,10 +1,10 @@
 # Speech Feedback
 
-## Create a speech feedback
+## Create a feedback result
 
 When a user has performed a speech recording and received feedback on it, the
-feedback can be stored using this call.
-The feedback is created for the current user.
+feedback result can be stored using this call.
+The feedback result is created for the current user.
 
 ### URL
 
@@ -20,6 +20,8 @@ id          | `string` | **Optional** The id of the feedback. If none is given, 
 audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
 sentences   | `json`   | **Optional** The feedback per sentence.
+extra       | `json`   | **Optional** Extra data to store.
+resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](recordings.md#recording-result-set).
 
 ### Request
 
@@ -85,6 +87,15 @@ Content-Type: application/json
     }
   ]
 }
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name="extra"
+Content-Type: application/json
+
+{'note': 'cheap microphone'}
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name="resultSetId"
+
+5600160f578c4db6b7b0327e16e42153
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -141,6 +152,13 @@ Content-Type: application/json
       ]
     }
   ],
+  "extra": {
+    "note": "cheap microphone"
+  },
+  "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
   "userId": "24"
 }
 ```
@@ -186,6 +204,13 @@ Content-Type: application/json
     0,
     2
   ],
+  "extra": {
+    "note": "cheap microphone"
+  },
+  "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
   "userId": "24"
 }
 ```

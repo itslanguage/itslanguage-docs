@@ -38,6 +38,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+    "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
     "userId": "24"
   },
   {
@@ -45,6 +49,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
+    "resultSet": {
+      "id": "5600160f578c4db6b7b0327e16e42153",
+      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    },
     "userId": "24"
   }
 ]
@@ -80,6 +88,10 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "5600160f578c4db6b7b0327e16e42153",
+    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+  },
   "userId": "24"
 }
 ```
@@ -100,10 +112,11 @@ POST /challenges/speech/:challenge/recordings HTTP/1.1
 
 ### Request parameters
 
-Name      | Type     | Description
-----------|----------|------------
-id        | `string` | **Optional** The recording identifier. If none is given, one is generated.
-audio     | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
+Name        | Type     | Description
+------------|----------|------------
+id          | `string` | **Optional** The recording identifier. If none is given, one is generated.
+audio       | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
+resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](#recording-result-set).
 
 ### Request
 
@@ -119,6 +132,10 @@ Content-Disposition: form-data; name="audio"; filename="blob"
 Content-Type: audio/ogg
 
 <audio blob>
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name="resultSetId"
+
+5600160f578c4db6b7b0327e16e42153
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -135,6 +152,25 @@ Content-Type: application/json
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "5600160f578c4db6b7b0327e16e42153",
+    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+  },
   "userId": "24"
 }
 ```
+
+
+# Recording result set
+
+In order to group recordings together a result set is used. The result set
+contains multiple recordings and an audio file containing all the audio files
+of its recordings combined.
+
+A result set is created automatically whenever a recording is created with
+a non-existing `resultSetId`. When the `resultSetId` does exist the recording
+is added to this set and the audio of the recording is appended to the audio
+of the result set.
+
+The result set cannot be queried directly but it can be seen when getting
+[progress](progress.md).
