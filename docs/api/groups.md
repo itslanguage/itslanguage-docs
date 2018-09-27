@@ -16,6 +16,7 @@ Name         | Type       | Description
 -------------|------------|------------
 id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
 name         | `string`   | **Required** The name of the group.
+categories   | `string[]` | **Optional** A list of ids of categories that are assigned to the group.
 
 ### Request
 
@@ -26,7 +27,8 @@ Content-Type: application/json
 
 {
   "id": "GROUP_1",
-  "name": "First Grade"
+  "name": "First Grade",
+  "categories": ["5066549580791808"]
 }
 ```
 
@@ -38,7 +40,8 @@ Content-Type: application/json
 
 {
   "id": "GROUP_1",
-  "name": "First Grade"
+  "name": "First Grade",
+  "categories": ["5066549580791808"]
 }
 ```
 
@@ -67,11 +70,13 @@ Content-Type: application/json
 [
   {
     "id": "GROUP_1",
-    "name": "First Grade"
+    "name": "First Grade",
+    "categories": ["5066549580791808"]
   },
   {
     "id": "GROUP_2",
-    "name": "Second Grade"
+    "name": "Second Grade",
+    "categories": ["9738482397896533"]
   }
 ]
 ```
@@ -102,6 +107,7 @@ Content-Type: application/json
 
 {
   "id": "GROUP_1",
-  "name": "First Grade"
+  "name": "First Grade",
+  "categories": ["5066549580791808"]
 }
 ```
