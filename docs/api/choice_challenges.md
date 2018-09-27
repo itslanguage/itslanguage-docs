@@ -1,7 +1,21 @@
 # Choice Challenges
 
-One set of transcription choices is used to perform speech recognition to selects one of the choices.
+A set of transcription choices is used to perform speech recognition to
+select one of the choices.
 
+
+## Fields
+
+A choice challenge contains the following fields. It is also noted whether it
+is a required or optional parameter.
+
+Name       | Type       | Description
+-----------|------------|------------
+`id`       | `string`   | **Optional** The choice challenge identifier. If none is given, one is generated.
+`question` | `string`   | **Optional** A hint or question related to the choices.
+`choices`  | `string[]` | **Required** The sentences of which at most one may be recognised.
+`audio`    | `blob[]`   | **Optional** Audible sentences that match the ones in `choices` at the same index.
+`status`   | `string`   | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After creating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason.
 
 ## List all choice challenges
 
@@ -18,17 +32,12 @@ GET /challenges/choice HTTP/1.1
 Accept: application/json
 ```
 
-### Response fields
-
-Name     | Type     | Description
----------|----------|------------
-`status` | `string` | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. Only a 'prepared' challenge is ready to perform a speech recognition on.
-
 ### Response
 
 The response is a JSON list with choice challenges.
 
-The second entry shows that _choice challenges_ can also be used to recognise one specific sentence.
+The second entry shows that _choice challenges_ can also be used to recognise
+one specific sentence.
 
 ```http
 HTTP/1.1 200 OK
@@ -129,15 +138,6 @@ Content-Type: application/json
 POST /challenges/choice HTTP/1.1
 ```
 
-### Request parameters
-
-Name       | Type       | Description
------------|------------|------------
-`id`       | `string`   | **Optional** The choice challenge identifier. If none is given, one is generated.
-`question` | `string`   | **Optional** A hint or question related to the choices.
-`choices`  | `string[]` | **Required** The sentences of which at most one may be recognised.
-`audio`    | `blob[]`   | **Optional** Audible sentences that match the ones in `choices` at the same index.
-
 ### Request
 
 ```http
@@ -165,12 +165,6 @@ Content-Type: audio/wav
 <spoken audio: sited>
 --jhgd87g7Gy3d78--
 ```
-
-### Response fields
-
-Name     | Type     | Description
----------|----------|------------
-`status` | `string` | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After creating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason.
 
 ### Response
 
@@ -212,11 +206,8 @@ PUT /challenges/choice/:challenge HTTP/1.1
 
 ### Request Parameters
 
-Name       | Type       | Description
------------|------------|------------
-`question` | `string`   | **Optional** A hint or question related to the choices.
-`choices`  | `string[]` | **Optional** The sentences of which at most one may be recognised.
-`audio`    | `blob[]`   | **Optional** Audible sentences that match the ones in `choices`.
+See [Fields](#fields) for parameter names. All parameters are optional as this
+concerns an incremental update.
 
 ### Request
 
@@ -246,9 +237,12 @@ choices=located&choices=sited&choices=stationed&choices=settled
 
 ### Response fields
 
-Name     | Type     | Description
----------|----------|------------
-`status` | `string` | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After updating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready once more to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason. Note that once a choice challenge has been updated, no speech recognitions can be performed on it until the status becomes 'prepared' again, even though the choice challenge was 'prepared' before the update.
+For all fields see [Fields](#fields).
+Noteworthy things are below.
+
+Name     | Note
+---------|------------
+`status` | Once a choice challenge has been updated, no speech recognitions can be performed on it until the status becomes 'prepared' again, even though the choice challenge was 'prepared' before the update.
 
 ### Response
 
