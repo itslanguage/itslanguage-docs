@@ -34,6 +34,7 @@ Content-Type: application/json
     "created": "2017-01-12T09:35:20Z",
     "updated": "2017-01-12T09:35:20Z",
     "name": "Category 1",
+    "order": 1,
     "description": "Some awesome description.",
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
@@ -46,6 +47,7 @@ Content-Type: application/json
     "created": "2017-01-12T09:36:20Z",
     "updated": "2017-01-12T09:36:20Z",
     "name": "Category 2",
+    "order": 3,
     "description": "Another awesome description.",
     "color": "#0f0",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
@@ -87,6 +89,7 @@ Content-Type: application/json
     "created": "2017-01-13T09:35:20Z",
     "updated": "2017-01-13T09:35:20Z",
     "name": "Category 1.1",
+    "order": 1,
     "description": "Some awesome description.",
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
@@ -99,6 +102,7 @@ Content-Type: application/json
     "created": "2017-01-13T09:36:20Z",
     "updated": "2017-01-13T09:36:20Z",
     "name": "Category 1.2",
+    "order": 66,
     "description": "Another awesome description.",
     "color": "#0f0",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
@@ -137,7 +141,8 @@ Content-Type: application/json
   "created": "2017-01-12T09:38:20Z",
   "updated": "2017-01-12T09:38:20Z",
   "name": "Category 1.1",
-  "description": "Super duper.",
+  "order": 66,
+  "description": "Commander Cody, the time has come.",
   "color": null,
   "imageUrl": null,
   "iconUrl": null,
@@ -160,6 +165,7 @@ Name               | Type      | Description
 `id`               | `string`  | **Optional** The category identifier. If none is given, one is generated.
 `parent`           | `string`  | **Optional** Identifier of the parent category.
 `name`             | `string`  | **Optional** A name for the category.
+`order`            | `string`  | **Optional** An optional index to ensure a specific ordering.
 `description`      | `string`  | **Optional** A possible more verbose description about the category.
 `color`            | `string`  | **Optional** A color, preferably in RGB format.
 `image`            | `blob`    | **Optional** An image to show with the category.
@@ -181,6 +187,10 @@ category_3
 Content-Disposition: form-data; name="name"
 
 Category 3
+--jhgd87g7Gy3d78
+Content-Disposition: form-data; name="order"
+
+66
 --jhgd87g7Gy3d78
 Content-Disposition: form-data; name="description"
 
@@ -227,6 +237,7 @@ Location: https://api.itslanguage.nl/categories/category_3
   "created": "2017-01-12T09:50:20Z",
   "updated": "2017-01-12T09:50:20Z",
   "name": "Category 3",
+  "order": 66,
   "description": "Category three. Winner of all categories. Yes.",
   "color": "#e3e3e3",
   "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
@@ -253,6 +264,7 @@ Name               | Type      | Description
 -------------------|-----------|------------
 `parent`           | `string`  | **Optional** Identifier of the parent category.
 `name`             | `string`  | **Optional** A name for the category.
+`order`            | `string`  | **Optional** An optional index to ensure a specific ordering.
 `description`      | `string`  | **Optional** A possible more verbose description about the category.
 `color`            | `string`  | **Optional** A color, preferably in RGB format.
 `image`            | `blob`    | **Optional** An image to show with the category.
@@ -284,6 +296,7 @@ Location: https://api.itslanguage.nl/categories/category_3
   "created": "2017-01-12T09:50:20Z",
   "updated": "2017-01-12T09:50:20Z",
   "name": "Category 3",
+  "order": 66,
   "description": "Category three. Winner of all categories. Yes.",
   "color": "#e3e3e3",
   "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
