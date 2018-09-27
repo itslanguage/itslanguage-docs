@@ -17,45 +17,38 @@ Role        | Description
 
 ## Permissions
 
-* Role: Tenant
-Permissions:
-    * AUDIO_ANALYSIS_CREATE,
-    * AUDIO_ANALYSIS_LIST,
-    * CHALLENGE_EDIT,
-    * CHALLENGE_LIST,
-    * CHALLENGE_DELETE,
-    * ORGANISATION_CREATE,
-    * ORGANISATION_LIST,
-    * SPEECH_RECORDING_LIST,
-    * STUDENT_CREATE,
-    * STUDENT_LIST
-            
-* Role: Organisation
-Permissions:
-    * AUDIO_ANALYSIS_CREATE,
-    * AUDIO_ANALYSIS_LIST,
-    * AUDIO_RECOGNITION_LIST,
-    * CHALLENGE_CREATE,
-    * CHALLENGE_DELETE,
-    * CHALLENGE_EDIT,
-    * CHALLENGE_LIST,
-    * CHOICE_CHALLENGE_CREATE,
-    * CHOICE_CHALLENGE_DELETE,
-    * CHOICE_CHALLENGE_LIST,
-    * DOWNLOAD,
-    * SPEECH_RECORDING_LIST,
-    * STUDENT_LIST
+Below are the permissions per role in a single table.
 
-* Role: Student
-    * AUDIO_ANALYSIS_CREATE,
-    * AUDIO_ANALYSIS_LIST,
-    * AUDIO_RECOGNITION_CREATE,
-    * AUDIO_RECOGNITION_LIST,
-    * CHALLENGE_LIST,
-    * CHOICE_CHALLENGE_LIST,
-    * DOWNLOAD,
-    * SPEECH_RECORDING_CREATE,
-    * SPEECH_RECORDING_LIST
+Permissions \ Roles      | TENANT | ORGANISATION | STUDENT | TEACHER | ANNOTATOR_FULL | ANNOTATOR_BASE
+-------------------------|--------|--------------|---------|---------|----------------|---------------
+ANNOTATION_CREATE        |        |              |         |         | X              | X
+ANNOTATION_DELETE        |        |              |         |         | X              | X
+ANNOTATION_EDIT          |        |              |         |         | X              | X
+ANNOTATION_LIST          |        |              |         |         | X              | X
+ASSIGNMENT_LIST          |        |              |         |         | X              | X
+AUDIO_ANALYSIS_CREATE    | X      | X            | X       | X       |                |
+AUDIO_ANALYSIS_LIST      | X      | X            | X       | X       |                |
+AUDIO_RECOGNITION_CREATE |        |              | X       | X       |                |
+AUDIO_RECOGNITION_LIST   |        | X            | X       | X       |                |
+CATEGORY_CREATE          |        | X            |         | X       |                |
+CATEGORY_LIST            |        | X            | X       | X       | X              | X
+CHALLENGE_CREATE         |        | X            |         | X       |                |
+CHALLENGE_DELETE         | X      | X            |         | X       |                |
+CHALLENGE_EDIT           | X      | X            |         | X       |                |
+CHALLENGE_LIST           | X      | X            | X       | X       | X              | X
+CHOICE_CHALLENGE_CREATE  |        | X            |         |         |                |
+CHOICE_CHALLENGE_DELETE  |        | X            |         |         |                |
+CHOICE_CHALLENGE_LIST    |        | X            | X       | X       |                |
+DOWNLOAD                 | X      | X            | X       | X       | X              | X
+FEEDBACK_CREATE          |        |              | X       |         |                |
+GROUP_CREATE             |        | X            |         | X       |                |
+GROUP_LIST               |        | X            | X       | X       | X              | X
+ORGANISATION_CREATE      | X      |              |         |         |                |
+ORGANISATION_LIST        | X      |              |         |         |                |
+SPEECH_RECORDING_CREATE  |        |              | X       | X       |                |
+SPEECH_RECORDING_LIST    | X      | X            | X       | X       | X              | X
+USER_CREATE              | X      | X            |         | X       |                |
+USER_LIST                | X      | X            |         | X       | X              | X
 
-If a call is made with an invalid scope gained from an OAuth2 Token and thus with insufficient permissions,
-a `403 Forbidden` response is returned.
+If a call is made with an invalid scope gained from an OAuth2 Token and thus
+with insufficient permissions, a `403 Forbidden` response is returned.
