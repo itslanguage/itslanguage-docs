@@ -38,9 +38,7 @@ Content-Type: application/json
 
 {
   "id": "GROUP_1",
-  "name": "First Grade",
-  "created": "2016-12-22T02:14:05Z",
-  "updated": "2016-12-22T02:14:05Z"
+  "name": "First Grade"
 }
 ```
 
@@ -69,15 +67,11 @@ Content-Type: application/json
 [
   {
     "id": "GROUP_1",
-    "name": "First Grade",
-    "created": "2016-12-22T02:14:05Z",
-    "updated": "2016-12-22T02:14:05Z"
+    "name": "First Grade"
   },
   {
     "id": "GROUP_2",
-    "name": "Second Grade",
-    "created": "2017-01-01T14:05:05Z",
-    "updated": "2017-01-01T14:05:05Z"
+    "name": "Second Grade"
   }
 ]
 ```
@@ -108,8 +102,6 @@ Content-Type: application/json
 
 {
   "id": "GROUP_1",
-  "name": "First Grade",
-  "created": "2000-04-17T19:20:23Z",
-  "updated": "2001-12-14T07:38:45Z"
+  "name": "First Grade"
 }
 ```
