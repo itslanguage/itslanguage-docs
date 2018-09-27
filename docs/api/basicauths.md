@@ -19,7 +19,7 @@ To create a basicauth for another user, [impersonate the user](
 oauth2.md#impersonation) first.
 
 When creating a basicauth for a user in an organisation, the username doesn't
-have to be unique across organisations. The username does have to be unique
+need to be unique across organisations. The username **does need to be unique**
 within the organisation.
 
 ### Input
