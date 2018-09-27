@@ -38,6 +38,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+    "resultSet": {
+      "id": "923848397208945",
+      "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
+    },
     "userId": "24"
   },
   {
@@ -45,6 +49,10 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
+    "resultSet": {
+      "id": "923848397208945",
+      "combinedAudioUrl": "https://api.itslanguage.nl/download/ksd83gdiuhs7cs"
+    },
     "userId": "24"
   }
 ]
@@ -80,6 +88,10 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "923848397208945",
+    "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
+  },
   "userId": "24"
 }
 ```
@@ -100,10 +112,11 @@ POST /challenges/speech/:challenge/recordings HTTP/1.1
 
 ### Request parameters
 
-Name      | Type     | Description
-----------|----------|------------
-id        | `string` | **Optional** The recording identifier. If none is given, one is generated.
-audio     | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
+Name        | Type     | Description
+------------|----------|------------
+id          | `string` | **Optional** The recording identifier. If none is given, one is generated.
+audio       | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
+resultSetId | `string` | **Required** The id of the result set the recording belongs to. If this doesn't exist one is created.
 
 ### Request
 
@@ -119,6 +132,10 @@ Content-Disposition: form-data; name="audio"; filename="blob"
 Content-Type: audio/ogg
 
 <audio blob>
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name="resultSetId"
+
+iohfg78h37fgy3ho84
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -135,6 +152,10 @@ Content-Type: application/json
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "resultSet": {
+    "id": "iohfg78h37fgy3ho84",
+    "combinedAudioUrl": "https://api.itslanguage.nl/download/kljhiusdhwhe811"
+  },
   "userId": "24"
 }
 ```
