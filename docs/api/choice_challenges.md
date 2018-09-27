@@ -29,7 +29,8 @@ Name     | Type     | Description
 
 The response is a JSON list with choice challenges.
 
-The second entry shows that _choice challenges_ can also be used to recognise one specific sentence.
+The second entry shows that _choice challenges_ can also be used to recognise
+one specific sentence.
 
 ```http
 HTTP/1.1 200 OK
