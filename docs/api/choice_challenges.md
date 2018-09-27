@@ -1,6 +1,7 @@
 # Choice Challenges
 
-One set of transcription choices is used to perform speech recognition to selects one of the choices.
+A set of transcription choices is used to perform speech recognition to
+select one of the choices.
 
 
 ## List all choice challenges
