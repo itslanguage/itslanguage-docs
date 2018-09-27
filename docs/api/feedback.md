@@ -19,7 +19,7 @@ Name        | Type     | Description
 id          | `string` | **Optional** The id of the feedback. If none is given, one is generated.
 audio       | `blob`   | **Required** The recorded audio.
 challengeId | `string` | **Required** The id of the speech challenge used to perform the feedback.
-errors      | `int`    | **Required** The amount of errors made per sentence.
+sentences   | `json`   | **Optional** The feedback per sentence.
 extra       | `json`   | **Optional** Extra data to store.
 resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](recordings.md#recording-result-set).
 
@@ -44,13 +44,49 @@ Content-Type: audio/ogg
 
 <audio blob>
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="errors"
+Content-Disposition: form-data; name="sentences"
+Content-Type: application/json
 
-0
+{
+  "sentence": 0,
+  "errors": 1,
+  "words": [
+    {
+      "expected": "hello",
+      "recognized": "hello",
+      "error": null,
+      "correct": true
+    },
+    {
+      "expected": "there",
+      "recognized": "their",
+      "error": "substitution",
+      "correct": false
+    }
+  ]
+}
 --YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="errors"
+Content-Disposition: form-data; name="sentences"
+Content-Type: application/json
 
-2
+{
+  "sentence": 1,
+  "errors": 0,
+  "words": [
+    {
+      "expected": "general",
+      "recognized": "general",
+      "error": null,
+      "correct": true
+    },
+    {
+      "expected": "kenobi",
+      "recognized": "kenobi",
+      "error": null,
+      "correct": true
+    }
+  ]
+}
 --YvHKkjjzXfysYJVHMoOAoNczae
 Content-Disposition: form-data; name="extra"
 Content-Type: application/json
@@ -78,9 +114,43 @@ Content-Type: application/json
   "created": "2018-02-20T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/feedback/34/audio",
   "challengeId": "chal",
-  "errors": [
-    0,
-    1
+  "sentences": [
+    {
+      "sentence": 0,
+      "errors": 1,
+      "words": [
+        {
+          "expected": "hello",
+          "recognized": "hello",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "there",
+          "recognized": "their",
+          "error": "substitution",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "sentence": 1,
+      "errors": 0,
+      "words": [
+        {
+          "expected": "general",
+          "recognized": "general",
+          "error": null,
+          "correct": true
+        },
+        {
+          "expected": "kenobi",
+          "recognized": "kenobi",
+          "error": null,
+          "correct": true
+        }
+      ]
+    }
   ],
   "extra": {
     "note": "cheap microphone"
