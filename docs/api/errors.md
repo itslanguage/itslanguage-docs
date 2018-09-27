@@ -1,3 +1,5 @@
+# Errors
+
 Errors are reported with HTTP status codes in the 400 (for client errors) or 500 (for server errors) range. The response will contain a JSON object describing the error.
 
 ## Error Format
