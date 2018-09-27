@@ -35,7 +35,6 @@ pages:
     - 'Category': 'api/categories.md'
     - 'Tenants': 'api/tenants.md'
     - 'Groups': 'api/groups.md'
-    - 'Profiles': 'api/profiles.md'
     - Users:
         - 'Users': 'api/users.md'
         - 'Basic authentication': 'api/basicauths.md'
