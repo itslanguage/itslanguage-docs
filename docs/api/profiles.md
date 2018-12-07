@@ -1,6 +1,8 @@
 # Profiles
 
-Profiles contain information about a User. A User does not need a Profile.
+A user does not require a profile, providing this information is optional.
+Providing profile information is recommended. Accurate profile information
+helps to train the speech models and improves the quality.
 
 ## Create a profile
 
