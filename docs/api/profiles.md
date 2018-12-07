@@ -16,11 +16,11 @@ POST /users/:userId/profile HTTP/1.1
 
 Name         | Type       | Description
 -------------|------------|------------
-firstName    | `object`   | **Optional** The profile containing information about the user.
-lastName     | `string`   | **Optional** The groups this user is part of.
-infix        | `string`   | **Optional** The names of roles to grant the user.
-gender       | `string`   | **Optional** The gender of the user.
-birthDate    | `string`   | **Optional** The birthDate of the user. In the proper ISO 8601 format.
+birthYear    | `int`      | **Optional** The user's year of birth.
+gender       | `string`   | **Optional** The user's gender ("Male"|"Female").
+country      | `string`   | **Optional** The country of the user's mother tongue.
+language     | `string`   | **Optional** The language of the user's mother tongue. In ISO 639-2 format.
+cefr         | `string`   | **Optional** The user's CEFR (Common European Framework of Reference) level.
 
 ### Request
 
@@ -30,11 +30,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstName": "Najat",
-  "infix": "van der",
-  "lastName": "Lee",
+  "birthYear": 1923,
   "gender": "Male",
-  "birthDate": "1996-16-07T00:00:00Z"
+  "country": "Netherlands",
+  "language": "nld",
+  "cefr": "A2"
 }
 ```
 
@@ -45,11 +45,11 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "firstName": "Najat",
-  "infix": "van der",
-  "lastName": "Lee",
+  "birthYear": 1923,
   "gender": "Male",
-  "birthDate": "1996-16-07T00:00:00Z",
+  "country": "Netherlands",
+  "language": "nld",
+  "cefr": "A2",
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -77,11 +77,11 @@ HTTP/1.1 200 Created
 Content-Type: application/json
 
 {
-  "firstName": "Juriaan",
-  "infix": null,
-  "lastName": "Winkens",
+  "birthYear": 1923,
   "gender": "Male",
-  "birthDate":"1996-16-07T00:00:00Z",
+  "country": "Netherlands",
+  "language": "nld",
+  "cefr": "A2",
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
 }
@@ -109,11 +109,11 @@ HTTP/1.1 200 Created
 Content-Type: application/json
 
 {
-  "firstName": "Juriaan",
-  "infix": null,
-  "lastName": "Winkens",
+  "birthYear": 1923,
   "gender": "Male",
-  "birthDate":"1996-16-07T00:00:00Z",
+  "country": "Netherlands",
+  "language": "nld",
+  "cefr": "A2",
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
 }
