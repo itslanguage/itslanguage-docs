@@ -34,7 +34,16 @@ Content-Type: application/json
             "id": "user_1",
             "firstName": "Martin",
             "infix": "van",
-            "lastName": "Nostrand"
+            "lastName": "Nostrand",
+            "profile": {
+                "birthYear": 1981,
+                "gender": "m",
+                "cefr": "A2",
+                "motherTongue": {
+                    "country": "Netherlands",
+                    "language": "nld"
+                }
+            }
         },
         "challenges": [
             {
