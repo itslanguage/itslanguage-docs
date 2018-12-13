@@ -20,7 +20,7 @@ POST /users/:userId/profile HTTP/1.1
 Name         | Type       | Description
 -------------|------------|------------
 birthYear    | `int`      | **Optional** The user's year of birth.
-gender       | `string`   | **Optional** The user's gender ("m" = male, "f" = female).
+gender       | `string`   | **Optional** The user's gender ("m" = male, "f" = female, "x" = other).
 country      | `string`   | **Optional** The country of the user's mother tongue.
 language     | `string`   | **Optional** The language of the user's mother tongue. In ISO 639-2 format.
 cefr         | `int`      | **Optional** The user's CEFR level.
