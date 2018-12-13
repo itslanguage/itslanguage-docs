@@ -6,7 +6,8 @@ helps to train the speech models and improves the quality.
 
 ## Create a profile
 
-Link a profile to a user. If a user already has a profile, it will be overwritten.
+Link a profile to a user. If a user already has a profile, modified
+parameters will be overwritten.
 
 ### URL
 
@@ -19,10 +20,29 @@ POST /users/:userId/profile HTTP/1.1
 Name         | Type       | Description
 -------------|------------|------------
 birthYear    | `int`      | **Optional** The user's year of birth.
-gender       | `string`   | **Optional** The user's gender ("Male"|"Female").
+gender       | `string`   | **Optional** The user's gender ("m" = male, "f" = female, "x" = other).
 country      | `string`   | **Optional** The country of the user's mother tongue.
 language     | `string`   | **Optional** The language of the user's mother tongue. In ISO 639-2 format.
-cefr         | `string`   | **Optional** The user's CEFR (Common European Framework of Reference) level.
+cefr         | `int`      | **Optional** The user's CEFR level.
+
+#### cefr
+
+The "cefr" input parameter is an integer value which maps to official CEFR
+values, for more information see: [CEFR (Common European Framework of Reference)](https://www.cambridgeenglish.org/exams-and-tests/cefr/).
+
+int  | Value |
+-----|-------|
+0    | no score
+1    | < A1
+2    | A1
+3    | A2
+4    | A2+
+5    | B1
+6    | B1+
+7    | B2
+8    | B2+
+9    | C1
+10   | C2
 
 ### Request
 
@@ -33,10 +53,10 @@ Content-Type: application/json
 
 {
   "birthYear": 1923,
-  "gender": "Male",
+  "gender": "m",
   "country": "Netherlands",
   "language": "nld",
-  "cefr": "A2"
+  "cefr": 1
 }
 ```
 
@@ -48,10 +68,10 @@ Content-Type: application/json
 
 {
   "birthYear": 1923,
-  "gender": "Male",
+  "gender": "m",
   "country": "Netherlands",
   "language": "nld",
-  "cefr": "A2",
+  "cefr": 1,
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -80,10 +100,10 @@ Content-Type: application/json
 
 {
   "birthYear": 1923,
-  "gender": "Male",
+  "gender": "m",
   "country": "Netherlands",
   "language": "nld",
-  "cefr": "A2",
+  "cefr": 1,
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
 }
@@ -112,14 +132,11 @@ Content-Type: application/json
 
 {
   "birthYear": 1923,
-  "gender": "Male",
+  "gender": "m",
   "country": "Netherlands",
   "language": "nld",
-  "cefr": "A2",
+  "cefr": 1,
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
 }
 ```
-
-
-
