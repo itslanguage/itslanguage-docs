@@ -316,28 +316,17 @@
 <h2 id="timestamps"><a class="toclink" href="#timestamps">Timestamps</a></h2>
 <p>All timestamps are returned in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>.</p>
 <h2 id="summary-representations"><a class="toclink" href="#summary-representations">Summary Representations</a></h2>
-<p>When you fetch a list of resources, the response includes a <em>subset</em> of the
+<p>When fetching a list of resources, the response includes a <em>subset</em> of the
 attributes for that resource. This is the "summary" representation of the
 resource. (Some attributes are computationally expensive for the API to provide.
 For performance reasons, the summary representation excludes those attributes.
-To obtain those attributes, fetch the "detailed" representation.)</p>
-<p><strong>Example</strong>: When you get a list of students, you get the summary
-representation of each student. Here, we fetch the list of students owned
-by the <a href="">sheffield</a> organisation:</p>
-<pre><code class="http">GET /organisations/sheffield/students HTTP/1.1
-</code></pre>
-
+To obtain those attributes, fetch the "detailed" representation using a
+dedicated API.)</p>
 <h2 id="detailed-representations"><a class="toclink" href="#detailed-representations">Detailed Representations</a></h2>
-<p>When you fetch an individual resource, the response typically includes <em>all</em>
+<p>When fetching individual resources, a response typically includes <em>all</em>
 attributes for that resource. This is the "detailed" representation of the
 resource. (Note that authorization sometimes influences the amount of detail
 included in the representation.)</p>
-<p><strong>Example</strong>: When you get an individual repository, you get the detailed
-representation of the repository. Here, we fetch the
-<a href="">sheffield/amy</a> student:</p>
-<pre><code class="http">GET /organisations/sheffield/students/amy HTTP/1.1
-</code></pre>
-
 <p>The documentation provides an example response for each API method. The example
 response illustrates all attributes that are returned by that method.</p>
               
