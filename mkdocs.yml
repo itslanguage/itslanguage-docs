@@ -1,7 +1,7 @@
 site_name: ITSLanguage API
 repo_url: https://github.com/itslanguage/itslanguage-docs/
-copyright: 2013-2015
-pages:
+copyright: 2013-2019
+nav:
 - Home:
     - 'ITSLanguage Speech API': 'index.md'
 - REST API basics:
@@ -57,7 +57,6 @@ use_directory_urls: false
 strict: true
 
 markdown_extensions:
-    - inline_graphviz
     - toc:
         anchorlink: True
     - admonition

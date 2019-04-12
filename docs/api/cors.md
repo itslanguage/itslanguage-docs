@@ -1,9 +1,11 @@
 # Cross Origin Resource Sharing
 
 The API supports Cross Origin Resource Sharing (CORS) for AJAX requests.
-you can read the [CORS W3C working draft](http://www.w3.org/TR/cors), or
-[this intro](http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity) from the
-HTML 5 Security Guide.
+
+For more information, see the
+[CORS W3C working draft](http://www.w3.org/TR/cors), or
+[this intro](http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity)
+from the HTML 5 Security Guide.
 
 Here's a sample request sent from a browser hitting
 `http://example.com`:

@@ -1,10 +1,41 @@
 language: python
 python: '3.5'
-script: "bash ./deploy.sh"
+
+script: echo "no test needed"
+
 env:
   global:
-  - ENCRYPTION_LABEL: "980e848ecaba"
-  - COMMIT_AUTHOR_EMAIL: "loek@d-centralize.nl"
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y graphviz
+  - COMMIT_AUTHOR_NAME: ITSLanguage Bot
+  - COMMIT_AUTHOR_EMAIL: its-bot@itslanguage.nl
+  - SITE_DIR: $TRAVIS_BUILD_DIR/.site
+
+after_success:
+  # Failing will "fail" the build
+  # doing this step in before_deploy
+  # will not.
+  - mkdocs build -d $SITE_DIR
+  # Make sure our script is executable
+  - chmod +x $TRAVIS_BUILD_DIR/gh-pages.sh
+
+deploy:
+  # Deploy to GitHub pages with our Bot user.
+  # Runs when a tag is made available.
+  - provider: script
+    skip_cleanup: true
+    script: "$TRAVIS_BUILD_DIR/gh-pages.sh"
+    on:
+      branch: master
+      tags: true
+
+  # Deploy to GitHub pages with our Bot user.
+  # It seems that it is not possible to specify both "on"
+  # arguments. Runs when master get's an update.
+  - provider: script
+    skip_cleanup: true
+    script: "$TRAVIS_BUILD_DIR/gh-pages.sh"
+    on:
+      branch: master
+
+notifications:
+  slack:
+    secure: rMZ9XLDgOiU2Xpv2UiAjJmCz4hD4BFIyLYXalRtaYOvBogyDdJbL3gQe0Rsf6u3aYuxl/xLriuFBfZQSF59z8WxznZbL69aevFj2y9vFAWjRw4LWZi99o4sMnSe0TGnzS2TLalzfZawwkTcmBeKRgZXLtkTfN7geyzotiJPt8wltPmOn1HuAaPjlr7ts1u0l0s/IVZ+JyG21+wK+0wqyk9ZpwmVo588/vtoG8eKQMPG+QWFcn6vgi03WKR9T+S9kmCGC9xcohlwZZ7LHYWJ8DneMws3TbYDttHptZ/bmuUJif/RquRXCAPy0mCxx5Av7hA44xSfqADzIuVSJ7vpPQW9nmGFKVu3si21c8FcOsnhoHtU9mTuq8ymilRcl/cQj83N/0A6g5uidIwAEYgmtjH19wd0QY7kmnHLWzdXW7AG98sXUhjxNuofD1cm0kjNG3DclutetS5NhCoWviB7DihY4EQbIccrKSajQ8NGIVKGxD4MlhiuzmD03kjnCtd78WAzqn191dGQHrKOJPP8jcG0ySX3IxOCLOocFqGuNSRqT6RWQoGOejhnK0ZjWGwjxTJOUcdUZKnrv/qR7Eaq37KM/8JwHuSjXCYNOSkei/wGTgEfb77uoY92+gqbM+JEHdrTXFFA3gpVCm1WR9xa1UxQCcKCaoBnn9Ag2dOjKH0U=

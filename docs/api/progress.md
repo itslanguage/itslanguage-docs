@@ -39,7 +39,7 @@ Content-Type: application/json
         "challenges": [
             {
                 "id": "chal_1",
-                "audioUrl": "http://example.com/audio.mp3",
+                "referenceAudioUrl": "http://example.com/audio.mp3",
                 "recordingSet": {
                   "id": "5600160f578c4db6b7b0327e16e42153",
                   "combinedAudioUrl": "http://example.com/fullaudio.mp3",
@@ -57,7 +57,7 @@ Content-Type: application/json
             },
             {
                 "id": "chal_2",
-                "audioUrl": "http://example.com/audio.mp3",
+                "referenceAudioUrl": "http://example.com/audio.mp3",
                 "recordingSet": null
             }
         ]

@@ -1,4 +1,8 @@
-Errors are reported with HTTP status codes in the 400 (for client errors) or 500 (for server errors) range. The response will contain a JSON object describing the error.
+# Errors
+
+Errors are reported with HTTP status codes in the 400 (for client errors) or
+500 (for server errors) range. The response will contain a JSON object
+describing the error.
 
 ## Error Format
 
@@ -46,9 +50,9 @@ Content-Length: 148
 }
 ```
 
-All error objects have resource and field properties so that your client
-can tell what the problem is.  There's also an error code to let you
-know what is wrong with the field.  These are the possible validation error
+All error objects have resource and field properties so that a client
+can tell what the problem is. There's also an error code to indicate what
+is wrong with the field. These are the possible validation error
 codes:
 
 Error Name       | Description
@@ -56,9 +60,10 @@ Error Name       | Description
 `missing`        | A resource does not exist.
 `missing_field`  | A required field on a resource has not been set.
 `invalid`        | The formatting of a field is invalid.  The documentation for that resource should be able to give you more specific information.
-`already_exists` | Another resource has the same value as this field.  This can happen in resources that must have some unique key (such as Label names).
+`already_exists` | Another resource has the same value as this field. This can happen in resources that must have some unique key (such as Label names).
 
-If resources have custom validation errors, they will be documented with the resource.
+If resources have custom validation errors, they will be documented with the
+resource.
 
 ## Generic Errors
 
@@ -90,9 +95,14 @@ Verb     | Description
 
 ## JSONP Errors
 
-When clients request responses in JSONP format, the API server will *always* respond with a 200 response code. This prevents the web browser swallowing the HTTP response without giving the Javascript callback a chance to process it.
+When clients request responses in JSONP format, the API server will *always*
+respond with a 200 response code. This prevents the web browser swallowing
+the HTTP response without giving the Javascript callback a chance to process
+it.
 
-It is always possible to identify an error response from a successful one by looking at the `typename` field. The would-be HTTP status code is included in the `status` field.
+It is always possible to identify an error response from a successful one by
+looking at the `typename` field. The would-be HTTP status code is included
+in the `status` field.
 
 <div class="alert alert-danger">
   <p>The JSONP return structure is not final yet.</p>

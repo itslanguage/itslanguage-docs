@@ -39,8 +39,8 @@ Content-Type: application/json
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
     "resultSet": {
-      "id": "5600160f578c4db6b7b0327e16e42153",
-      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+      "id": "923848397208945",
+      "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
     },
     "userId": "24"
   },
@@ -50,8 +50,8 @@ Content-Type: application/json
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
     "resultSet": {
-      "id": "5600160f578c4db6b7b0327e16e42153",
-      "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+      "id": "923848397208945",
+      "combinedAudioUrl": "https://api.itslanguage.nl/download/ksd83gdiuhs7cs"
     },
     "userId": "24"
   }
@@ -89,8 +89,8 @@ Content-Type: application/json
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
   "resultSet": {
-    "id": "5600160f578c4db6b7b0327e16e42153",
-    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    "id": "923848397208945",
+    "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
   },
   "userId": "24"
 }
@@ -116,7 +116,7 @@ Name        | Type     | Description
 ------------|----------|------------
 id          | `string` | **Optional** The recording identifier. If none is given, one is generated.
 audio       | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
-resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](#recording-result-set).
+resultSetId | `string` | **Required** The unique id of the result set the recording belongs to. See [Recording result set](#recording-result-set). If this doesn't exist one is created.
 
 ### Request
 
@@ -135,7 +135,7 @@ Content-Type: audio/ogg
 --YvHKkjjzXfysYJVHMoOAoNczae
 Content-Disposition: form-data; name="resultSetId"
 
-5600160f578c4db6b7b0327e16e42153
+iohfg78h37fgy3ho84
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
@@ -153,8 +153,8 @@ Content-Type: application/json
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
   "resultSet": {
-    "id": "5600160f578c4db6b7b0327e16e42153",
-    "combinedAudioUrl": "http://example.com/fullaudio.mp3",
+    "id": "iohfg78h37fgy3ho84",
+    "combinedAudioUrl": "https://api.itslanguage.nl/download/kljhiusdhwhe811"
   },
   "userId": "24"
 }
