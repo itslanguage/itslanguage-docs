@@ -29,6 +29,7 @@ nav:
       - 'Choice': 'api/choice_challenges.md'
     - 'Progress': 'api/progress.md'
     - 'Speech Recordings': 'api/recordings.md'
+    - 'Speech Feedback': 'api/feedback.md'
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
     - 'Category': 'api/categories.md'
@@ -41,6 +42,7 @@ nav:
         - 'Email authentication': 'api/emailauth.md'
 - Websocket API:
     - 'WAMP': 'websocket/wamp.md'
+    - 'Speech Feedback': 'websocket/feedback.md'
     - 'Speech Recording': 'websocket/speech_recording.md'
     - 'Pronunciation Analyses': 'websocket/pronunciation_analyses.md'
     - 'Choice Recognitions': 'websocket/choice_recognitions.md'

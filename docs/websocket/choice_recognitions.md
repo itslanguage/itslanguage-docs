@@ -2,6 +2,14 @@
 
 Performing a choice recognition is broken up into various calls.
 
+To perform a choice recognition a number of steps have to be made:
+
+1. [Initialising a choice recognition](#initialising-a-choice-recognition)
+2. [Initialise choice challenge](#initialise-choice-challenge)
+3. [Register audio procedure](wamp.md#register-audio-procedure)
+4. [Perform the recognition](#perform-the-recognition)
+
+
 ## Initialising a choice recognition
 
 This is the starting point for a choice recognition. A unique recognition id
@@ -21,30 +29,6 @@ nl.itslanguage.choice.init_recognition
 
 The unique recognition id is returned as a string. The id is used in other calls
 to identify the current recognition.
-
-
-## Initialising audio for uploading
-
-The audio that is to be uploaded for recognition is streamed to the server. Some
-information is required in order for the server to be able to store and
-use the audio correctly.
-
-### URI
-
-```
-nl.itslanguage.choice.init_audio
-```
-
-### Parameters
-
-Name           | Type     | Description
----------------|----------|------------
-recognition_id | `string` | **Required** The id of the recognition to initialise the audio for.
-audio_format   | `string` | **Required** The mimetype of the audio to upload.
-
-Depending on the `audio_format`, additional parameters may be required.
-Please see [the audio documentation](audio.md) for which audio formats are
-supported and what parameters they require.
 
 
 ## Initialise choice challenge
@@ -70,30 +54,9 @@ organisation_id | `string` | **Required** The id of the organisation in which to
 challenge_id    | `string` | **Required** The id of the challenge to prepare.
 
 
-## Stream recognition audio
-
-The audio to be recognised can now be streamed to the server. The streaming
-works by repeatedly calling this RPC. Each time the RPC is called, the data
-will be appended to an audio file on the server.
-
-### URI
-
-```
-nl.itslanguage.choice.write
-```
-
-### Parameters
-
-Name           | Type     | Description
----------------|----------|------------
-recognition_id | `string` | **Required** The id of the recognition for which to upload the audio.
-data           | `bytes`  | **Required** The data to stream to the server. This can be any length.
-encoding       | `string` | **Optional** The encoding in which the data is sent. This should be `base64` if the data is base64 encoded.
-
-
 ## Perform the recognition
 
-After completing the streaming of the audio, the recognition can be performed.
+The recognition can be performed when all preparations are done.
 
 ### URI
 
@@ -106,6 +69,7 @@ nl.itslanguage.choice.recognise
 Name           | Type     | Description
 ---------------|----------|------------
 recognition_id | `string` | **Required** The id of the recognition to perform.
+rpc            | `string` | **Required** The URI of a [registered audio rpc](wamp.md#register-audio-procedure).
 
 ### Response
 
@@ -123,3 +87,8 @@ The RPC can return various errors:
 * `nl.itslanguage.recognition_failed` If the recognition of the audio failed.
 * `nl.itslanguage.no_such_organisation` If the organisation doesn't exist.
 * `nl.itslanguage.no_such_challenge` If the challenge doesn't exist.
+
+
+[1]: https://github.com/crossbario/autobahn-js/blob/master/doc/programming.md#registering-procedures
+[2]: https://autobahn.readthedocs.io/en/latest/wamp/programming.html#registering-procedures
+[progressive results]: https://crossbar.io/docs/Progressive-Call-Results/
