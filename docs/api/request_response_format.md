@@ -18,7 +18,7 @@ When sending JSON the `Content-Type` header needs to be set to
 
 ```bash
 curl -d '{"name": "sheffield"}' -H "Content-Type: application/json" \
-  https://api.itslanguage.nl/organisations
+  https://api.itslanguage.io/organisations
 ```
 
 Blank fields are included as `null` instead of being omitted.

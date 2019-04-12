@@ -30,7 +30,7 @@ The documentation matching this environment is available at:
 
 This environment will store data it receives for a longer time and provides
 stable features. The production environment can be found here:
-`https://api.itslanguage.nl`.
+`https://api.itslanguage.io`.
 
 The documentation matching this environment is available at:
 `https://help.itslanguage.nl`.

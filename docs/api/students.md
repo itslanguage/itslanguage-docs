@@ -88,7 +88,7 @@ birthYear | `int`    | **Optional** The birth year of the student.
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/organisations/whizzo/students/4
+Location: https://api.itslanguage.io/organisations/whizzo/students/4
 
 {
   "id": "4",

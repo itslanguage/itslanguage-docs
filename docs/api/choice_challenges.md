@@ -52,7 +52,7 @@ Content-Type: application/json
     "choices": [
       {
         "choice": "located",
-        "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ"
+        "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ"
       }, {
         "choice": "sited",
         "audioUrl": null
@@ -113,7 +113,7 @@ Content-Type: application/json
   "choices": [
     {
       "choice": "located",
-      "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ"
+      "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ"
     }, {
       "choice": "sited",
       "audioUrl": null
@@ -171,7 +171,7 @@ Content-Type: audio/wav
 ```http
 HTTP/1.1 202 Accepted
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/choice/4
+Location: https://api.itslanguage.io/challenges/choice/4
 
 {
   "id": "4",
@@ -181,10 +181,10 @@ Location: https://api.itslanguage.nl/challenges/choice/4
   "choices": [
     {
       "choice": "located",
-      "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ"
+      "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ"
     }, {
       "choice": "sited",
-      "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsK"
+      "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsK"
     }
   ],
   "status": "preparing"
@@ -249,7 +249,7 @@ Name     | Note
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/choice/4
+Location: https://api.itslanguage.io/challenges/choice/4
 
 {
   "id": "4",

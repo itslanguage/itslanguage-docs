@@ -152,7 +152,7 @@ Content-Type: application/json
   "id": "35",
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
-  "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/35/audio",
+  "audioUrl": "https://api.itslanguage.io/challenges/pronunciation/test/analyses/35/audio",
   "userId": "24",
   "score": 0.75,
   "words": [
@@ -258,7 +258,7 @@ Content-Type: application/json
     "id": "34",
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
-    "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/34/audio",
+    "audioUrl": "https://api.itslanguage.io/challenges/pronunciation/test/analyses/34/audio",
     "userId": "24",
     "score": 0.75,
     "words": [
@@ -328,7 +328,7 @@ Content-Type: application/json
     "id": "35",
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
-    "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/35/audio",
+    "audioUrl": "https://api.itslanguage.io/challenges/pronunciation/test/analyses/35/audio",
     "userId": "24",
     "score": 0.75,
     "words": [
@@ -370,7 +370,7 @@ Content-Type: application/json
     "id": "36",
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
-    "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/36/audio",
+    "audioUrl": "https://api.itslanguage.io/challenges/pronunciation/test/analyses/36/audio",
     "userId": "24",
     "score": 0.75,
     "words": [
@@ -475,7 +475,7 @@ Content-Type: application/json
   "id": "25",
   "updated": "2014-02-13T09:37:40Z",
   "created": "2014-02-13T09:37:37Z",
-  "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/25/audio",
+  "audioUrl": "https://api.itslanguage.io/challenges/pronunciation/test/analyses/25/audio",
   "userId": "24",
   "score": 0.75,
   "words": [

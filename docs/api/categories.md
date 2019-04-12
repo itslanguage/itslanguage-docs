@@ -37,8 +37,8 @@ Content-Type: application/json
     "order": 1,
     "description": "Some awesome description.",
     "color": "#00f",
-    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
     "speechChallenges": []
   },
   {
@@ -50,8 +50,8 @@ Content-Type: application/json
     "order": 3,
     "description": "Another awesome description.",
     "color": "#0f0",
-    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
     "speechChallenges": []
   }
 ]
@@ -92,8 +92,8 @@ Content-Type: application/json
     "order": 1,
     "description": "Some awesome description.",
     "color": "#00f",
-    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
     "speechChallenges": ["speech_x"]
   },
   {
@@ -105,8 +105,8 @@ Content-Type: application/json
     "order": 66,
     "description": "Another awesome description.",
     "color": "#0f0",
-    "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-    "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+    "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+    "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
     "speechChallenges": ["speech_y", "speech_w"]
   }
 ]
@@ -230,7 +230,7 @@ speech_3
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/categories/category_3
+Location: https://api.itslanguage.io/categories/category_3
 
 {
   "id": "category_3",
@@ -240,8 +240,8 @@ Location: https://api.itslanguage.nl/categories/category_3
   "order": 66,
   "description": "Category three. Winner of all categories. Yes.",
   "color": "#e3e3e3",
-  "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-  "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+  "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+  "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
   "speechChallenges": ["speech_1", "speech_2", "speech_3"]
 }
 ```
@@ -288,7 +288,7 @@ Content-Type: application/json
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Location: https://api.itslanguage.nl/categories/category_3
+Location: https://api.itslanguage.io/categories/category_3
 
 {
   "id": "category_3_1",
@@ -299,8 +299,8 @@ Location: https://api.itslanguage.nl/categories/category_3
   "order": 66,
   "description": "Category three. Winner of all categories. Yes.",
   "color": "#e3e3e3",
-  "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-  "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
+  "imageUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+  "iconUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
   "speechChallenges": ["speech_1", "speech_2", "speech_3"]
 }
 ```

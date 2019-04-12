@@ -19,7 +19,7 @@ and optional scope. To request an access token for the user `tenant` with
 password `secret` and scope `tenant/tenant`, the request should look like this:
 
 ```http
-POST https://api.itslanguage.nl/tokens HTTP/1.1
+POST https://api.itslanguage.io/tokens HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 
@@ -63,7 +63,7 @@ access token should be placed in the Authorization header as a bearer token.
 Example:
 
 ```http
-GET https://api.itslanguage.nl/organisations HTTP/1.1
+GET https://api.itslanguage.io/organisations HTTP/1.1
 Accept: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
 ```
@@ -72,7 +72,7 @@ In cases where it is not possible to use the `Authorization` header, the token
 can be supplied using a request parameter:
 
 ```http
-GET https://api.itslanguage.nl/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJI HTTP/1.1
+GET https://api.itslanguage.io/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJI HTTP/1.1
 ```
 
 !!! note
@@ -117,7 +117,7 @@ described in [Using the access token](#using-the-access-token).
 Example request:
 
 ```http
-POST https://api.itslanguage.nl/tokens HTTP/1.1
+POST https://api.itslanguage.io/tokens HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
