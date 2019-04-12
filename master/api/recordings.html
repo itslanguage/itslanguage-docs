@@ -180,7 +180,14 @@
         </ul>
     
 
+    <li class="toctree-l3"><a href="#recording-result-set">Recording result set</a></li>
+    
+
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="feedback.html">Speech Feedback</a>
                 </li>
                 <li class="">
                     
@@ -234,6 +241,10 @@
                 <li class="">
                     
     <a class="" href="../websocket/wamp.html">WAMP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/feedback.html">Speech Feedback</a>
                 </li>
                 <li class="">
                     
@@ -418,7 +429,7 @@ The recording is created as the current user.</p>
 <tr>
 <td>resultSetId</td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The id of the result set the recording belongs to. If this doesn't exist one is created.</td>
+<td><strong>Required</strong> The unique id of the result set the recording belongs to. See <a href="#recording-result-set">Recording result set</a>. If this doesn't exist one is created.</td>
 </tr>
 </tbody>
 </table>
@@ -457,6 +468,17 @@ Content-Type: application/json
   &quot;userId&quot;: &quot;24&quot;
 }
 </code></pre>
+
+<h1 id="recording-result-set"><a class="toclink" href="#recording-result-set">Recording result set</a></h1>
+<p>In order to group recordings together a result set is used. The result set
+contains multiple recordings and an audio file containing all the audio files
+of its recordings combined.</p>
+<p>A result set is created automatically whenever a recording is created with
+a non-existing <code>resultSetId</code>. When the <code>resultSetId</code> does exist the recording
+is added to this set and the audio of the recording is appended to the audio
+of the result set.</p>
+<p>The result set cannot be queried directly but it can be seen when getting
+<a href="progress.html">progress</a>.</p>
               
             </div>
           </div>
@@ -464,7 +486,7 @@ Content-Type: application/json
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="analyses.html" class="btn btn-neutral float-right" title="Speech Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="feedback.html" class="btn btn-neutral float-right" title="Speech Feedback">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="progress.html" class="btn btn-neutral" title="Progress"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -500,7 +522,7 @@ Content-Type: application/json
         <span><a href="progress.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="analyses.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="feedback.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

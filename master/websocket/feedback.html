@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Speech Recording - ITSLanguage API</title>
+  <title>Speech Feedback - ITSLanguage API</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Speech Recording";
-    var mkdocs_page_input_path = "websocket/speech_recording.md";
+    var mkdocs_page_name = "Speech Feedback";
+    var mkdocs_page_input_path = "websocket/feedback.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -223,33 +223,31 @@
                     
     <a class="" href="wamp.html">WAMP</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="feedback.html">Speech Feedback</a>
-                </li>
                 <li class=" current">
                     
-    <a class="current" href="speech_recording.html">Speech Recording</a>
+    <a class="current" href="feedback.html">Speech Feedback</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#speech-recording">Speech Recording</a></li>
+    <li class="toctree-l3"><a href="#speech-feedback">Speech feedback</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#initialise-a-recording">Initialise a recording</a></li>
+            <li><a class="toctree-l4" href="#prepare">Prepare</a></li>
         
-            <li><a class="toctree-l4" href="#initialising-audio-for-uploading">Initialising audio for uploading</a></li>
+            <li><a class="toctree-l4" href="#start-listening">Start listening</a></li>
         
-            <li><a class="toctree-l4" href="#initialise-recording-challenge">Initialise recording challenge</a></li>
+            <li><a class="toctree-l4" href="#pause">Pause</a></li>
         
-            <li><a class="toctree-l4" href="#stream-recording-audio">Stream recording audio</a></li>
-        
-            <li><a class="toctree-l4" href="#close-recording">Close recording</a></li>
+            <li><a class="toctree-l4" href="#resume">Resume</a></li>
         
         </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="speech_recording.html">Speech Recording</a>
                 </li>
                 <li class="">
                     
@@ -292,10 +290,10 @@
         
       
     
-    <li>Speech Recording</li>
+    <li>Speech Feedback</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/websocket/speech_recording.md"
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/websocket/feedback.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -305,25 +303,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="speech-recording"><a class="toclink" href="#speech-recording">Speech Recording</a></h1>
-<p>Storing speech recordings is split up into multiple RPCs. Below, the various
-RPCs are documented.</p>
-<h2 id="initialise-a-recording"><a class="toclink" href="#initialise-a-recording">Initialise a recording</a></h2>
-<p>Initialise a speech recording, this RPC should be called for each new speech
-recording. A unique id is generated for a speech recording. This id is used
-in the other RPCs to identify the recording,</p>
+                <h1 id="speech-feedback"><a class="toclink" href="#speech-feedback">Speech feedback</a></h1>
+<p>It's possible to get feedback while recording. After every sentence feedback is
+provided indicating whether or not the sentence was read well.
+To perform a recording with feedback the following calls have to be made:</p>
+<ol>
+<li><a href="#prepare">Prepare the speech feedback</a></li>
+<li><a href="wamp.html#register-audio-procedure">Register audio procedure for streaming</a></li>
+<li><a href="#listen">Start listening for audio</a></li>
+</ol>
+<h2 id="prepare"><a class="toclink" href="#prepare">Prepare</a></h2>
+<p>Prepare a new speech feedback. This RPC should be called for each new speech
+feedback. A unique id is generated for a speech feedback and a speech challenge
+is prepared.</p>
 <h3 id="uri"><a class="toclink" href="#uri">URI</a></h3>
-<pre><code>nl.itslanguage.recording.init_recording
-</code></pre>
-
-<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
-<p>The id of the new speech recording is returned as a string.</p>
-<h2 id="initialising-audio-for-uploading"><a class="toclink" href="#initialising-audio-for-uploading">Initialising audio for uploading</a></h2>
-<p>The audio that is to be uploaded for analysis is streamed to the server. Some
-information is required in order for the server to be able to store the audio
-correctly.</p>
-<h3 id="uri_1"><a class="toclink" href="#uri_1">URI</a></h3>
-<pre><code>nl.itslanguage.recording.init_audio
+<pre><code>nl.itslanguage.feedback.prepare
 </code></pre>
 
 <h3 id="parameters"><a class="toclink" href="#parameters">Parameters</a></h3>
@@ -337,27 +331,25 @@ correctly.</p>
 </thead>
 <tbody>
 <tr>
-<td>recording_id</td>
+<td>challenge_id</td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The unique id of the speech recording.</td>
-</tr>
-<tr>
-<td>audio_format</td>
-<td><code>string</code></td>
-<td><strong>Required</strong> The mimetype of the audio to upload.</td>
+<td><strong>Required</strong> The id of the speech challenge to prepare.</td>
 </tr>
 </tbody>
 </table>
-<p>Depending on the <code>audio_format</code>, additional parameters may be required.
-Please see <a href="audio.html">the audio documentation</a> for which audio formats are
-supported and what parameters they require.</p>
-<h2 id="initialise-recording-challenge"><a class="toclink" href="#initialise-recording-challenge">Initialise recording challenge</a></h2>
-<p>A challenge should be linked when storing the recording. This call verifies
-asynchronously that the challenge exists. If the challenge or the organisation
-doesn't exist, an error is raised. Since this happens asynchronously, the error
-is raised later.</p>
-<h3 id="uri_2"><a class="toclink" href="#uri_2">URI</a></h3>
-<pre><code>nl.itslanguage.recording.init_challenge
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
+<p>The id of the new speech recording is returned as a string.</p>
+<h2 id="start-listening"><a class="toclink" href="#start-listening">Start listening</a></h2>
+<p>In order to receive feedback the server needs to listen for audio on the
+registered audio rpc. While listening the server will reply using progressive
+results.
+The server will stop listening when the audio rpc returns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server will only stop processing the audio when the audio rpc returns.</p>
+</div>
+<h3 id="uri_1"><a class="toclink" href="#uri_1">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.listen_and_reply
 </code></pre>
 
 <h3 id="parameters_1"><a class="toclink" href="#parameters_1">Parameters</a></h3>
@@ -376,23 +368,219 @@ is raised later.</p>
 <td><strong>Required</strong> The unique id of the speech recording.</td>
 </tr>
 <tr>
-<td>organisation_id</td>
+<td>rpc</td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The id of the organisation in which to find the challenge.</td>
-</tr>
-<tr>
-<td>challenge_id</td>
-<td><code>string</code></td>
-<td><strong>Required</strong> The id of the challenge the recording is meant for.</td>
+<td><strong>Required</strong> The URI of a <a href="wamp.html#register-audio-procedure">registered audio rpc</a>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="stream-recording-audio"><a class="toclink" href="#stream-recording-audio">Stream recording audio</a></h2>
-<p>The recorded audio can now be streamed to the server. The streaming works by
-repeatedly calling this RPC. Each time the RPC is called, the data
-will be appended to an audio file on the server.</p>
-<h3 id="uri_3"><a class="toclink" href="#uri_3">URI</a></h3>
-<pre><code>nl.itslanguage.recording.write
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<p>The rpc returns progressive results for realtime feadback. After every sentence
+the following json is sent as a progressive result:</p>
+<pre><code class="json">{
+  &quot;feedback_id&quot;: &quot;recording_1&quot;,
+  &quot;sentence&quot;: 0,
+  &quot;errors&quot;: 0,
+  &quot;words&quot;: [
+    {
+      &quot;expected&quot;: &quot;funny&quot;,
+      &quot;recognized&quot;: &quot;funny&quot;,
+      &quot;error&quot;: null,
+      &quot;correct&quot;: true
+    },
+    {
+      &quot;expected&quot;: &quot;gif&quot;,
+      &quot;recognized&quot;: &quot;jif&quot;,
+      &quot;error&quot;: &quot;substitution&quot;,
+      &quot;correct&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feedback_id</td>
+<td><code>string</code></td>
+<td>The unique id of the feedback this results belongs to.</td>
+</tr>
+<tr>
+<td>sentence</td>
+<td><code>int</code></td>
+<td>The index of the sentence, starting at <code>0</code>.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td><code>int</code></td>
+<td>Amount of errors made.</td>
+</tr>
+<tr>
+<td>words</td>
+<td><code>list</code></td>
+<td>All expected and recognized words in the sentence.</td>
+</tr>
+</tbody>
+</table>
+<p>The list of words each contain the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>correct</td>
+<td><code>bool</code></td>
+<td>Whether the word was pronounced correctly.</td>
+</tr>
+<tr>
+<td>error</td>
+<td><code>string</code></td>
+<td>The kind of error that was detected.</td>
+</tr>
+<tr>
+<td>expected</td>
+<td><code>string</code></td>
+<td>The word as it was expected to be pronounced.</td>
+</tr>
+<tr>
+<td>recognized</td>
+<td><code>string</code></td>
+<td>The recognized result. If nothing is recognized this field is <code>null</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>When an error is detected it is included as a string. Possible values are:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deletion</code></td>
+<td>Nothing was recognized.</td>
+</tr>
+<tr>
+<td><code>substitution</code></td>
+<td>Something got recognized but not what was expected.</td>
+</tr>
+<tr>
+<td><code>repetition</code></td>
+<td>The word was recognized correctly but multiple times.</td>
+</tr>
+</tbody>
+</table>
+<p>When the recording is finished a recording with feedback is returned:</p>
+<pre><code class="json">{
+  &quot;id&quot;: &quot;recording_1&quot;,
+  &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;audioUrl&quot;: &quot;https://api.itslanguage.nl/download/audio.wav&quot;,
+  &quot;sentences&quot;: [
+    {
+      &quot;sentence&quot;: 0,
+      &quot;errors&quot;: 1,
+      &quot;words&quot;: [
+        {
+          &quot;expected&quot;: &quot;hello&quot;,
+          &quot;recognized&quot;: &quot;hello&quot;,
+          &quot;error&quot;: null,
+          &quot;correct&quot;: true
+        },
+        {
+          &quot;expected&quot;: &quot;there&quot;,
+          &quot;recognized&quot;: &quot;their&quot;,
+          &quot;error&quot;: &quot;substitution&quot;,
+          &quot;correct&quot;: false
+        }
+      ]
+    },
+    {
+      &quot;sentence&quot;: 1,
+      &quot;errors&quot;: 0,
+      &quot;words&quot;: [
+        {
+          &quot;expected&quot;: &quot;general&quot;,
+          &quot;recognized&quot;: &quot;general&quot;,
+          &quot;error&quot;: null,
+          &quot;correct&quot;: true
+        },
+        {
+          &quot;expected&quot;: &quot;kenobi&quot;,
+          &quot;recognized&quot;: &quot;kenobi&quot;,
+          &quot;error&quot;: null,
+          &quot;correct&quot;: true
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+<td>The id of the recording.</td>
+</tr>
+<tr>
+<td>created</td>
+<td><code>string</code></td>
+<td>The timestamp when the recording was created.</td>
+</tr>
+<tr>
+<td>updated</td>
+<td><code>string</code></td>
+<td>The timestamp when the recording was last updated.</td>
+</tr>
+<tr>
+<td>audioUrl</td>
+<td><code>string</code></td>
+<td>The url to fetch the recorded audio.</td>
+</tr>
+<tr>
+<td>sentences</td>
+<td><code>array</code></td>
+<td>A list containing the feedback per sentence.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pause"><a class="toclink" href="#pause">Pause</a></h2>
+<p>When desired the feedback recording can be paused. Doing so will stop the
+server from processing the audio stream and returning feedback. Do note that
+<strong>the audio recording isn't paused when the feedback is paused</strong>. To pause the
+recording the audio RPC needs to stop sending data. For practical reasons it is
+recommended to stop sending audio when the feedback is paused. Also see the
+<a href="#resume">Resume</a> docs for more info.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pausing the feedback will not stop the feedback. See
+<a href="#start-listening">the note on audio processing</a> how to stop it.</p>
+</div>
+<h3 id="uri_2"><a class="toclink" href="#uri_2">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.pause
 </code></pre>
 
 <h3 id="parameters_2"><a class="toclink" href="#parameters_2">Parameters</a></h3>
@@ -406,27 +594,24 @@ will be appended to an audio file on the server.</p>
 </thead>
 <tbody>
 <tr>
-<td>recording_id</td>
+<td>id</td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The unique id of the speech recording.</td>
-</tr>
-<tr>
-<td>data</td>
-<td><code>bytes</code></td>
-<td><strong>Required</strong> The data to stream to the server. This can be any length.</td>
-</tr>
-<tr>
-<td>encoding</td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> The encoding in which the data is sent. This should be <code>base64</code> if the data is base64 encoded.</td>
+<td><strong>Required</strong> The id of the feedback to pause.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="close-recording"><a class="toclink" href="#close-recording">Close recording</a></h2>
-<p>Close the recording and store it on the server. After this call, no data can be
-written to the recording any more.</p>
-<h3 id="uri_4"><a class="toclink" href="#uri_4">URI</a></h3>
-<pre><code>nl.itslanguage.recording.close
+<h2 id="resume"><a class="toclink" href="#resume">Resume</a></h2>
+<p>A paused feedback can be resumed using this RPC. After this the audio stream is
+again processed by the server.
+Currently <strong>it is required to re-send the audio header when resuming
+feedback</strong>. Failing to do so will fail the feedback as the server can't
+recognise the audio format without a header.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It appears to be valid to have a wave file with multiple headers.</p>
+</div>
+<h3 id="uri_3"><a class="toclink" href="#uri_3">URI</a></h3>
+<pre><code>nl.itslanguage.feedback.resume
 </code></pre>
 
 <h3 id="parameters_3"><a class="toclink" href="#parameters_3">Parameters</a></h3>
@@ -440,17 +625,17 @@ written to the recording any more.</p>
 </thead>
 <tbody>
 <tr>
-<td>recording_id</td>
+<td>id</td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The unique id of the speech recording.</td>
+<td><strong>Required</strong> The id of the feedback to resume.</td>
+</tr>
+<tr>
+<td>sentence_id</td>
+<td><code>int</code></td>
+<td><strong>Required</strong> The id of the sentence (starting with <code>0</code>) to resume on.</td>
 </tr>
 </tbody>
 </table>
-<p>The RPC can return various errors:</p>
-<ul>
-<li><code>nl.itslanguage.no_such_organisation</code> If the organisation doesn't exist.</li>
-<li><code>nl.itslanguage.no_such_challenge</code> If the challenge doesn't exist.</li>
-</ul>
               
             </div>
           </div>
@@ -458,10 +643,10 @@ written to the recording any more.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pronunciation_analyses.html" class="btn btn-neutral float-right" title="Pronunciation Analyses">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="speech_recording.html" class="btn btn-neutral float-right" title="Speech Recording">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="feedback.html" class="btn btn-neutral" title="Speech Feedback"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="wamp.html" class="btn btn-neutral" title="WAMP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -491,10 +676,10 @@ written to the recording any more.</p>
           <a href="https://github.com/itslanguage/itslanguage-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="feedback.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="wamp.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="pronunciation_analyses.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="speech_recording.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -168,6 +168,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../api/feedback.html">Speech Feedback</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/analyses.html">Speech Analysis</a>
                 </li>
                 <li class="">
@@ -222,8 +226,18 @@
             
     <li class="toctree-l3"><a href="#wamp">WAMP</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#register-audio-procedure">Register audio procedure</a></li>
+        
+        </ul>
+    
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="feedback.html">Speech Feedback</a>
                 </li>
                 <li class="">
                     
@@ -290,6 +304,29 @@ To be able to use the websocket API, a WAMP client should be used.
 The recommended WAMP client is Autobahn since it's from the author of WAMP.
 Other <a href="http://wamp-proto.org/implementations/">implementations</a> are also
 available.</p>
+<h2 id="register-audio-procedure"><a class="toclink" href="#register-audio-procedure">Register audio procedure</a></h2>
+<p>To send audio, a WAMP procedure must be registered. Check your
+WAMP library's documentation on how to do this. Some are linked here:</p>
+<ul>
+<li>[Autobahn-js][1]</li>
+<li>[Autobahn|Python][2]</li>
+</ul>
+<p>The procedure must return [progressive results], check your library's
+documentation on how to implement this. Every progressive result is a chunk of
+the audio and so audio is sent in chunks.
+Later on, the server will call this procedure to 'pull' the audio in. When the
+procedure returns, the stream is finished/closed.</p>
+<p>Note that a complete (self-describing) audio file is expected, starting with a
+header. Check <a href="audio.html#self-describing-formats">the audio documentation page</a>
+to see more about supported formats.</p>
+<p>The procedure can best be registered to a randomly generated URI, using uuid4
+for this is advisable to ensure uniqueness. For every audio a separate procedure
+must be registered. The URI is used later on.
+It is advisable to unregister the procedure when the streaming is finished.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Re-using a URI can result in conflicts.</p>
+</div>
               
             </div>
           </div>
@@ -297,7 +334,7 @@ available.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="speech_recording.html" class="btn btn-neutral float-right" title="Speech Recording">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="feedback.html" class="btn btn-neutral float-right" title="Speech Feedback">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../api/emailauth.html" class="btn btn-neutral" title="Email authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -333,7 +370,7 @@ available.</p>
         <span><a href="../api/emailauth.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="speech_recording.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="feedback.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

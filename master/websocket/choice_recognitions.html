@@ -168,6 +168,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../api/feedback.html">Speech Feedback</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/analyses.html">Speech Analysis</a>
                 </li>
                 <li class="">
@@ -221,6 +225,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="feedback.html">Speech Feedback</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="speech_recording.html">Speech Recording</a>
                 </li>
                 <li class="">
@@ -238,11 +246,7 @@
         
             <li><a class="toctree-l4" href="#initialising-a-choice-recognition">Initialising a choice recognition</a></li>
         
-            <li><a class="toctree-l4" href="#initialising-audio-for-uploading">Initialising audio for uploading</a></li>
-        
             <li><a class="toctree-l4" href="#initialise-choice-challenge">Initialise choice challenge</a></li>
-        
-            <li><a class="toctree-l4" href="#stream-recognition-audio">Stream recognition audio</a></li>
         
             <li><a class="toctree-l4" href="#perform-the-recognition">Perform the recognition</a></li>
         
@@ -299,6 +303,13 @@
               
                 <h1 id="choice-recognitions"><a class="toclink" href="#choice-recognitions">Choice Recognitions</a></h1>
 <p>Performing a choice recognition is broken up into various calls.</p>
+<p>To perform a choice recognition a number of steps have to be made:</p>
+<ol>
+<li><a href="#initialising-a-choice-recognition">Initialising a choice recognition</a></li>
+<li><a href="#initialise-choice-challenge">Initialise choice challenge</a></li>
+<li><a href="wamp.html#register-audio-procedure">Register audio procedure</a></li>
+<li><a href="#perform-the-recognition">Perform the recognition</a></li>
+</ol>
 <h2 id="initialising-a-choice-recognition"><a class="toclink" href="#initialising-a-choice-recognition">Initialising a choice recognition</a></h2>
 <p>This is the starting point for a choice recognition. A unique recognition id
 is generated, which serves a leading role in the recognition. Each other call
@@ -312,50 +323,17 @@ requires the recognition id as a parameter.</p>
 <h3 id="response"><a class="toclink" href="#response">Response</a></h3>
 <p>The unique recognition id is returned as a string. The id is used in other calls
 to identify the current recognition.</p>
-<h2 id="initialising-audio-for-uploading"><a class="toclink" href="#initialising-audio-for-uploading">Initialising audio for uploading</a></h2>
-<p>The audio that is to be uploaded for recognition is streamed to the server. Some
-information is required in order for the server to be able to store and
-use the audio correctly.</p>
-<h3 id="uri_1"><a class="toclink" href="#uri_1">URI</a></h3>
-<pre><code>nl.itslanguage.choice.init_audio
-</code></pre>
-
-<h3 id="parameters"><a class="toclink" href="#parameters">Parameters</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>recognition_id</td>
-<td><code>string</code></td>
-<td><strong>Required</strong> The id of the recognition to initialise the audio for.</td>
-</tr>
-<tr>
-<td>audio_format</td>
-<td><code>string</code></td>
-<td><strong>Required</strong> The mimetype of the audio to upload.</td>
-</tr>
-</tbody>
-</table>
-<p>Depending on the <code>audio_format</code>, additional parameters may be required.
-Please see <a href="audio.html">the audio documentation</a> for which audio formats are
-supported and what parameters they require.</p>
 <h2 id="initialise-choice-challenge"><a class="toclink" href="#initialise-choice-challenge">Initialise choice challenge</a></h2>
 <p>Before performing the recognition, a WFST needs to be prepared for the
 challenge. When the RPC is called, the challenge is initialised asynchronously.
 When the challenge is to be used, the server automatically waits for the
 challenge initialisation to finish. If the initialisation results in an error,
 the error is relayed to the client.</p>
-<h3 id="uri_2"><a class="toclink" href="#uri_2">URI</a></h3>
+<h3 id="uri_1"><a class="toclink" href="#uri_1">URI</a></h3>
 <pre><code>nl.itslanguage.choice.init_challenge
 </code></pre>
 
-<h3 id="parameters_1"><a class="toclink" href="#parameters_1">Parameters</a></h3>
+<h3 id="parameters"><a class="toclink" href="#parameters">Parameters</a></h3>
 <table>
 <thead>
 <tr>
@@ -382,48 +360,13 @@ the error is relayed to the client.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="stream-recognition-audio"><a class="toclink" href="#stream-recognition-audio">Stream recognition audio</a></h2>
-<p>The audio to be recognised can now be streamed to the server. The streaming
-works by repeatedly calling this RPC. Each time the RPC is called, the data
-will be appended to an audio file on the server.</p>
-<h3 id="uri_3"><a class="toclink" href="#uri_3">URI</a></h3>
-<pre><code>nl.itslanguage.choice.write
-</code></pre>
-
-<h3 id="parameters_2"><a class="toclink" href="#parameters_2">Parameters</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>recognition_id</td>
-<td><code>string</code></td>
-<td><strong>Required</strong> The id of the recognition for which to upload the audio.</td>
-</tr>
-<tr>
-<td>data</td>
-<td><code>bytes</code></td>
-<td><strong>Required</strong> The data to stream to the server. This can be any length.</td>
-</tr>
-<tr>
-<td>encoding</td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> The encoding in which the data is sent. This should be <code>base64</code> if the data is base64 encoded.</td>
-</tr>
-</tbody>
-</table>
 <h2 id="perform-the-recognition"><a class="toclink" href="#perform-the-recognition">Perform the recognition</a></h2>
-<p>After completing the streaming of the audio, the recognition can be performed.</p>
-<h3 id="uri_4"><a class="toclink" href="#uri_4">URI</a></h3>
+<p>The recognition can be performed when all preparations are done.</p>
+<h3 id="uri_2"><a class="toclink" href="#uri_2">URI</a></h3>
 <pre><code>nl.itslanguage.choice.recognise
 </code></pre>
 
-<h3 id="parameters_3"><a class="toclink" href="#parameters_3">Parameters</a></h3>
+<h3 id="parameters_1"><a class="toclink" href="#parameters_1">Parameters</a></h3>
 <table>
 <thead>
 <tr>
@@ -437,6 +380,11 @@ will be appended to an audio file on the server.</p>
 <td>recognition_id</td>
 <td><code>string</code></td>
 <td><strong>Required</strong> The id of the recognition to perform.</td>
+</tr>
+<tr>
+<td>rpc</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The URI of a <a href="wamp.html#register-audio-procedure">registered audio rpc</a>.</td>
 </tr>
 </tbody>
 </table>
