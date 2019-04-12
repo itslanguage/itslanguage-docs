@@ -57,7 +57,7 @@ The audio can be downloaded by opening the `audioUrl` in the response.
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/choice/test/recognitions/8
+Location: https://api.itslanguage.io/challenges/choice/test/recognitions/8
 
 {
   "id": "8",
@@ -65,7 +65,7 @@ Location: https://api.itslanguage.nl/challenges/choice/test/recognitions/8
   "created": "2014-02-13T09:39:37Z",
   "challengeId": "8",
   "userId": "24",
-  "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/8/audio",
+  "audioUrl": "https://api.itslanguage.io/challenges/choice/test/recognitions/8/audio",
   "recognised": "bike"
 }
 ```
@@ -93,7 +93,7 @@ Content-Type: application/json
     "created": "2014-07-19T19:22:48Z",
     "challengeId": "8",
     "userId": "harry",
-    "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/8/audio",
+    "audioUrl": "https://api.itslanguage.io/challenges/choice/test/recognitions/8/audio",
     "recognised": "bright side of life"
   },
   {
@@ -102,7 +102,7 @@ Content-Type: application/json
     "created": "2014-07-19T19:22:48Z",
     "challengeId": "237",
     "userId": "arthur",
-    "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/237/audio",
+    "audioUrl": "https://api.itslanguage.io/challenges/choice/test/recognitions/237/audio",
     "recognised": "spam"
   }
 ]
@@ -131,7 +131,7 @@ Content-Type: application/json
   "updated": "2014-07-19T19:22:48Z",
   "challengeId": "spam",
   "userId": "87",
-  "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/spam/audio",
+  "audioUrl": "https://api.itslanguage.io/challenges/choice/test/recognitions/spam/audio",
   "recognised": null
 }
 ```

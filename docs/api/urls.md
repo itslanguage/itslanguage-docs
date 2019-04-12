@@ -1,10 +1,10 @@
 # URLs
 
-API actions are usually performed by accessing our production servers on the `api.itslanguage.nl` domain.
+API actions are usually performed by accessing our production servers on the `api.itslanguage.io` domain.
 For example:
 
 ```sh
-curl -i https://api.itslanguage.nl/organisations
+curl -i https://api.itslanguage.io/organisations
 ```
 
 ```http

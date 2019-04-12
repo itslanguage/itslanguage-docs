@@ -11,7 +11,7 @@ Here's a sample request sent from a browser hitting
 `http://example.com`:
 
 ```bash
-curl -i https://api.itslanguage.nl -H "Origin: http://example.com"
+curl -i https://api.itslanguage.io -H "Origin: http://example.com"
 ```
 ```http
 HTTP/1.1 302 Found
@@ -20,7 +20,7 @@ HTTP/1.1 302 Found
 This is what the CORS preflight request looks like:
 
 ```bash
-curl -i https://api.itslanguage.nl -H "Origin: http://example.com" -X OPTIONS
+curl -i https://api.itslanguage.io -H "Origin: http://example.com" -X OPTIONS
 ```
 ```http
 HTTP/1.1 204 No Content

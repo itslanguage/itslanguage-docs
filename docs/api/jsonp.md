@@ -6,14 +6,14 @@ issues.  The response includes the same data output as the regular API,
 plus the relevant HTTP Header information.
 
 ```bash
-curl "https://api.itslanguage.nl?callback=foo"
+curl "https://api.itslanguage.io?callback=foo"
 ```
 ```js
 foo({
   "meta": {
     "status": 200,
     "Link": [ // pagination headers and other links
-      ["https://api.itslanguage.nl?cursor=next2", {"rel": "next"}]
+      ["https://api.itslanguage.io?cursor=next2", {"rel": "next"}]
     ]
   },
   "data": {

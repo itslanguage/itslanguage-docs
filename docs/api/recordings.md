@@ -37,10 +37,10 @@ Content-Type: application/json
     "id": "recording_1",
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
-    "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+    "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
     "resultSet": {
       "id": "923848397208945",
-      "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
+      "combinedAudioUrl": "https://api.itslanguage.io/download/lhsdb78333y78d"
     },
     "userId": "24"
   },
@@ -48,10 +48,10 @@ Content-Type: application/json
     "id": "14",
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
-    "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
+    "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-Xaq",
     "resultSet": {
       "id": "923848397208945",
-      "combinedAudioUrl": "https://api.itslanguage.nl/download/ksd83gdiuhs7cs"
+      "combinedAudioUrl": "https://api.itslanguage.io/download/ksd83gdiuhs7cs"
     },
     "userId": "24"
   }
@@ -87,10 +87,10 @@ Content-Type: application/json
   "id": "speech_1",
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
-  "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "resultSet": {
     "id": "923848397208945",
-    "combinedAudioUrl": "https://api.itslanguage.nl/download/lhsdb78333y78d"
+    "combinedAudioUrl": "https://api.itslanguage.io/download/lhsdb78333y78d"
   },
   "userId": "24"
 }
@@ -151,10 +151,10 @@ Content-Type: application/json
   "id": "34",
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
-  "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "resultSet": {
     "id": "iohfg78h37fgy3ho84",
-    "combinedAudioUrl": "https://api.itslanguage.nl/download/kljhiusdhwhe811"
+    "combinedAudioUrl": "https://api.itslanguage.io/download/kljhiusdhwhe811"
   },
   "userId": "24"
 }

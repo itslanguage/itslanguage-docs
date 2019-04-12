@@ -33,7 +33,7 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "transcription": "You could take the baby with you",
-    "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+    "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
     "status": "preparing",
     "alignment": null
   },
@@ -42,7 +42,7 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "transcription": "tap",
-    "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu6-Abq",
+    "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
     "status": "prepared",
     "alignment": {
       "confidenceScore": -3.44,
@@ -119,7 +119,7 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "tap",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu6-Abq",
+  "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
   "status": "prepared",
   "alignment": {
     "confidenceScore": -3.44,
@@ -207,14 +207,14 @@ You could take the baby with you
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/pronunciation/4
+Location: https://api.itslanguage.io/challenges/pronunciation/4
 
 {
   "id": "4",
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "You could take the baby with you",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
+  "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "status": "preparing",
   "alignment": null
 }
@@ -275,14 +275,14 @@ Content-Type: application/json
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/pronunciation/4
+Location: https://api.itslanguage.io/challenges/pronunciation/4
 
 {
   "id": "4",
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "You could take the baby with you",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Abc",
+  "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-Abc",
   "status": "prepared",
   "alignment": {"confidenceScore": -3.44, "words": [....]}
 }

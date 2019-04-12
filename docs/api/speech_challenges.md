@@ -32,9 +32,9 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "topic": "What do you know about babies?",
-    "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-    "srtUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
-    "imageUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe"
+    "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
+    "srtUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
+    "imageUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe"
   },
   {
     "id": "12",
@@ -77,9 +77,9 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about babies?",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "srtUrl": "https://api.itslanguage.nl/download/zVXLJJuGyhBHQbfX",
-  "imageUrl": "https://api.itslanguage.nl/download/dlnBo-dotLpnhN-a"
+  "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
+  "srtUrl": "https://api.itslanguage.io/download/zVXLJJuGyhBHQbfX",
+  "imageUrl": "https://api.itslanguage.io/download/dlnBo-dotLpnhN-a"
 }
 ```
 
@@ -139,16 +139,16 @@ Content-Type: image/png
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/speech/4
+Location: https://api.itslanguage.io/challenges/speech/4
 
 {
   "id": "4",
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about babies?",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "srtUrl": "https://api.itslanguage.nl/download/QEYduwrFRHeufiru",
-  "imageUrl": "https://api.itslanguage.nl/download/h-JJREJRCFAeA-nl"
+  "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
+  "srtUrl": "https://api.itslanguage.io/download/QEYduwrFRHeufiru",
+  "imageUrl": "https://api.itslanguage.io/download/h-JJREJRCFAeA-nl"
 }
 ```
 
@@ -192,15 +192,15 @@ Content-Type: application/json
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Location: https://api.itslanguage.nl/challenges/speech/4
+Location: https://api.itslanguage.io/challenges/speech/4
 
 {
   "id": "4",
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about the baby?",
-  "referenceAudioUrl": "https://api.itslanguage.nl/download/cxtczOCmVbvVsIFw",
-  "srtUrl": "https://api.itslanguage.nl/download/acfRSlgOorYdeYcP",
-  "imageUrl": "https://api.itslanguage.nl/download/xCbFikceYVgUIHqc"
+  "referenceAudioUrl": "https://api.itslanguage.io/download/cxtczOCmVbvVsIFw",
+  "srtUrl": "https://api.itslanguage.io/download/acfRSlgOorYdeYcP",
+  "imageUrl": "https://api.itslanguage.io/download/xCbFikceYVgUIHqc"
 }
 ```

@@ -40,7 +40,7 @@ Content-Type: application/json
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Location: https://api.itslanguage.nl/roles/Student
+Location: https://api.itslanguage.io/roles/Student
 
 {
   "id": "Student",
