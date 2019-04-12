@@ -314,7 +314,7 @@ OAuth2 compatible client.</p>
 API. The body should contain the username, password, grant type (<code>password</code>)
 and optional scope. To request an access token for the user <code>tenant</code> with
 password <code>secret</code> and scope <code>tenant/tenant</code>, the request should look like this:</p>
-<pre><code class="http">POST https://api.itslanguage.nl/tokens HTTP/1.1
+<pre><code class="http">POST https://api.itslanguage.io/tokens HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 
@@ -354,14 +354,14 @@ Pragma: no-cache
 <p>The access token can be used to make an authorised request. To do so, the
 access token should be placed in the Authorization header as a bearer token.
 Example:</p>
-<pre><code class="http">GET https://api.itslanguage.nl/organisations HTTP/1.1
+<pre><code class="http">GET https://api.itslanguage.io/organisations HTTP/1.1
 Accept: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
 </code></pre>
 
 <p>In cases where it is not possible to use the <code>Authorization</code> header, the token
 can be supplied using a request parameter:</p>
-<pre><code class="http">GET https://api.itslanguage.nl/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJI HTTP/1.1
+<pre><code class="http">GET https://api.itslanguage.io/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJI HTTP/1.1
 </code></pre>
 
 <div class="admonition note">
@@ -417,7 +417,7 @@ scope and the grant type (<code>client_credentials</code>). The request should a
 contain a previously received access token in the <code>Authorization</code> header as
 described in <a href="#using-the-access-token">Using the access token</a>.
 Example request:</p>
-<pre><code class="http">POST https://api.itslanguage.nl/tokens HTTP/1.1
+<pre><code class="http">POST https://api.itslanguage.io/tokens HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI

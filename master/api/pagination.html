@@ -300,7 +300,7 @@
                 <h1 id="pagination"><a class="toclink" href="#pagination">Pagination</a></h1>
 <p>Requests that return multiple items will be paginated to 20 items by
 default.  You can set a custom page size up to 100 with the <code>?per_page</code> parameter.</p>
-<pre><code class="bash">curl &quot;https://api.itslanguage.nl/resources?per_page=100&quot;
+<pre><code class="bash">curl &quot;https://api.itslanguage.io/resources?per_page=100&quot;
 </code></pre>
 
 <h2 id="link-header"><a class="toclink" href="#link-header">Link Header</a></h2>
@@ -309,8 +309,8 @@ default.  You can set a custom page size up to 100 with the <code>?per_page</cod
 follow these Link header values instead of constructing your own URLs. In some
 instances, pagination is not based on page number.</p>
 <pre><code class="http">HTTP/1.1 200 OK
-Link: &lt;https://api.itslanguage.nl/resources?page=for12c&amp;per_page=100&gt;; rel=&quot;next&quot;,
-      &lt;https://api.itslanguage.nl/resources?page=back12c&amp;per_page=100&gt;; rel=&quot;prev&quot;
+Link: &lt;https://api.itslanguage.io/resources?page=for12c&amp;per_page=100&gt;; rel=&quot;next&quot;,
+      &lt;https://api.itslanguage.io/resources?page=back12c&amp;per_page=100&gt;; rel=&quot;prev&quot;
 </code></pre>
 
 <p><em>Linebreak is included for readability.</em></p>

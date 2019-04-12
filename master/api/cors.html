@@ -299,14 +299,14 @@
 from the HTML 5 Security Guide.</p>
 <p>Here's a sample request sent from a browser hitting
 <code>http://example.com</code>:</p>
-<pre><code class="bash">curl -i https://api.itslanguage.nl -H &quot;Origin: http://example.com&quot;
+<pre><code class="bash">curl -i https://api.itslanguage.io -H &quot;Origin: http://example.com&quot;
 </code></pre>
 
 <pre><code class="http">HTTP/1.1 302 Found
 </code></pre>
 
 <p>This is what the CORS preflight request looks like:</p>
-<pre><code class="bash">curl -i https://api.itslanguage.nl -H &quot;Origin: http://example.com&quot; -X OPTIONS
+<pre><code class="bash">curl -i https://api.itslanguage.io -H &quot;Origin: http://example.com&quot; -X OPTIONS
 </code></pre>
 
 <pre><code class="http">HTTP/1.1 204 No Content

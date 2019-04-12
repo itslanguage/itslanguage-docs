@@ -297,14 +297,14 @@ wrapped in a JavaScript function.  This is typically used when browsers want
 to embed content in web pages by getting around cross domain
 issues.  The response includes the same data output as the regular API,
 plus the relevant HTTP Header information.</p>
-<pre><code class="bash">curl &quot;https://api.itslanguage.nl?callback=foo&quot;
+<pre><code class="bash">curl &quot;https://api.itslanguage.io?callback=foo&quot;
 </code></pre>
 
 <pre><code class="js">foo({
   &quot;meta&quot;: {
     &quot;status&quot;: 200,
     &quot;Link&quot;: [ // pagination headers and other links
-      [&quot;https://api.itslanguage.nl?cursor=next2&quot;, {&quot;rel&quot;: &quot;next&quot;}]
+      [&quot;https://api.itslanguage.io?cursor=next2&quot;, {&quot;rel&quot;: &quot;next&quot;}]
     ]
   },
   &quot;data&quot;: {
