@@ -8,7 +8,6 @@ nav:
     - 'Authentication': 'api/authentication.md'
     - 'Cross Origin Resource Sharing': 'api/cors.md'
     - 'Data representation': 'api/data_representation.md'
-    - 'Environments': 'api/environments.md'
     - 'JSON-P Callbacks': 'api/jsonp.md'
     - 'Pagination': 'api/pagination.md'
     - 'Parameters': 'api/parameters.md'
