@@ -45,9 +45,6 @@ nav:
     - 'Pronunciation Analyses': 'websocket/pronunciation_analyses.md'
     - 'Choice Recognitions': 'websocket/choice_recognitions.md'
     - 'Audio': 'websocket/audio.md'
-- Internal API:
-    - 'Permissions': 'api/permissions.md'
-    - 'Infrastructure Architecture': 'api/architecture.md'
 
 theme: readthedocs
 use_directory_urls: false
