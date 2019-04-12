@@ -36,5 +36,3 @@ function foo(response) {
 All of the headers are the same String value as the HTTP Headers with one
 notable exception: Link.  Link headers are pre-parsed for you and come
 through as an array of `[url, options]` tuples.
-
-[support]: http://itslanguage.nl/contact
