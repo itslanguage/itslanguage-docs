@@ -22,7 +22,7 @@ Accept: application/json
 
 ### Response
 
-The response is a JSON list with challenges.
+The response is a JSON list with assignments.
 The ``digest`` field is the filename without extension for a given recording.
 
 ```http
@@ -144,7 +144,7 @@ PUT /assignments/:assignment HTTP/1.1
 
 * `assignment` - **Required** The assignment identifier.
 
-Update one or more properties of an existing speech challenge.
+Update one or more properties of an existing assignment.
 
 ### Request parameters
 
