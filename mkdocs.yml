@@ -36,6 +36,7 @@ nav:
     - 'Tenants': 'api/tenants.md'
     - 'Groups': 'api/groups.md'
     - 'Profiles': 'api/profiles.md'
+    - 'Assignments': 'api/assignments.md'
     - Users:
         - 'Users': 'api/users.md'
         - 'Basic authentication': 'api/basicauths.md'
