@@ -194,3 +194,40 @@ XXX
 ### Response
 
 XXX
+
+
+
+# Reference Annotations
+
+A reference annotation is an annotation for a specific audio recording, usually generated through
+forced alignment. This reference annotation can be used as a starting point to create human
+annotations based upon the reference annotation that provides a set of aligned fragments.
+
+## Get a single reference annotation
+
+### URL
+
+```http
+GET /organisations/:organisation/challenges/speech/:challenge/recordings/:recording/reference HTTP/1.1
+```
+
+The request and response are similar to the normal annotation GET call.
+
+## Update a reference annotation
+
+### URL
+
+```http
+PUT /organisations/:organisation/challenges/speech/:challenge/recordings/:recording/reference HTTP/1.1
+```
+
+### Request parameters
+
+Parameters should be posted as JSON body.
+
+Name          | Type   | Description
+--------------|--------|------------
+`annotations` | `list` | **Required** The annotations as list of type `Fragment` (as specified
+above).
+
+The response is similar to the normal annotation PUT call.
