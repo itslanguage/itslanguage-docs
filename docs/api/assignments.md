@@ -34,30 +34,30 @@ Content-Type: application/json
     "id":49847474,
     "created":"2017-08-25T14:12:15Z",
     "updated":"2018-06-10T10:24:20Z",
-    "name":"P1_lijn3_Gelder_thema9",
+    "name":"Assignment #1",
     "baseDueDate":"2017-11-05T00:00:00Z",
     "fullDueDate":"2017-11-12T00:00:00Z",
     "recordings":[
        {
           "recording":"53242344042624",
           "organisation":"testschoolbarneveld",
-          "challenge":"Assign_1_1_lijn3_thema9_01_Mooiofvies_a",
+          "challenge":"challenge1",
           "digest":"82c2b290ef674edf99af0e184dc5e6c4",
           "tenant":null
        }
     ],
     "annotations":[
        {
+          "id":6236956254011392,
           "recording":{
              "recording":"53242344042624",
              "organisation":"testschoolbarneveld",
-             "challenge":"Assign_1_1_lijn3_thema9_01_Mooiofvies_a",
+             "challenge":"challenge1",
              "digest":null,
              "tenant":"demo"
           },
-          "doneFull":null,
-          "id":6236956254011392,
-          "doneBase":null
+          "doneBase":null,
+          "doneFull":null
        }
     ]
   }
@@ -89,10 +89,37 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  ...
+  "id":49847474,
+  "created":"2017-08-25T14:12:15Z",
+  "updated":"2018-06-10T10:24:20Z",
+  "name":"Assignment #1",
+  "baseDueDate":"2017-11-05T00:00:00Z",
+  "fullDueDate":"2017-11-12T00:00:00Z",
+  "recordings":[
+     {
+        "recording":"53242344042624",
+        "organisation":"testschoolbarneveld",
+        "challenge":"challenge1",
+        "digest":"82c2b290ef674edf99af0e184dc5e6c4",
+        "tenant":null
+     }
+  ],
+  "annotations":[
+     {
+        "id":6236956254011392,
+        "recording":{
+           "recording":"53242344042624",
+           "organisation":"testschoolbarneveld",
+           "challenge":"challenge1",
+           "digest":null,
+           "tenant":"demo"
+        },
+        "doneBase":null,
+        "doneFull":null
+     }
+  ]
 }
 ```
-
 
 ## Create an assignment
 
@@ -122,16 +149,20 @@ by the base annnotator.
 `fullDueDate`    | `string` | **Optional** The due date for when all recordings should be completed
 by the full annnotator.
 
-The Recording format (`FlatRecordingReference`).
+The Recording format (`FlatRecordingReference`). All parameters together form the full namespace of
+one audio recording.
 
 Parameters should be posted as JSON body.
 
 Name             | Type     | Description
 -----------------|----------|------------
 `tenant`         | `string` | **Required** The unique identier of the tenant.
-`organisation`   | `string` | **Required** The unique identifier of the organisation.
-`recording`      | `string` | **Required** The unique identifier of the recording.
-`challenge`      | `string` | **Required** The unique identifier of the challenge.
+`organisation`   | `string` | **Required** The identifier of the organisation within the tenant
+namespace.
+`challenge`      | `string` | **Required** The identifier of the challenge as specified within the
+organisation..
+`recording`      | `string` | **Required** The identifier of the recording as specified within the
+organisation.
 
 
 ## Update an assignment
@@ -148,13 +179,12 @@ Update one or more properties of an existing assignment.
 
 ### Request parameters
 
-XXX
-
+These are exactly as specified in [Create an assignment](#create-an-assignment).
 
 ### Request
 
-XXX
+The request is exactly as specified in [Create an assignment](#create-an-assignment).
 
 ### Response
 
-XXX
+The response is exactly as specified in [Create an assignment](#create-an-assignment).
