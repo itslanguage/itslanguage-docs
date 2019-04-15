@@ -104,8 +104,6 @@
     
         <ul>
         
-            <li><a class="toctree-l5" href="#create-a-role">Create a role</a></li>
-        
             <li><a class="toctree-l5" href="#get-a-single-role">Get a single role</a></li>
         
             <li><a class="toctree-l5" href="#list-roles">List roles</a></li>
@@ -308,75 +306,20 @@
                 <h1 id="roles"><a class="toclink" href="#roles">Roles</a></h1>
 <p>Roles are named groups of permissions. A role is typically assigned to a user
 to grant a user permissions.</p>
-<h2 id="create-a-role"><a class="toclink" href="#create-a-role">Create a role</a></h2>
-<h3 id="url"><a class="toclink" href="#url">URL</a></h3>
-<pre><code class="http">POST /roles/role HTTP/1.1
-</code></pre>
-
-<h3 id="request-parameters"><a class="toclink" href="#request-parameters">Request parameters</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> The category identifier. If none is given, one is generated.</td>
-</tr>
-<tr>
-<td><code>permissions</code></td>
-<td><code>array</code></td>
-<td><strong>Required</strong> Array of permissions this role is authorized for.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
-<pre><code class="http">POST /users HTTP/1.1
-Accept: application/json
-Content-Type: application/json
-
-{
-  &quot;id&quot;: &quot;Student&quot;,
-  &quot;permissions&quot;: [
-       &quot;CHOICE_CHALLENGE_CREATE&quot;,
-       &quot;CHOICE_CHALLENGE_DELETE&quot;
-  ]
-}
-</code></pre>
-
-<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
-<pre><code class="http">HTTP/1.1 201 Created
-Content-Type: application/json
-Location: https://api.itslanguage.io/roles/Student
-
-{
-  &quot;id&quot;: &quot;Student&quot;,
-  &quot;permissions&quot;: [
-       &quot;CHOICE_CHALLENGE_CREATE&quot;,
-       &quot;CHOICE_CHALLENGE_DELETE&quot;
-  ]
-}
-</code></pre>
-
 <h2 id="get-a-single-role"><a class="toclink" href="#get-a-single-role">Get a single role</a></h2>
-<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<h3 id="url"><a class="toclink" href="#url">URL</a></h3>
 <pre><code class="http">GET /roles/:role HTTP/1.1
 </code></pre>
 
 <ul>
 <li><code>role</code> - <strong>Required</strong> The role identifier.</li>
 </ul>
-<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
 <pre><code class="http">GET /roles/Student HTTP/1.1
 Accept: application/json
 </code></pre>
 
-<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
 <pre><code class="http">HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -390,16 +333,16 @@ Content-Type: application/json
 </code></pre>
 
 <h2 id="list-roles"><a class="toclink" href="#list-roles">List roles</a></h2>
-<h3 id="url_2"><a class="toclink" href="#url_2">URL</a></h3>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
 <pre><code class="http">GET /roles HTTP/1.1
 </code></pre>
 
-<h3 id="request_2"><a class="toclink" href="#request_2">Request</a></h3>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
 <pre><code class="http">GET /roles HTTP/1.1
 Accept: application/json
 </code></pre>
 
-<h3 id="response_2"><a class="toclink" href="#response_2">Response</a></h3>
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
 <pre><code class="http">HTTP/1.1 201 Created
 Content-Type: application/json
 
