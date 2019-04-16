@@ -14,12 +14,6 @@ To create an emailauth for the current user:
 POST /user/emailauths HTTP/1.1
 ```
 
-To create an emailauth for another user:
-
-```http
-POST /users/:user/emailauths HTTP/1.1
-```
-
 ### Input
 
 Name     | Type     | Description
