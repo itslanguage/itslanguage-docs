@@ -53,3 +53,29 @@ Content-Type: application/json
     "password": "alohomora"
 }
 ```
+
+
+## Delete a credential
+
+### URL
+
+To delete a basicauth for the current user:
+
+```http
+DELETE /user/basicauths/:basicauth HTTP/1.1
+```
+
+To delete a basicauth for another user, [impersonate the user](
+oauth2.md#impersonation) first.
+
+### Request
+
+```http
+DELETE /user/basicauths/1 HTTP/1.1
+```
+
+### Response
+
+```http
+HTTP/1.1 204 No Content
+```
