@@ -46,3 +46,27 @@ Content-Type: application/json
     "password": "aviB3leax"
 }
 ```
+
+## Delete an email credential
+
+### URL
+
+To delete a emailauth for the current user:
+
+```http
+DELETE /user/emailauths/:emailauth HTTP/1.1
+```
+
+To delete an emailauth for another user, [impersonate the user](oauth2.md#impersonation) first.
+
+### Request
+
+```http
+DELETE /user/emailauths/1 HTTP/1.1
+```
+
+### Response
+
+```http
+HTTP/1.1 204 No Content
+```
