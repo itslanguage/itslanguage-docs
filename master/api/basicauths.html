@@ -213,6 +213,8 @@
         
             <li><a class="toctree-l5" href="#create-credentials">Create credentials</a></li>
         
+            <li><a class="toctree-l5" href="#delete-a-credential">Delete a credential</a></li>
+        
         </ul>
     
 
@@ -356,6 +358,21 @@ Content-Type: application/json
     &quot;email&quot;: &quot;harry&quot;,
     &quot;password&quot;: &quot;alohomora&quot;
 }
+</code></pre>
+
+<h2 id="delete-a-credential"><a class="toclink" href="#delete-a-credential">Delete a credential</a></h2>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<p>To delete a basicauth for the current user:</p>
+<pre><code class="http">DELETE /user/basicauths/:basicauth HTTP/1.1
+</code></pre>
+
+<p>To delete a basicauth for another user, <a href="oauth2.html#impersonation">impersonate the user</a> first.</p>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<pre><code class="http">DELETE /user/basicauths/1 HTTP/1.1
+</code></pre>
+
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<pre><code class="http">HTTP/1.1 204 No Content
 </code></pre>
               
             </div>
