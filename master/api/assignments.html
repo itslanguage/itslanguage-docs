@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Speech Feedback - ITSLanguage API</title>
+  <title>Assignments - ITSLanguage API</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Speech Feedback";
-    var mkdocs_page_input_path = "api/feedback.md";
+    var mkdocs_page_name = "Assignments";
+    var mkdocs_page_input_path = "api/assignments.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -166,23 +166,9 @@
                     
     <a class="" href="recordings.html">Speech Recordings</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="feedback.html">Speech Feedback</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#speech-feedback">Speech Feedback</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#create-a-feedback-result">Create a feedback result</a></li>
-        
-            <li><a class="toctree-l4" href="#get-feedback-by-id">Get feedback by id</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="feedback.html">Speech Feedback</a>
                 </li>
                 <li class="">
                     
@@ -208,9 +194,27 @@
                     
     <a class="" href="profiles.html">Profiles</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="assignments.html">Assignments</a>
+    <a class="current" href="assignments.html">Assignments</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#assignments">Assignments</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#list-all-assignments">List all assignments</a></li>
+        
+            <li><a class="toctree-l4" href="#get-a-single-assignment">Get a single assignment</a></li>
+        
+            <li><a class="toctree-l4" href="#create-an-assignment">Create an assignment</a></li>
+        
+            <li><a class="toctree-l4" href="#update-an-assignment">Update an assignment</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -294,10 +298,10 @@
         
       
     
-    <li>Speech Feedback</li>
+    <li>Assignments</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/feedback.md"
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/assignments.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -307,16 +311,118 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="speech-feedback"><a class="toclink" href="#speech-feedback">Speech Feedback</a></h1>
-<h2 id="create-a-feedback-result"><a class="toclink" href="#create-a-feedback-result">Create a feedback result</a></h2>
-<p>When a user has performed a speech recording and received feedback on it, the
-feedback result can be stored using this call.
-The feedback result is created for the current user.</p>
+                <h1 id="assignments"><a class="toclink" href="#assignments">Assignments</a></h1>
+<p>Annotation assignments provide a set of speech recordings to one (base annotator) or two (also the full annotator) specific users to annotate.</p>
+<h2 id="list-all-assignments"><a class="toclink" href="#list-all-assignments">List all assignments</a></h2>
+<p>A user with the 'ADMIN' role will receive all the assignments.
+Non-admins will receive only the assignments assigned to them.</p>
 <h3 id="url"><a class="toclink" href="#url">URL</a></h3>
-<pre><code class="http">POST /feedback HTTP/1.1
+<pre><code class="http">GET /assignments HTTP/1.1
+</code></pre>
+
+<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
+<pre><code class="http">GET /assignments HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
+<p>The response is a JSON list with assignments.
+The <code>digest</code> field is the filename without extension for a given recording.</p>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    &quot;id&quot;:49847474,
+    &quot;created&quot;:&quot;2017-08-25T14:12:15Z&quot;,
+    &quot;updated&quot;:&quot;2018-06-10T10:24:20Z&quot;,
+    &quot;name&quot;:&quot;Assignment #1&quot;,
+    &quot;baseDueDate&quot;:&quot;2017-11-05T00:00:00Z&quot;,
+    &quot;fullDueDate&quot;:&quot;2017-11-12T00:00:00Z&quot;,
+    &quot;recordings&quot;:[
+       {
+          &quot;recording&quot;:&quot;53242344042624&quot;,
+          &quot;organisation&quot;:&quot;testschoolbarneveld&quot;,
+          &quot;challenge&quot;:&quot;challenge1&quot;,
+          &quot;digest&quot;:&quot;82c2b290ef674edf99af0e184dc5e6c4&quot;,
+          &quot;tenant&quot;:null
+       }
+    ],
+    &quot;annotations&quot;:[
+       {
+          &quot;id&quot;:6236956254011392,
+          &quot;recording&quot;:{
+             &quot;recording&quot;:&quot;53242344042624&quot;,
+             &quot;organisation&quot;:&quot;testschoolbarneveld&quot;,
+             &quot;challenge&quot;:&quot;challenge1&quot;,
+             &quot;digest&quot;:null,
+             &quot;tenant&quot;:&quot;demo&quot;
+          },
+          &quot;doneBase&quot;:null,
+          &quot;doneFull&quot;:null
+       }
+    ]
+  }
+]
+</code></pre>
+
+<h2 id="get-a-single-assignment"><a class="toclink" href="#get-a-single-assignment">Get a single assignment</a></h2>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<pre><code class="http">GET /assignment/:assignment HTTP/1.1
+</code></pre>
+
+<ul>
+<li><code>assignment</code> - <strong>Required</strong> The assignment identifier.</li>
+</ul>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<pre><code class="http">GET /assignment/assignment_1 HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;id&quot;:49847474,
+  &quot;created&quot;:&quot;2017-08-25T14:12:15Z&quot;,
+  &quot;updated&quot;:&quot;2018-06-10T10:24:20Z&quot;,
+  &quot;name&quot;:&quot;Assignment #1&quot;,
+  &quot;baseDueDate&quot;:&quot;2017-11-05T00:00:00Z&quot;,
+  &quot;fullDueDate&quot;:&quot;2017-11-12T00:00:00Z&quot;,
+  &quot;recordings&quot;:[
+     {
+        &quot;recording&quot;:&quot;53242344042624&quot;,
+        &quot;organisation&quot;:&quot;testschoolbarneveld&quot;,
+        &quot;challenge&quot;:&quot;challenge1&quot;,
+        &quot;digest&quot;:&quot;82c2b290ef674edf99af0e184dc5e6c4&quot;,
+        &quot;tenant&quot;:null
+     }
+  ],
+  &quot;annotations&quot;:[
+     {
+        &quot;id&quot;:6236956254011392,
+        &quot;recording&quot;:{
+           &quot;recording&quot;:&quot;53242344042624&quot;,
+           &quot;organisation&quot;:&quot;testschoolbarneveld&quot;,
+           &quot;challenge&quot;:&quot;challenge1&quot;,
+           &quot;digest&quot;:null,
+           &quot;tenant&quot;:&quot;demo&quot;
+        },
+        &quot;doneBase&quot;:null,
+        &quot;doneFull&quot;:null
+     }
+  ]
+}
+</code></pre>
+
+<h2 id="create-an-assignment"><a class="toclink" href="#create-an-assignment">Create an assignment</a></h2>
+<h3 id="url_2"><a class="toclink" href="#url_2">URL</a></h3>
+<pre><code class="http">POST /assignments HTTP/1.1
 </code></pre>
 
 <h3 id="request-parameters"><a class="toclink" href="#request-parameters">Request parameters</a></h3>
+<p>Parameters should be posted as JSON body.</p>
 <table>
 <thead>
 <tr>
@@ -327,212 +433,136 @@ The feedback result is created for the current user.</p>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
+<td><code>id</code></td>
 <td><code>string</code></td>
-<td><strong>Optional</strong> The id of the feedback. If none is given, one is generated.</td>
+<td><strong>Optional</strong> The unique identier of the assignment. If none is given, one is generated.</td>
 </tr>
 <tr>
-<td>audio</td>
-<td><code>blob</code></td>
-<td><strong>Required</strong> The recorded audio.</td>
-</tr>
-<tr>
-<td>challengeId</td>
+<td><code>name</code></td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The id of the speech challenge used to perform the feedback.</td>
+<td><strong>Optional</strong> The name for the assignment serving as guidance to the</td>
 </tr>
 <tr>
-<td>sentences</td>
-<td><code>json</code></td>
-<td><strong>Optional</strong> The feedback per sentence.</td>
+<td>annotator.</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>extra</td>
-<td><code>json</code></td>
-<td><strong>Optional</strong> Extra data to store.</td>
-</tr>
-<tr>
-<td>resultSetId</td>
+<td><code>baseAnnotator</code></td>
 <td><code>string</code></td>
-<td><strong>Required</strong> The unique id of the result set the recording belongs to. See <a href="recordings.html#recording-result-set">Recording result set</a>.</td>
+<td><strong>Optional</strong> The unique identifier of the annotator user appointed as</td>
+</tr>
+<tr>
+<td>base annotator.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>fullAnnotator</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique identifier of the annotator user appointed as</td>
+</tr>
+<tr>
+<td>full annotator.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>recordings</code></td>
+<td><code>list</code></td>
+<td><strong>Required</strong> The recording to include in the assignment. See below for</td>
+</tr>
+<tr>
+<td>the format of each recording.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>baseDueDate</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The due date for when all recordings should be completed</td>
+</tr>
+<tr>
+<td>by the base annnotator.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>fullDueDate</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The due date for when all recordings should be completed</td>
+</tr>
+<tr>
+<td>by the full annnotator.</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
-<p>The request should be a <code>multipart/form-data</code>.</p>
-<p>Example:</p>
-<pre><code class="http">POST /feedback HTTP/1.1
-Accept: application/json
-Content-Type: multipart/form-data; boundary=&quot;YvHKkjjzXfysYJVHMoOAoNczae&quot;
-
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;challengeId&quot;
-
-chal
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;audio&quot;; filename=&quot;blob&quot;
-Content-Type: audio/ogg
-
-&lt;audio blob&gt;
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;sentences&quot;
-Content-Type: application/json
-
-{
-  &quot;sentence&quot;: 0,
-  &quot;errors&quot;: 1,
-  &quot;words&quot;: [
-    {
-      &quot;expected&quot;: &quot;hello&quot;,
-      &quot;recognized&quot;: &quot;hello&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
-    },
-    {
-      &quot;expected&quot;: &quot;there&quot;,
-      &quot;recognized&quot;: &quot;their&quot;,
-      &quot;error&quot;: &quot;substitution&quot;,
-      &quot;correct&quot;: false
-    }
-  ]
-}
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;sentences&quot;
-Content-Type: application/json
-
-{
-  &quot;sentence&quot;: 1,
-  &quot;errors&quot;: 0,
-  &quot;words&quot;: [
-    {
-      &quot;expected&quot;: &quot;general&quot;,
-      &quot;recognized&quot;: &quot;general&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
-    },
-    {
-      &quot;expected&quot;: &quot;kenobi&quot;,
-      &quot;recognized&quot;: &quot;kenobi&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
-    }
-  ]
-}
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;extra&quot;
-Content-Type: application/json
-
-{'note': 'cheap microphone'}
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name=&quot;resultSetId&quot;
-
-5600160f578c4db6b7b0327e16e42153
---YvHKkjjzXfysYJVHMoOAoNczae--
-</code></pre>
-
-<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
-<p>If the feedback is stored without error the stored feedback is returned as
-JSON. Example:</p>
-<pre><code class="http">HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-  &quot;id&quot;: &quot;34&quot;,
-  &quot;updated&quot;: &quot;2018-02-20T09:39:40Z&quot;,
-  &quot;created&quot;: &quot;2018-02-20T09:39:37Z&quot;,
-  &quot;audioUrl&quot;: &quot;https://api.itslanguage.nl/feedback/34/audio&quot;,
-  &quot;challengeId&quot;: &quot;chal&quot;,
-  &quot;sentences&quot;: [
-    {
-      &quot;sentence&quot;: 0,
-      &quot;errors&quot;: 1,
-      &quot;words&quot;: [
-        {
-          &quot;expected&quot;: &quot;hello&quot;,
-          &quot;recognized&quot;: &quot;hello&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
-        },
-        {
-          &quot;expected&quot;: &quot;there&quot;,
-          &quot;recognized&quot;: &quot;their&quot;,
-          &quot;error&quot;: &quot;substitution&quot;,
-          &quot;correct&quot;: false
-        }
-      ]
-    },
-    {
-      &quot;sentence&quot;: 1,
-      &quot;errors&quot;: 0,
-      &quot;words&quot;: [
-        {
-          &quot;expected&quot;: &quot;general&quot;,
-          &quot;recognized&quot;: &quot;general&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
-        },
-        {
-          &quot;expected&quot;: &quot;kenobi&quot;,
-          &quot;recognized&quot;: &quot;kenobi&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
-        }
-      ]
-    }
-  ],
-  &quot;extra&quot;: {
-    &quot;note&quot;: &quot;cheap microphone&quot;
-  },
-  &quot;resultSet&quot;: {
-      &quot;id&quot;: &quot;5600160f578c4db6b7b0327e16e42153&quot;,
-      &quot;combinedAudioUrl&quot;: &quot;http://example.com/fullaudio.mp3&quot;,
-    },
-  &quot;userId&quot;: &quot;24&quot;
-}
-</code></pre>
-
-<h2 id="get-feedback-by-id"><a class="toclink" href="#get-feedback-by-id">Get feedback by id</a></h2>
-<p>A previously stored feedback can be fetched using a <code>GET</code> request.
-Feedback can only be get by the owning user or by a user with the <code>TEACHER</code>
-role.</p>
-<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
-<pre><code class="http">POST /feedback/:id HTTP/1.1
+<p>The Recording format (<code>FlatRecordingReference</code>). All parameters together form the full namespace of
+one audio recording.</p>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenant</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique identier of the tenant.</td>
+</tr>
+<tr>
+<td><code>organisation</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the organisation within the tenant</td>
+</tr>
+<tr>
+<td>namespace.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the challenge as specified within the</td>
+</tr>
+<tr>
+<td>organisation..</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>recording</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the recording as specified within the</td>
+</tr>
+<tr>
+<td>organisation.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update-an-assignment"><a class="toclink" href="#update-an-assignment">Update an assignment</a></h2>
+<h3 id="url_3"><a class="toclink" href="#url_3">URL</a></h3>
+<pre><code class="http">PUT /assignments/:assignment HTTP/1.1
 </code></pre>
 
 <ul>
-<li>id - <strong>Required</strong> The id of the feedback to get.</li>
+<li><code>assignment</code> - <strong>Required</strong> The assignment identifier.</li>
 </ul>
-<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
-<p>A <code>GET</code> request should be made, <code>application/json</code> should be accepted as a
-valid return format. (All formats are accepted by default.)</p>
-<pre><code class="http">GET /feedback/34788437 HTTP/1.1
-Accept: application/json
-</code></pre>
-
-<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
-<pre><code class="http">HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  &quot;id&quot;: &quot;34&quot;,
-  &quot;updated&quot;: &quot;2018-02-20T09:39:40Z&quot;,
-  &quot;created&quot;: &quot;2018-02-20T09:39:37Z&quot;,
-  &quot;audioUrl&quot;: &quot;https://api.itslanguage.nl/feedback/34/audio&quot;,
-  &quot;challengeId&quot;: &quot;chal&quot;,
-  &quot;errors&quot;: [
-    0,
-    2
-  ],
-  &quot;extra&quot;: {
-    &quot;note&quot;: &quot;cheap microphone&quot;
-  },
-  &quot;resultSet&quot;: {
-      &quot;id&quot;: &quot;5600160f578c4db6b7b0327e16e42153&quot;,
-      &quot;combinedAudioUrl&quot;: &quot;http://example.com/fullaudio.mp3&quot;,
-    },
-  &quot;userId&quot;: &quot;24&quot;
-}
-</code></pre>
+<p>Update one or more properties of an existing assignment.</p>
+<h3 id="request-parameters_1"><a class="toclink" href="#request-parameters_1">Request parameters</a></h3>
+<p>These are exactly as specified in <a href="#create-an-assignment">Create an assignment</a>.</p>
+<h3 id="request_2"><a class="toclink" href="#request_2">Request</a></h3>
+<p>The request is exactly as specified in <a href="#create-an-assignment">Create an assignment</a>.</p>
+<h3 id="response_2"><a class="toclink" href="#response_2">Response</a></h3>
+<p>The response is exactly as specified in <a href="#create-an-assignment">Create an assignment</a>.</p>
               
             </div>
           </div>
@@ -540,10 +570,10 @@ Content-Type: application/json
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="analyses.html" class="btn btn-neutral float-right" title="Speech Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="annotations.html" class="btn btn-neutral float-right" title="Annotations">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="recordings.html" class="btn btn-neutral" title="Speech Recordings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="profiles.html" class="btn btn-neutral" title="Profiles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -573,10 +603,10 @@ Content-Type: application/json
           <a href="https://github.com/itslanguage/itslanguage-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="recordings.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="profiles.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="analyses.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="annotations.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

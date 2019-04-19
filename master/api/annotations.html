@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Annotations - ITSLanguage API</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Annotations";
+    var mkdocs_page_input_path = "api/annotations.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ITSLanguage API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../index.html">ITSLanguage Speech API</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">REST API basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="authentication.html">Authentication</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="cors.html">Cross Origin Resource Sharing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="data_representation.html">Data representation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="jsonp.html">JSON-P Callbacks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="pagination.html">Pagination</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="parameters.html">Parameters</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="request_response_format.html">Request and response format</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Security</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="roles.html">Roles</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="permissions.html">Permissions</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="ssl.html">SSL</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="errors.html">Error handling</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="filters.html">Filters</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="urls.html">URLs</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">REST API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="oauth2.html">OAuth2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="organisations.html">Organisations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="students.html">Students</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Challenges</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="speech_challenges.html">Speech</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="pronunciation_challenges.html">Pronunciation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="choice_challenges.html">Choice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="progress.html">Progress</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="recordings.html">Speech Recordings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="feedback.html">Speech Feedback</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="analyses.html">Speech Analysis</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="recognitions.html">Speech Recognition</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="categories.html">Category</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="tenants.html">Tenants</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="groups.html">Groups</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="profiles.html">Profiles</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="assignments.html">Assignments</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="annotations.html">Annotations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#annotations">Annotations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#list-all-annotations">List all annotations</a></li>
+        
+            <li><a class="toctree-l4" href="#get-a-single-annotation">Get a single annotation</a></li>
+        
+            <li><a class="toctree-l4" href="#create-an-annotation">Create an annotation</a></li>
+        
+            <li><a class="toctree-l4" href="#update-an-annotation">Update an annotation</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#reference-annotations">Reference Annotations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#get-a-single-reference-annotation">Get a single reference annotation</a></li>
+        
+            <li><a class="toctree-l4" href="#update-a-reference-annotation">Update a reference annotation</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Users</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="users.html">Users</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="basicauths.html">Basic authentication</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="emailauth.html">Email authentication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Websocket API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../websocket/wamp.html">WAMP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/feedback.html">Speech Feedback</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/speech_recording.html">Speech Recording</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/pronunciation_analyses.html">Pronunciation Analyses</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/choice_recognitions.html">Choice Recognitions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../websocket/audio.html">Audio</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ITSLanguage API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>REST API &raquo;</li>
+        
+      
+    
+    <li>Annotations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/annotations.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="annotations"><a class="toclink" href="#annotations">Annotations</a></h1>
+<p>Annotations are notes to specific fragments of audio. These annotations can then be classified.
+Common classifiers are <code>Prompt</code>, <code>Out of Prompt</code> or <code>Error</code>. Annotations are made by users called
+annotators. They are able to put these annotations on recorded audio.</p>
+<p>An annotator either has the role of <code>full</code> annotator of <code>base</code> annotator. Base annotators only
+have a subset of labels available to annotate with. The more senior <code>full</code> annotator can correct
+the base annotators annotation and has an extended set of labels available.</p>
+<h2 id="list-all-annotations"><a class="toclink" href="#list-all-annotations">List all annotations</a></h2>
+<p>A user with the 'ADMIN' role will receive all the annotations.
+Non-admins will receive only the annotations assigned to them.
+See below for further filtering options.</p>
+<h3 id="url"><a class="toclink" href="#url">URL</a></h3>
+<pre><code class="http">GET /annotations HTTP/1.1
+</code></pre>
+
+<h3 id="request-parameters"><a class="toclink" href="#request-parameters">Request parameters</a></h3>
+<p>The are no request parameters</p>
+<pre><code class="http">GET /annotations?recording=1 HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="filters"><a class="toclink" href="#filters">Filters</a></h3>
+<p>The following <a href="filters.html">filters</a> may be applied:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>annotator</code></td>
+<td><code>string</code></td>
+<td>The unique identier of the annotator to find the annotations for.</td>
+</tr>
+<tr>
+<td><code>assignment</code></td>
+<td><code>string</code></td>
+<td>The assignment for which to find the annotations.</td>
+</tr>
+<tr>
+<td><code>recording</code></td>
+<td><code>string</code></td>
+<td>The speech recording for which to find the annotations.</td>
+</tr>
+<tr>
+<td><code>done</code></td>
+<td><code>bool</code></td>
+<td>Whether or not and how to filter on the done property. None when all values are allowed, True if only done annotations are desired. False for all not finished annotations.</td>
+</tr>
+<tr>
+<td><code>perPage</code></td>
+<td><code>string</code></td>
+<td>Amount of annotations to return.</td>
+</tr>
+<tr>
+<td><code>startCursor</code></td>
+<td><code>string</code></td>
+<td>A previously returned cursor to use as an 'offset'.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
+<p>The response is a JSON list with annotations.</p>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    &quot;id&quot;:5646929551687680,
+    &quot;updated&quot;:&quot;2018-06-07T13:50:44Z&quot;,
+    &quot;created&quot;:&quot;2018-06-07T13:50:44Z&quot;,
+    &quot;assignment&quot;:4873731453222912,
+    &quot;doneBase&quot;:null,
+    &quot;doneFull&quot;:null,
+    &quot;recording&quot;:{
+       &quot;recording&quot;:&quot;5715999101812736&quot;,
+       &quot;organisation&quot;:&quot;aschool&quot;,
+       &quot;challenge&quot;:&quot;challenge1&quot;,
+       &quot;digest&quot;:null,
+        &quot;tenant&quot;:&quot;demo&quot;
+    },
+    &quot;audioUrl&quot;:&quot;https://api.itslanguage.io/download/2257a2f8ada1446bae8d97f591169de9&quot;,
+    &quot;fragments&quot;:[
+       {
+         &quot;start&quot;:5.81,
+         &quot;labels&quot;:[
+            {
+               &quot;comment&quot;:&quot;&quot;,
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;speelt&quot;
+            }
+         ],
+         &quot;end&quot;:6.45
+      },
+      {
+         &quot;start&quot;:6.67,
+         &quot;labels&quot;:[
+            {
+               &quot;comment&quot;:&quot;&quot;,
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;op&quot;
+            }
+         ],
+         &quot;end&quot;:7.17
+      }
+    ]
+  }
+]
+</code></pre>
+
+<h2 id="get-a-single-annotation"><a class="toclink" href="#get-a-single-annotation">Get a single annotation</a></h2>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<pre><code class="http">GET /annotation/:annotation HTTP/1.1
+</code></pre>
+
+<ul>
+<li><code>annotation</code> - <strong>Required</strong> The annotation identifier.</li>
+</ul>
+<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
+<pre><code class="http">GET /annotation/annotation_1 HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;id&quot;:5646929551687680,
+  &quot;updated&quot;:&quot;2018-06-07T13:50:44Z&quot;,
+  &quot;created&quot;:&quot;2018-06-07T13:50:44Z&quot;,
+  &quot;assignment&quot;:4873731453222912,
+  &quot;doneBase&quot;:null,
+  &quot;doneFull&quot;:null,
+  &quot;recording&quot;:{
+     &quot;recording&quot;:&quot;5715999101812736&quot;,
+     &quot;organisation&quot;:&quot;aschool&quot;,
+     &quot;challenge&quot;:&quot;challenge1&quot;,
+     &quot;digest&quot;:null,
+     &quot;tenant&quot;:&quot;demo&quot;
+  },
+  &quot;audioUrl&quot;:&quot;https://api.itslanguage.io/download/2257a2f8ada1446bae8d97f591169de9&quot;,
+  &quot;fragments&quot;:[
+     {
+       &quot;start&quot;:5.81,
+       &quot;labels&quot;:[
+          {
+             &quot;comment&quot;:&quot;&quot;,
+             &quot;layer&quot;:&quot;Words&quot;,
+             &quot;label&quot;:&quot;speelt&quot;
+          }
+       ],
+       &quot;end&quot;:6.45
+    },
+    {
+       &quot;start&quot;:6.67,
+       &quot;labels&quot;:[
+          {
+             &quot;comment&quot;:&quot;&quot;,
+             &quot;layer&quot;:&quot;Words&quot;,
+             &quot;label&quot;:&quot;op&quot;
+          }
+       ],
+       &quot;end&quot;:7.17
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="create-an-annotation"><a class="toclink" href="#create-an-annotation">Create an annotation</a></h2>
+<h3 id="url_2"><a class="toclink" href="#url_2">URL</a></h3>
+<pre><code class="http">POST /annotations HTTP/1.1
+Accept: application/json
+Content: application/json
+
+{
+   &quot;annotation&quot;:&quot;5646929551687680&quot;,
+   &quot;assignment&quot;:4873731453222912,
+   &quot;recording&quot;:{
+      &quot;recording&quot;:&quot;5715999101812736&quot;,
+      &quot;organisation&quot;:&quot;org1&quot;,
+      &quot;challenge&quot;:&quot;challenge1&quot;,
+      &quot;tenant&quot;:&quot;demo&quot;
+   },
+   &quot;fragments&quot;:[
+      {
+         &quot;start&quot;:0.59,
+         &quot;end&quot;:1.07,
+         &quot;labels&quot;:[
+            {
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;zon&quot;,
+               &quot;comment&quot;:&quot;&quot;
+            },
+            {
+               &quot;layer&quot;:&quot;OutOfPrompt&quot;,
+               &quot;label&quot;:&quot;InsertionUtterance&quot;,
+               &quot;comment&quot;:&quot;zo&quot;
+            }
+         ]
+      },
+      {
+         &quot;start&quot;:9.81,
+         &quot;end&quot;:10.93,
+         &quot;labels&quot;:[
+            {
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;weer.&quot;,
+               &quot;comment&quot;:&quot;&quot;
+            }
+         ]
+      },
+   ],
+}
+</code></pre>
+
+<h3 id="request-parameters_1"><a class="toclink" href="#request-parameters_1">Request parameters</a></h3>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The unique identier of the annotation. If none is given, one is generated.</td>
+</tr>
+<tr>
+<td><code>doneBase</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The datetime this annotation was marked as done by the base annotator.</td>
+</tr>
+<tr>
+<td><code>doneFull</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The datetime this annotation was marked as done by the full annotator.</td>
+</tr>
+<tr>
+<td><code>recording</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The reference to the recording (type</td>
+</tr>
+<tr>
+<td><code>FlatRecordingReference</code> as specified below.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>assignment</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique identifier of the assignment this annotation</td>
+</tr>
+<tr>
+<td>is for.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>fragments</code></td>
+<td><code>list</code></td>
+<td><strong>Required</strong> The annotated fragments (type <code>Fragment</code> as specified below).</td>
+</tr>
+</tbody>
+</table>
+<p>The Recording format (<code>FlatRecordingReference</code>). All parameters together form the full namespace of
+one audio recording.</p>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenant</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique identier of the tenant.</td>
+</tr>
+<tr>
+<td><code>organisation</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the organisation within the tenant</td>
+</tr>
+<tr>
+<td>namespace.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the challenge as specified within the</td>
+</tr>
+<tr>
+<td>organisation..</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>recording</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The identifier of the recording as specified within the</td>
+</tr>
+<tr>
+<td>organisation.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The Fragment format:</p>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td><code>float</code></td>
+<td><strong>Required</strong> The start point of the fragment, in seconds.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td><code>float</code></td>
+<td><strong>Required</strong> The end point of the fragment, in seconds.</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td><code>list</code></td>
+<td><strong>Required</strong> The labels assigned to this fragment (type <code>Label</code> as specified</td>
+</tr>
+<tr>
+<td>below).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The Label format:</p>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layer</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The specifier for the layer (e.g. <code>Words</code>, <code>OutOfPrompt</code>,</td>
+</tr>
+<tr>
+<td><code>Error</code>, <code>Noise</code>).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The specifier of a particular label within a layer (on the Words layer we would expect the word here).</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> An optional extra value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_2"><a class="toclink" href="#response_2">Response</a></h3>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+   &quot;updated&quot;:&quot;2019-04-14T07:55:16Z&quot;,
+   &quot;created&quot;:&quot;2018-06-07T13:50:44Z&quot;,
+   &quot;id&quot;:5646929551687680,
+   &quot;doneBase&quot;:null,
+   &quot;doneFull&quot;:null
+   &quot;assignment&quot;:4873731453222912,
+   &quot;recording&quot;:{
+      &quot;recording&quot;:&quot;5715999101812736&quot;,
+      &quot;organisation&quot;:&quot;org1&quot;,
+      &quot;challenge&quot;:&quot;challenge1&quot;,
+      &quot;digest&quot;:null,
+      &quot;tenant&quot;:&quot;demo&quot;
+   },
+   &quot;audioUrl&quot;:&quot;https://api.itslanguage.io/download/3357a2f8ada1446bae8d97f591169de9&quot;,
+   &quot;fragments&quot;:[
+      {
+         &quot;start&quot;:0.59,
+         &quot;end&quot;:1.07,
+         &quot;labels&quot;:[
+            {
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;zon&quot;,
+               &quot;comment&quot;:&quot;&quot;
+            },
+            {
+               &quot;layer&quot;:&quot;OutOfPrompt&quot;,
+               &quot;label&quot;:&quot;InsertionUtterance&quot;,
+               &quot;comment&quot;:&quot;zo&quot;
+            }
+         ]
+      },
+      {
+         &quot;start&quot;:9.81,
+         &quot;end&quot;:10.93,
+         &quot;labels&quot;:[
+            {
+               &quot;layer&quot;:&quot;Words&quot;,
+               &quot;label&quot;:&quot;weer.&quot;,
+               &quot;comment&quot;:&quot;&quot;
+            }
+         ]
+     }
+   ]
+}
+</code></pre>
+
+<h2 id="update-an-annotation"><a class="toclink" href="#update-an-annotation">Update an annotation</a></h2>
+<h3 id="url_3"><a class="toclink" href="#url_3">URL</a></h3>
+<pre><code class="http">PUT /annotations/:annotation HTTP/1.1
+</code></pre>
+
+<ul>
+<li><code>annotation</code> - <strong>Required</strong> The annotation identifier.</li>
+</ul>
+<p>Update one or more properties of an existing annotation.</p>
+<h3 id="request-parameters_2"><a class="toclink" href="#request-parameters_2">Request parameters</a></h3>
+<p>These are exactly as specified in <a href="#create-an-annotation">Create an annotation</a>.</p>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<p>The request is exactly as specified in <a href="#create-an-annotation">Create an annotation</a>.</p>
+<h3 id="response_3"><a class="toclink" href="#response_3">Response</a></h3>
+<p>The response is exactly as specified in <a href="#create-an-annotation">Create an annotation</a>.</p>
+<h1 id="reference-annotations"><a class="toclink" href="#reference-annotations">Reference Annotations</a></h1>
+<p>A reference annotation is an annotation for a specific audio recording, usually generated through
+forced alignment (matches words in the prompt of the challenge to the audio recording).
+That leads to annotations on the fragments where a relation between prompt and audio was found
+(the alignment). No error or out of prompt classes are assigned in an automated fashion. This is
+the starting point to create human annotations.</p>
+<h2 id="get-a-single-reference-annotation"><a class="toclink" href="#get-a-single-reference-annotation">Get a single reference annotation</a></h2>
+<p>When a reference annotation has been added for a specific recording at an earlier time, this is how
+to retrieve it. The URL includes the full namespace to the recording.</p>
+<h3 id="url_4"><a class="toclink" href="#url_4">URL</a></h3>
+<pre><code class="http">GET /organisations/:organisation/challenges/speech/:challenge/recordings/:recording/reference HTTP/1.1
+</code></pre>
+
+<h3 id="request-parameters_3"><a class="toclink" href="#request-parameters_3">Request parameters</a></h3>
+<p>These are exactly as specified in <a href="#get-a-single-annotation">Get a single annotation</a>.</p>
+<h3 id="request_2"><a class="toclink" href="#request_2">Request</a></h3>
+<p>The request is exactly as specified in <a href="#get-a-single-annotation">Get a single annotation</a>.</p>
+<h3 id="response_4"><a class="toclink" href="#response_4">Response</a></h3>
+<p>The response is exactly as specified in  <a href="#get-a-single-annotation">Get a single annotation</a>.</p>
+<h2 id="update-a-reference-annotation"><a class="toclink" href="#update-a-reference-annotation">Update a reference annotation</a></h2>
+<p>There's no POST API call to create an annotation. It's basically a property of a recording to update,
+therefore it's a PUT call. Due to different permissions it requires (an admin would need to
+impersonate), it's not part of the recording PUT.</p>
+<h3 id="url_5"><a class="toclink" href="#url_5">URL</a></h3>
+<pre><code class="http">PUT /organisations/:organisation/challenges/speech/:challenge/recordings/:recording/reference HTTP/1.1
+</code></pre>
+
+<h3 id="request-parameters_4"><a class="toclink" href="#request-parameters_4">Request parameters</a></h3>
+<p>Parameters should be posted as JSON body.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>annotations</code></td>
+<td><code>list</code></td>
+<td><strong>Required</strong> The annotations as list of type <code>Fragment</code> (as specified</td>
+</tr>
+<tr>
+<td>above).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response_5"><a class="toclink" href="#response_5">Response</a></h3>
+<p>The response is exactly as specified in <a href="#create-an-annotation">Create an annotation</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="users.html" class="btn btn-neutral float-right" title="Users">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="assignments.html" class="btn btn-neutral" title="Assignments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2013-2019</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itslanguage/itslanguage-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="assignments.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="users.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
