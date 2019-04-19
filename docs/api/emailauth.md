@@ -14,12 +14,6 @@ To create an emailauth for the current user:
 POST /user/emailauths HTTP/1.1
 ```
 
-To create an emailauth for another user:
-
-```http
-POST /users/:user/emailauths HTTP/1.1
-```
-
 ### Input
 
 Name     | Type     | Description
@@ -51,4 +45,28 @@ Content-Type: application/json
     "email": "SymonvanLonden@dayrep.com",
     "password": "aviB3leax"
 }
+```
+
+## Delete an email credential
+
+### URL
+
+To delete a emailauth for the current user:
+
+```http
+DELETE /user/emailauths/:emailauth HTTP/1.1
+```
+
+To delete an emailauth for another user, [impersonate the user](oauth2.md#impersonation) first.
+
+### Request
+
+```http
+DELETE /user/emailauths/1 HTTP/1.1
+```
+
+### Response
+
+```http
+HTTP/1.1 204 No Content
 ```
