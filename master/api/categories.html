@@ -195,8 +195,6 @@
         
             <li><a class="toctree-l4" href="#create-a-catetory">Create a catetory</a></li>
         
-            <li><a class="toctree-l4" href="#update-a-category">Update a category</a></li>
-        
         </ul>
     
 
@@ -552,97 +550,6 @@ Location: https://api.itslanguage.io/categories/category_3
 
 {
   &quot;id&quot;: &quot;category_3&quot;,
-  &quot;created&quot;: &quot;2017-01-12T09:50:20Z&quot;,
-  &quot;updated&quot;: &quot;2017-01-12T09:50:20Z&quot;,
-  &quot;name&quot;: &quot;Category 3&quot;,
-  &quot;order&quot;: 66,
-  &quot;description&quot;: &quot;Category three. Winner of all categories. Yes.&quot;,
-  &quot;color&quot;: &quot;#e3e3e3&quot;,
-  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK&quot;,
-  &quot;iconUrl&quot;: &quot;https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe&quot;,
-  &quot;speechChallenges&quot;: [&quot;speech_1&quot;, &quot;speech_2&quot;, &quot;speech_3&quot;]
-}
-</code></pre>
-
-<h2 id="update-a-category"><a class="toclink" href="#update-a-category">Update a category</a></h2>
-<h3 id="url_4"><a class="toclink" href="#url_4">URL</a></h3>
-<pre><code class="http">PUT /categories/:category HTTP/1.1
-</code></pre>
-
-<ul>
-<li><code>category</code> - <strong>Required</strong> The category identifier.</li>
-</ul>
-<p>Update one or more properties of an existing category</p>
-<h3 id="request-parameters_1"><a class="toclink" href="#request-parameters_1">Request parameters</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>parent</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> Identifier of the parent category.</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> A name for the category.</td>
-</tr>
-<tr>
-<td><code>order</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> An optional index to ensure a specific ordering.</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> A possible more verbose description about the category.</td>
-</tr>
-<tr>
-<td><code>color</code></td>
-<td><code>string</code></td>
-<td><strong>Optional</strong> A color, preferably in RGB format.</td>
-</tr>
-<tr>
-<td><code>image</code></td>
-<td><code>blob</code></td>
-<td><strong>Optional</strong> An image to show with the category.</td>
-</tr>
-<tr>
-<td><code>icon</code></td>
-<td><code>blob</code></td>
-<td><strong>Optional</strong> An icon to show with the category.</td>
-</tr>
-<tr>
-<td><code>speechChallenges</code></td>
-<td><code>object</code></td>
-<td><strong>Optional</strong> An array of Speech Challenges identifiers categorized in the category.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="request_4"><a class="toclink" href="#request_4">Request</a></h3>
-<pre><code class="http">PUT /categories/category_3_1 HTTP/1.1
-Accept: application/json
-Content-Type: application/json
-
-{
-  &quot;parent&quot;: [&quot;categorie_3&quot;]
-}
-</code></pre>
-
-<h3 id="response_4"><a class="toclink" href="#response_4">Response</a></h3>
-<pre><code class="http">HTTP/1.1 200 OK
-Content-Type: application/json
-Location: https://api.itslanguage.io/categories/category_3
-
-{
-  &quot;id&quot;: &quot;category_3_1&quot;,
-  &quot;parent&quot; &quot;category_3&quot;,
   &quot;created&quot;: &quot;2017-01-12T09:50:20Z&quot;,
   &quot;updated&quot;: &quot;2017-01-12T09:50:20Z&quot;,
   &quot;name&quot;: &quot;Category 3&quot;,
