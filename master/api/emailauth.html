@@ -217,6 +217,8 @@
         
             <li><a class="toctree-l5" href="#create-email-credentials">Create email credentials</a></li>
         
+            <li><a class="toctree-l5" href="#delete-an-email-credential">Delete an email credential</a></li>
+        
         </ul>
     
 
@@ -310,10 +312,6 @@ the REST API. Only users with administrative powers can perform these calls.</p>
 <pre><code class="http">POST /user/emailauths HTTP/1.1
 </code></pre>
 
-<p>To create an emailauth for another user:</p>
-<pre><code class="http">POST /users/:user/emailauths HTTP/1.1
-</code></pre>
-
 <h3 id="input"><a class="toclink" href="#input">Input</a></h3>
 <table>
 <thead>
@@ -355,6 +353,21 @@ Content-Type: application/json
     &quot;email&quot;: &quot;SymonvanLonden@dayrep.com&quot;,
     &quot;password&quot;: &quot;aviB3leax&quot;
 }
+</code></pre>
+
+<h2 id="delete-an-email-credential"><a class="toclink" href="#delete-an-email-credential">Delete an email credential</a></h2>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<p>To delete a emailauth for the current user:</p>
+<pre><code class="http">DELETE /user/emailauths/:emailauth HTTP/1.1
+</code></pre>
+
+<p>To delete an emailauth for another user, <a href="oauth2.html#impersonation">impersonate the user</a> first.</p>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<pre><code class="http">DELETE /user/emailauths/1 HTTP/1.1
+</code></pre>
+
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<pre><code class="http">HTTP/1.1 204 No Content
 </code></pre>
               
             </div>
