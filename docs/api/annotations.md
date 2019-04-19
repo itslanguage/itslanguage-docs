@@ -374,6 +374,10 @@ The response is exactly as specified in  [Get a single annotation](#get-a-single
 
 ## Update a reference annotation
 
+There's no POST API call to create an annotation. It's basically a property of a recording to update,
+therefore it's a PUT call. Due to different permissions it requires (an admin would need to
+impersonate), it's not part of the recording PUT.
+
 ### URL
 
 ```http
