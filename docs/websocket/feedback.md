@@ -4,10 +4,19 @@ It's possible to get feedback while recording. After every sentence feedback is
 provided indicating whether or not the sentence was read well.
 To perform a recording with feedback the following calls have to be made:
 
-1. [Prepare the speech feedback](#prepare)
-2. [Register audio procedure for streaming](wamp.md#register-audio-procedure)
-3. [Start listening for audio](#listen)
+1. [Meet prerequisites](#prerequisites)
+2. [Prepare the speech feedback](#prepare)
+3. [Register audio procedure for streaming](wamp.md#register-audio-procedure)
+4. [Start listening for audio](#listen)
 
+## Prerequisites
+
+To be able to do speech feedback the following prerequisites needs to be met:
+
+- A speech challenge must be used so that needs to exist.
+- The speech challenges needs to have the language set
+- The user performing the speech feedback needs to have a valid profile with
+  birthYear and language set.
 
 ## Prepare
 
