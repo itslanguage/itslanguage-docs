@@ -240,6 +240,8 @@
     
         <ul>
         
+            <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+        
             <li><a class="toctree-l4" href="#prepare">Prepare</a></li>
         
             <li><a class="toctree-l4" href="#start-listening">Start listening</a></li>
@@ -316,10 +318,19 @@
 provided indicating whether or not the sentence was read well.
 To perform a recording with feedback the following calls have to be made:</p>
 <ol>
+<li><a href="#prerequisites">Meet prerequisites</a></li>
 <li><a href="#prepare">Prepare the speech feedback</a></li>
 <li><a href="wamp.html#register-audio-procedure">Register audio procedure for streaming</a></li>
 <li><a href="#listen">Start listening for audio</a></li>
 </ol>
+<h2 id="prerequisites"><a class="toclink" href="#prerequisites">Prerequisites</a></h2>
+<p>To be able to do speech feedback the following prerequisites needs to be met:</p>
+<ul>
+<li>A speech challenge must be used so that needs to exist.</li>
+<li>The speech challenges needs to have the language set</li>
+<li>The user performing the speech feedback needs to have a valid profile with
+  birthYear and language set.</li>
+</ul>
 <h2 id="prepare"><a class="toclink" href="#prepare">Prepare</a></h2>
 <p>Prepare a new speech feedback. This RPC should be called for each new speech
 feedback. A unique id is generated for a speech feedback and a speech challenge

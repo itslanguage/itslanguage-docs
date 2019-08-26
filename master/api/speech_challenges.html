@@ -338,18 +338,22 @@ Content-Type: application/json
     &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
     &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
     &quot;topic&quot;: &quot;What do you know about babies?&quot;,
+    &quot;language&quot;: &quot;eng&quot;,
     &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
     &quot;srtUrl&quot;: &quot;https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK&quot;,
-    &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe&quot;
+    &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe&quot;,
+    &quot;metadata&quot;: null
   },
   {
     &quot;id&quot;: &quot;12&quot;,
     &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
     &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+    &quot;language&quot;: &quot;eng&quot;,
     &quot;topic&quot;: &quot;Book&quot;,
     &quot;referenceAudioUrl&quot;: null,
     &quot;srtUrl&quot;: null,
-    &quot;imageUrl&quot;: null
+    &quot;imageUrl&quot;: null,
+    &quot;metadata&quot;: null
   }
 ]
 </code></pre>
@@ -376,9 +380,11 @@ Content-Type: application/json
   &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;topic&quot;: &quot;What do you know about babies?&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
   &quot;srtUrl&quot;: &quot;https://api.itslanguage.io/download/zVXLJJuGyhBHQbfX&quot;,
-  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/dlnBo-dotLpnhN-a&quot;
+  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/dlnBo-dotLpnhN-a&quot;,
+  &quot;metadata&quot;: null
 }
 </code></pre>
 
@@ -406,6 +412,11 @@ Content-Type: application/json
 <td><code>topic</code></td>
 <td><code>string</code></td>
 <td><strong>Optional</strong> A question or topic serving as guidance to the student.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Language of the challenge in ISO 639-2 format.</td>
 </tr>
 <tr>
 <td><code>referenceAudio</code></td>
@@ -444,6 +455,10 @@ Content-Disposition: form-data; name=&quot;topic&quot;
 
 What do you know about babies?
 --jhgd87g7Gy3d78
+Content-Disposition: form-data; name=&quot;language&quot;
+
+eng
+--jhgd87g7Gy3d78
 Content-Disposition: form-data; name=&quot;srt&quot;; filename=&quot;chal.srt&quot;
 Content-Type: text/plain
 
@@ -466,9 +481,11 @@ Location: https://api.itslanguage.io/challenges/speech/4
   &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;topic&quot;: &quot;What do you know about babies?&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
   &quot;srtUrl&quot;: &quot;https://api.itslanguage.io/download/QEYduwrFRHeufiru&quot;,
-  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/h-JJREJRCFAeA-nl&quot;
+  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/h-JJREJRCFAeA-nl&quot;,
+  &quot;metadata&quot;: null
 }
 </code></pre>
 
@@ -494,7 +511,12 @@ Location: https://api.itslanguage.io/challenges/speech/4
 <tr>
 <td><code>topic</code></td>
 <td><code>string</code></td>
-<td><strong>Optional</strong> A question or topic serving as guidance to the student.</td>
+<td><strong>Required</strong> A question or topic serving as guidance to the student.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Language of the challenge in ISO 639-2 format.</td>
 </tr>
 <tr>
 <td><code>referenceAudio</code></td>
@@ -533,9 +555,11 @@ Location: https://api.itslanguage.io/challenges/speech/4
   &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
   &quot;topic&quot;: &quot;What do you know about the baby?&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/cxtczOCmVbvVsIFw&quot;,
   &quot;srtUrl&quot;: &quot;https://api.itslanguage.io/download/acfRSlgOorYdeYcP&quot;,
-  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/xCbFikceYVgUIHqc&quot;
+  &quot;imageUrl&quot;: &quot;https://api.itslanguage.io/download/xCbFikceYVgUIHqc&quot;,
+  &quot;metadata&quot;: null
 }
 </code></pre>
               
