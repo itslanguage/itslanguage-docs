@@ -41,7 +41,7 @@ Content-Type: application/json
     "id": "12",
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
-    "language": null,
+    "language": "eng",
     "topic": "Book",
     "referenceAudioUrl": null,
     "srtUrl": null,
@@ -101,7 +101,7 @@ POST /challenges/speech HTTP/1.1
 | ---------------- | -------- | --------------------------------------------------------------------------------- |
 | `id`             | `string` | **Optional** The speech challenge identifier. If none is given, one is generated. |
 | `topic`          | `string` | **Optional** A question or topic serving as guidance to the student.              |
-| `language`       | `string` | **Optional** Language of the challenge in ISO 639-2 format.                       |
+| `language`       | `string` | **Required** Language of the challenge in ISO 639-2 format.                       |
 | `referenceAudio` | `blob`   | **Optional** The reference audio fragment.                                        |
 | `srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.                 |
 | `image`          | `blob`   | **Optional** An image to show with the challenge.                                 |
@@ -176,8 +176,8 @@ Update one or more properties of an existing speech challenge.
 
 | Name             | Type     | Description                                                          |
 | ---------------- | -------- | -------------------------------------------------------------------- |
-| `topic`          | `string` | **Optional** A question or topic serving as guidance to the student. |
-| `language`       | `string` | **Optional** Language of the challenge in ISO 639-2 format.          |
+| `topic`          | `string` | **Required** A question or topic serving as guidance to the student. |
+| `language`       | `string` | **Required** Language of the challenge in ISO 639-2 format.          |
 | `referenceAudio` | `blob`   | **Optional** The reference audio fragment.                           |
 | `srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.    |
 | `image`          | `blob`   | **Optional** An image to show with the challenge.                    |
