@@ -2,7 +2,6 @@
 
 Guide the student in speaking through an optional topic and optional reference audio.
 
-
 ## List all speech challenges
 
 ### URL
@@ -32,22 +31,25 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "topic": "What do you know about babies?",
+    "language": "eng",
     "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
     "srtUrl": "https://api.itslanguage.io/download/UKbsMpBsXaJUsBbK",
-    "imageUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe"
+    "imageUrl": "https://api.itslanguage.io/download/GdExSbs-ZVNnQUUe",
+    "metadata": null
   },
   {
     "id": "12",
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
+    "language": "eng",
     "topic": "Book",
     "referenceAudioUrl": null,
     "srtUrl": null,
-    "imageUrl": null
+    "imageUrl": null,
+    "metadata": null
   }
 ]
 ```
-
 
 ## Get a single speech challenge
 
@@ -57,7 +59,7 @@ Content-Type: application/json
 GET /challenges/speech/:challenge HTTP/1.1
 ```
 
-* `challenge` - **Required** The speech challenge identifier.
+- `challenge` - **Required** The speech challenge identifier.
 
 ### Request
 
@@ -77,12 +79,13 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about babies?",
+  "language": "eng",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "srtUrl": "https://api.itslanguage.io/download/zVXLJJuGyhBHQbfX",
-  "imageUrl": "https://api.itslanguage.io/download/dlnBo-dotLpnhN-a"
+  "imageUrl": "https://api.itslanguage.io/download/dlnBo-dotLpnhN-a",
+  "metadata": null
 }
 ```
-
 
 ## Create a speech challenge
 
@@ -94,15 +97,15 @@ POST /challenges/speech HTTP/1.1
 
 ### Request parameters
 
-Name             | Type     | Description
------------------|----------|------------
-`id`             | `string` | **Optional** The speech challenge identifier. If none is given, one is generated.
-`topic`          | `string` | **Optional** A question or topic serving as guidance to the student.
-`referenceAudio` | `blob`   | **Optional** The reference audio fragment.
-`srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.
-`image`          | `blob`   | **Optional** An image to show with the challenge.
-`metadata`       | `string` | **Optional** Client specific properties that are not validated nor filtered.
-
+| Name             | Type     | Description                                                                       |
+| ---------------- | -------- | --------------------------------------------------------------------------------- |
+| `id`             | `string` | **Optional** The speech challenge identifier. If none is given, one is generated. |
+| `topic`          | `string` | **Optional** A question or topic serving as guidance to the student.              |
+| `language`       | `string` | **Required** Language of the challenge in ISO 639-2 format.                       |
+| `referenceAudio` | `blob`   | **Optional** The reference audio fragment.                                        |
+| `srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.                 |
+| `image`          | `blob`   | **Optional** An image to show with the challenge.                                 |
+| `metadata`       | `string` | **Optional** Client specific properties that are not validated nor filtered.      |
 
 #### Request
 
@@ -121,6 +124,10 @@ Content-Disposition: form-data; name="topic"
 
 What do you know about babies?
 --jhgd87g7Gy3d78
+Content-Disposition: form-data; name="language"
+
+eng
+--jhgd87g7Gy3d78
 Content-Disposition: form-data; name="srt"; filename="chal.srt"
 Content-Type: text/plain
 
@@ -132,7 +139,6 @@ Content-Type: image/png
 <blob>
 --jhgd87g7Gy3d78--
 ```
-
 
 ### Response
 
@@ -146,12 +152,13 @@ Location: https://api.itslanguage.io/challenges/speech/4
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about babies?",
+  "language": "eng",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "srtUrl": "https://api.itslanguage.io/download/QEYduwrFRHeufiru",
-  "imageUrl": "https://api.itslanguage.io/download/h-JJREJRCFAeA-nl"
+  "imageUrl": "https://api.itslanguage.io/download/h-JJREJRCFAeA-nl",
+  "metadata": null
 }
 ```
-
 
 ## Update a speech challenge
 
@@ -161,19 +168,19 @@ Location: https://api.itslanguage.io/challenges/speech/4
 PUT /challenges/speech/:challenge HTTP/1.1
 ```
 
-* `challenge` - **Required** The speech challenge identifier.
+- `challenge` - **Required** The speech challenge identifier.
 
 Update one or more properties of an existing speech challenge.
 
 ### Request parameters
 
-Name             | Type     | Description
------------------|----------|------------
-`topic`          | `string` | **Optional** A question or topic serving as guidance to the student.
-`referenceAudio` | `blob`   | **Optional** The reference audio fragment.
-`srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.
-`image`          | `blob`   | **Optional** An image to show with the challenge.
-
+| Name             | Type     | Description                                                          |
+| ---------------- | -------- | -------------------------------------------------------------------- |
+| `topic`          | `string` | **Required** A question or topic serving as guidance to the student. |
+| `language`       | `string` | **Required** Language of the challenge in ISO 639-2 format.          |
+| `referenceAudio` | `blob`   | **Optional** The reference audio fragment.                           |
+| `srt`            | `blob`   | **Optional** The transcription of the challenge in `.srt` format.    |
+| `image`          | `blob`   | **Optional** An image to show with the challenge.                    |
 
 ### Request
 
@@ -199,8 +206,10 @@ Location: https://api.itslanguage.io/challenges/speech/4
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "topic": "What do you know about the baby?",
+  "language": "eng",
   "referenceAudioUrl": "https://api.itslanguage.io/download/cxtczOCmVbvVsIFw",
   "srtUrl": "https://api.itslanguage.io/download/acfRSlgOorYdeYcP",
-  "imageUrl": "https://api.itslanguage.io/download/xCbFikceYVgUIHqc"
+  "imageUrl": "https://api.itslanguage.io/download/xCbFikceYVgUIHqc",
+  "metadata": null
 }
 ```
