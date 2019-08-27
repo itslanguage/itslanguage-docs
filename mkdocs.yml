@@ -2,59 +2,58 @@ site_name: ITSLanguage API
 repo_url: https://github.com/itslanguage/itslanguage-docs/
 copyright: 2013-2019
 nav:
-- Home:
-    - 'ITSLanguage Speech API': 'index.md'
-- REST API basics:
-    - 'Authentication': 'api/authentication.md'
-    - 'Cross Origin Resource Sharing': 'api/cors.md'
-    - 'Data representation': 'api/data_representation.md'
-    - 'JSON-P Callbacks': 'api/jsonp.md'
-    - 'Pagination': 'api/pagination.md'
-    - 'Parameters': 'api/parameters.md'
-    - 'Request and response format': 'api/request_response_format.md'
-    - 'Security':
-      - 'Roles': 'api/roles.md'
-      - 'Permissions': 'api/permissions.md'
-      - 'SSL': 'api/ssl.md'
-    - 'Error handling': 'api/errors.md'
-    - 'Filters': 'api/filters.md'
-    - 'URLs': 'api/urls.md'
-- REST API:
-    - 'OAuth2': 'api/oauth2.md'
-    - 'Organisations': 'api/organisations.md'
-    - 'Students': 'api/students.md'
-    - 'Challenges':
-      - 'Speech': 'api/speech_challenges.md'
-      - 'Pronunciation': 'api/pronunciation_challenges.md'
-      - 'Choice': 'api/choice_challenges.md'
-    - 'Progress': 'api/progress.md'
-    - 'Speech Recordings': 'api/recordings.md'
-    - 'Speech Feedback': 'api/feedback.md'
-    - 'Speech Analysis': 'api/analyses.md'
-    - 'Speech Recognition': 'api/recognitions.md'
-    - 'Category': 'api/categories.md'
-    - 'Tenants': 'api/tenants.md'
-    - 'Groups': 'api/groups.md'
-    - 'Profiles': 'api/profiles.md'
-    - 'Assignments': 'api/assignments.md'
-    - 'Annotations': 'api/annotations.md'
-    - Users:
-        - 'Users': 'api/users.md'
-        - 'Basic authentication': 'api/basicauths.md'
-        - 'Email authentication': 'api/emailauth.md'
-- Websocket API:
-    - 'WAMP': 'websocket/wamp.md'
-    - 'Speech Feedback': 'websocket/feedback.md'
-    - 'Speech Recording': 'websocket/speech_recording.md'
-    - 'Pronunciation Analyses': 'websocket/pronunciation_analyses.md'
-    - 'Choice Recognitions': 'websocket/choice_recognitions.md'
-    - 'Audio': 'websocket/audio.md'
+  - Home:
+      - "ITSLanguage Speech API": "index.md"
+  - REST API basics:
+      - "Authentication": "api/authentication.md"
+      - "Cross Origin Resource Sharing": "api/cors.md"
+      - "Data representation": "api/data_representation.md"
+      - "JSON-P Callbacks": "api/jsonp.md"
+      - "Pagination": "api/pagination.md"
+      - "Parameters": "api/parameters.md"
+      - "Request and response format": "api/request_response_format.md"
+      - "Security":
+          - "Roles": "api/roles.md"
+          - "Permissions": "api/permissions.md"
+          - "SSL": "api/ssl.md"
+      - "Error handling": "api/errors.md"
+      - "Filters": "api/filters.md"
+      - "URLs": "api/urls.md"
+  - REST API:
+      - "OAuth2": "api/oauth2.md"
+      - "Organisations": "api/organisations.md"
+      - "Challenges":
+          - "Speech": "api/speech_challenges.md"
+          - "Pronunciation": "api/pronunciation_challenges.md"
+          - "Choice": "api/choice_challenges.md"
+      - "Progress": "api/progress.md"
+      - "Speech Recordings": "api/recordings.md"
+      - "Speech Feedback": "api/feedback.md"
+      - "Speech Analysis": "api/analyses.md"
+      - "Speech Recognition": "api/recognitions.md"
+      - "Category": "api/categories.md"
+      - "Tenants": "api/tenants.md"
+      - "Groups": "api/groups.md"
+      - "Profiles": "api/profiles.md"
+      - "Assignments": "api/assignments.md"
+      - "Annotations": "api/annotations.md"
+      - Users:
+          - "Users": "api/users.md"
+          - "Basic authentication": "api/basicauths.md"
+          - "Email authentication": "api/emailauth.md"
+  - Websocket API:
+      - "WAMP": "websocket/wamp.md"
+      - "Speech Feedback": "websocket/feedback.md"
+      - "Speech Recording": "websocket/speech_recording.md"
+      - "Pronunciation Analyses": "websocket/pronunciation_analyses.md"
+      - "Choice Recognitions": "websocket/choice_recognitions.md"
+      - "Audio": "websocket/audio.md"
 
 theme: readthedocs
 use_directory_urls: false
 strict: true
 
 markdown_extensions:
-    - toc:
-        anchorlink: True
-    - admonition
+  - toc:
+      anchorlink: True
+  - admonition

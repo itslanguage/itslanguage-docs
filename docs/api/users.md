@@ -3,7 +3,6 @@
 Users can be managed using the REST API. Only users with administrative
 powers can perform these calls.
 
-
 ## Create a user
 
 When creating a user, the user is created at the same level as the current
@@ -38,15 +37,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "groups": ["group_1"],
-  "profile": {
     "firstName": "Najat",
     "infix": "van der",
     "lastName": "Lee",
-    "gender": "Male",
-    "birthDate": "1996-16-07T00:00:00Z"
-  },
-  "roles": ['ADMIN']
+    "groups": ["group_1"],
+    "roles": ["ADMIN"]
 }
 ```
 
@@ -57,21 +52,16 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "id": "sdcjb823jhguys5j",
-  "groups": ["group_1"],
-  "profile": {
-    "firstName": "Najat",
+    "groups": ["group_1"],
     "infix": "van der",
-    "lastName": "Lee",
-    "gender": "Male",
-    "birthDate": "1996-16-07T00:00:00Z"
-  },
-  "roles": ['ADMIN'],
-  "created": "2016-12-22T02:14:05Z",
-  "updated": "2016-12-22T02:14:05Z"
+    "id": "sdcjb823jhguys5j",
+    "firstName": "Najat",
+    "updated": "2016-12-22T02:14:05Z",
+    "created": "2016-12-22T02:14:05Z",
+    "roles": ["ADMIN"],
+    "lastName": "Lee"
 }
 ```
-
 
 ## List users
 
@@ -98,13 +88,9 @@ Content-Type: application/json
   {
     "id": "sdcjb823jhguys5j",
     "groups": ["first_grade"],
-    "profile": {
-      "firstName": "Najat",
-      "infix": "van der",
-      "lastName": "Lee",
-      "gender": "Male",
-      "birthDate": "1996-16-07T00:00:00Z"
-    },
+    "firstName": "Najat",
+    "infix": "van der",
+    "lastName": "Lee",
     "roles": ['STUDENT']
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
@@ -112,13 +98,9 @@ Content-Type: application/json
   {
     "id": "iosdhrfd893ufg",
     "groups": ["first_grade", "second_grade"],
-    "profile": {
-      "firstName": "Chrissy",
-      "infix": null,
-      "lastName": "Haagen",
-      "gender": "Male",
-      "birthDate": "1996-16-07T00:00:00Z"
-    },
+    "firstName": "Chrissy",
+    "infix": null,
+    "lastName": "Haagen",
     "roles": ["TEACHER"],
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
@@ -160,13 +142,9 @@ Content-Type: application/json
 {
   "id": "bgfg83bjdg62j",
   "groups": ["group_6"],
-  "profile": {
-    "firstName": "Juriaan",
-    "infix": null,
-    "lastName": "Winkens",
-    "gender": "Male",
-    "birthDate": "1996-16-07T00:00:00Z"
-  },
+  "firstName": "Juriaan",
+  "infix": null,
+  "lastName": "Winkens",
   "roles": ["STUDENT"],
   "created": "2017-01-03T12:16:55Z",
   "updated": "2017-01-03T12:16:55Z"
