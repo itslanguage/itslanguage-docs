@@ -144,10 +144,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="students.html">Students</a>
-                </li>
-                <li class="">
-                    
     <span class="caption-text">Challenges</span>
     <ul class="subnav">
                 <li class="toctree-l3">
@@ -300,22 +296,22 @@
             <div class="section">
               
                 <h1 id="parameters"><a class="toclink" href="#parameters">Parameters</a></h1>
-<p>Many API methods take optional parameters. For GET requests, any parameters not
+<p>Some API methods take optional parameters. For GET requests, any parameters not
 specified as a segment in the path can be passed as an HTTP query string
-parameter:</p>
-<pre><code class="bash">curl -i &quot;https://api.itslanguage.io/organisations/sheffield/students/?first_name=mauro&quot;
+parameter.</p>
+<p>For example when listing entities using the url <code>/entities</code> with some <code>field</code>:</p>
+<pre><code class="bash">curl -i &quot;https://api.itslanguage.io/entitites/entity?field=magic&quot;
 </code></pre>
 
-<p>In this example, the 'sheffield' value is provided for the <code>:organisation</code>
-parameter in the path while <code>:first_name</code> is passed in the query
-string.</p>
+<p>In this example, the 'entity' value is provided for the <code>:entity</code> parameter in
+the path while <code>:field</code> is passed in the query string.</p>
 <p>For POST, PUT, and DELETE requests, parameters not included in the URL should
 be encoded as form data with a Content-Type of 'application/x-www-form-urlencoded':</p>
-<pre><code class="bash">curl -i -d 'first_name=Mauro' https://api.itslanguage.io/organisations/sheffield/students
+<pre><code class="bash">curl -i -d 'field=magic' https://api.itslanguage.io/entities/entity
 </code></pre>
 
 <p>Or the parameters should be encoded as JSON with a Content-Type of 'application/json':</p>
-<pre><code class="bash">curl -i -d '{&quot;firstName&quot;: &quot;Mauro&quot;}' -H 'application/json' https://api.itslanguage.io/organisations/sheffield/students
+<pre><code class="bash">curl -i -d '{&quot;field&quot;: &quot;value&quot;}' -H 'application/json' https://api.itslanguage.io/entities/entity
 </code></pre>
               
             </div>
