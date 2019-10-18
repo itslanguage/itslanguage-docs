@@ -73,47 +73,72 @@ the following json is sent as a progressive result:
 {
   "feedback_id": "recording_1",
   "sentence": 0,
-  "errors": 0,
+  "errors": 1,
+  "confidence": -78.0,
+  "currentFrame": 68,
+  "eosFrame": 63,
+  "sessionId": "test",
+  "tokenType": "EOS"
   "words": [
     {
+      "sentenceIndex": 0,
+      "textIndex": 1,
       "expected": "funny",
       "recognized": "funny",
-      "error": null,
-      "correct": true
+      "label": "CW",
+      "description": "Correct.",
+      "explanation": "The pronunciation matches the expected text."
     },
     {
+      "sentenceIndex": 0,
+      "textIndex": 1,
       "expected": "gif",
-      "recognized": "jif",
-      "error": "substitution",
-      "correct": false
+      "recognized": "gif-ERR",
+      "label": "PC",
+      "description": "Phonetic Change",
+      "explanation": "One or more phones are changed."
     }
   ]
 }
 ```
 
-Name        | Type     | Description
-------------|----------|------------
-feedback_id | `string` | The unique id of the feedback this results belongs to.
-sentence    | `int`    | The index of the sentence, starting at `0`.
-errors      | `int`    | Amount of errors made.
-words       | `list`   | All expected and recognized words in the sentence.
+Name         | Type     | Description
+-------------|----------|------------
+feedback_id  | `string` | The unique id of the feedback this results belongs to.
+sentence     | `int`    | The index of the sentence, starting at `0`.
+errors       | `int`    | Amount of errors made.
+confidence   | `float`  | Confidence of the end of sentence detection.
+currentFrame | `int`    | Audio frame of end of sentence detection.
+eosFrame     | `int`    | Audio frame of the end of sentence.
+sessionId    | `string` | Session identifier.
+tokenType    | `string` | The detected token.
+words        | `list`   | All expected and recognized words in the sentence.
 
 The list of words each contain the following fields:
 
-Name       | Type     | Description
------------|----------|------------
-correct    | `bool`   | Whether the word was pronounced correctly.
-error      | `string` | The kind of error that was detected.
-expected   | `string` | The word as it was expected to be pronounced.
-recognized | `string` | The recognized result. If nothing is recognized this field is `null`.
+Name          | Type     | Description
+--------------|----------|------------
+sentenceIndex | `int`    | Index of the sentence.
+textIndex     | `int`    | Index of the whole text.
+expected      | `string` | The word as it was expected to be pronounced.
+recognized    | `string` | The recognized result. If nothing is recognized this field is `null`.
+label         | `string` | Label describing what was recognized.
+description   | `string` | Description of the label.
+explanation   | `string` | in-depth explanation of the label.
+startTiming   | `int`    | Beginning of the section in milliseconds.
+endTiming     | `int`    | End of a section in milliseconds.
 
-When an error is detected it is included as a string. Possible values are:
+Other than a correct word labels can indicate errors in the pronunciation. These
+are all the possible labels that can currently be assigned to a word.
 
-Value          | Description
----------------|------------
-`deletion`     | Nothing was recognized.
-`substitution` | Something got recognized but not what was expected.
-`repetition`   | The word was recognized correctly but multiple times.
+Label | Description     | Explanation
+------|-----------------|------------
+`CW`  | Correct         | The pronunction matches the expected text.
+`SL`  | Silence         | Anomalous silence in-between words.
+`RW`  | Repetition      | Expected word was repeated.
+`OW`  | Omission        | Expected word was omitted.
+`PC`  | Phonetic Change | One or more phones are changed.
+`FS`  | False Start     | Partial in-prompt realisation.
 
 When the recording is finished a recording with feedback is returned:
 
@@ -127,36 +152,66 @@ When the recording is finished a recording with feedback is returned:
     {
       "sentence": 0,
       "errors": 1,
+      "confidence": -159.0,
+      "currentFrame": 64,
+      "eosFrame": 61,
+      "sessionId": "test",
+      "tokenType": "EOS"
       "words": [
         {
+          "sentenceIndex": 0,
+          "textIndex": 0,
           "expected": "hello",
           "recognized": "hello",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 10,
+          "endTiming": 400
         },
         {
+          "sentenceIndex": 0,
+          "textIndex": 1,
           "expected": "there",
-          "recognized": "their",
-          "error": "substitution",
-          "correct": false
+          "recognized": "there-ERR",
+          "label": "PC",
+          "description": "Phonetic Change",
+          "explanation": "One or more phones are changed.",
+          "startTiming": 400,
+          "endTiming": 620
         }
       ]
     },
     {
       "sentence": 1,
       "errors": 0,
+      "confidence": -124.1,
+      "currentFrame": 87,
+      "eosFrame": 84,
+      "sessionId": "test",
+      "tokenType": "EOS"
       "words": [
         {
+          "sentenceIndex": 1,
+          "textIndex": 2,
           "expected": "general",
           "recognized": "general",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 40,
+          "endTiming": 320
         },
         {
+          "sentenceIndex": 1,
+          "textIndex": 3,
           "expected": "kenobi",
           "recognized": "kenobi",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 320,
+          "endTiming": 500
         }
       ]
     }
