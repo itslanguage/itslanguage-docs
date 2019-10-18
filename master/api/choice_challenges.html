@@ -355,6 +355,11 @@ is a required or optional parameter.</p>
 <td><code>string</code></td>
 <td><strong>Required</strong> The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After creating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason.</td>
 </tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The language of the challenge in ISO 639-2 format</td>
+</tr>
 </tbody>
 </table>
 <h2 id="list-all-choice-challenges"><a class="toclink" href="#list-all-choice-challenges">List all choice challenges</a></h2>
@@ -395,7 +400,8 @@ Content-Type: application/json
         &quot;audioUrl&quot;: null
       }
     ],
-    &quot;status&quot;: &quot;prepared&quot;
+    &quot;status&quot;: &quot;prepared&quot;,
+    &quot;language&quot;: &quot;eng&quot;
   },
   {
     &quot;id&quot;: &quot;14&quot;,
@@ -408,7 +414,8 @@ Content-Type: application/json
         &quot;audioUrl&quot;: null
       }
     ],
-    &quot;status&quot;: &quot;preparing&quot;
+    &quot;status&quot;: &quot;preparing&quot;,
+    &quot;language&quot;: &quot;eng&quot;
   }
 ]
 </code></pre>
@@ -450,7 +457,8 @@ Content-Type: application/json
       &quot;audioUrl&quot;: null
     }
   ],
-  &quot;status&quot;: &quot;prepared&quot;
+  &quot;status&quot;: &quot;prepared&quot;,
+  &quot;language&quot;: &quot;eng&quot;
 }
 </code></pre>
 
@@ -504,7 +512,8 @@ Location: https://api.itslanguage.io/challenges/choice/4
       &quot;audioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsK&quot;
     }
   ],
-  &quot;status&quot;: &quot;preparing&quot;
+  &quot;status&quot;: &quot;preparing&quot;,
+  &quot;language&quot;, &quot;eng&quot;
 }
 </code></pre>
 
@@ -575,7 +584,8 @@ Location: https://api.itslanguage.io/challenges/choice/4
     &quot;stationed&quot;,
     &quot;settled&quot;
   ],
-  &quot;status&quot;: &quot;preparing&quot;
+  &quot;status&quot;: &quot;preparing&quot;,
+  &quot;language&quot;: &quot;eng&quot;
 }
 </code></pre>
 

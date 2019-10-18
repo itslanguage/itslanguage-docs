@@ -338,6 +338,7 @@ Content-Type: application/json
     &quot;transcription&quot;: &quot;You could take the baby with you&quot;,
     &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
     &quot;status&quot;: &quot;preparing&quot;,
+    &quot;language&quot;: &quot;eng&quot;,
     &quot;alignment&quot;: null
   },
   {
@@ -347,6 +348,7 @@ Content-Type: application/json
     &quot;transcription&quot;: &quot;tap&quot;,
     &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq&quot;,
     &quot;status&quot;: &quot;prepared&quot;,
+    &quot;language&quot;: &quot;eng&quot;,
     &quot;alignment&quot;: {
       &quot;confidenceScore&quot;: -3.44,
       &quot;words&quot;: [
@@ -417,6 +419,7 @@ Content-Type: application/json
   &quot;transcription&quot;: &quot;tap&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq&quot;,
   &quot;status&quot;: &quot;prepared&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;alignment&quot;: {
     &quot;confidenceScore&quot;: -3.44,
     &quot;words&quot;: [
@@ -492,6 +495,11 @@ Content-Type: application/json
 <td><code>blob</code></td>
 <td><strong>Required</strong> The reference audio fragment.</td>
 </tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The language of the challenge in ISO 639-2 format</td>
+</tr>
 </tbody>
 </table>
 <h3 id="request_2"><a class="toclink" href="#request_2">Request</a></h3>
@@ -523,6 +531,7 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   &quot;transcription&quot;: &quot;You could take the baby with you&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
   &quot;status&quot;: &quot;preparing&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;alignment&quot;: null
 }
 </code></pre>
@@ -560,6 +569,11 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
 <td><code>status</code></td>
 <td><code>string</code></td>
 <td><strong>Optional</strong> The status of the challenge (unprepared, preparing, prepared).</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The language of the challenge in ISO 639-2 format</td>
 </tr>
 <tr>
 <td><code>alignment</code></td>
@@ -605,6 +619,7 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   &quot;transcription&quot;: &quot;You could take the baby with you&quot;,
   &quot;referenceAudioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-Abc&quot;,
   &quot;status&quot;: &quot;prepared&quot;,
+  &quot;language&quot;: &quot;eng&quot;,
   &quot;alignment&quot;: {&quot;confidenceScore&quot;: -3.44, &quot;words&quot;: [....]}
 }
 </code></pre>
