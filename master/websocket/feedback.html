@@ -395,19 +395,30 @@ the following json is sent as a progressive result:</p>
 <pre><code class="json">{
   &quot;feedback_id&quot;: &quot;recording_1&quot;,
   &quot;sentence&quot;: 0,
-  &quot;errors&quot;: 0,
+  &quot;errors&quot;: 1,
+  &quot;confidence&quot;: -78.0,
+  &quot;currentFrame&quot;: 68,
+  &quot;eosFrame&quot;: 63,
+  &quot;sessionId&quot;: &quot;test&quot;,
+  &quot;tokenType&quot;: &quot;EOS&quot;
   &quot;words&quot;: [
     {
+      &quot;sentenceIndex&quot;: 0,
+      &quot;textIndex&quot;: 1,
       &quot;expected&quot;: &quot;funny&quot;,
       &quot;recognized&quot;: &quot;funny&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
+      &quot;label&quot;: &quot;CW&quot;,
+      &quot;description&quot;: &quot;Correct.&quot;,
+      &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;
     },
     {
+      &quot;sentenceIndex&quot;: 0,
+      &quot;textIndex&quot;: 1,
       &quot;expected&quot;: &quot;gif&quot;,
-      &quot;recognized&quot;: &quot;jif&quot;,
-      &quot;error&quot;: &quot;substitution&quot;,
-      &quot;correct&quot;: false
+      &quot;recognized&quot;: &quot;gif-ERR&quot;,
+      &quot;label&quot;: &quot;PC&quot;,
+      &quot;description&quot;: &quot;Phonetic Change&quot;,
+      &quot;explanation&quot;: &quot;One or more phones are changed.&quot;
     }
   ]
 }
@@ -438,6 +449,31 @@ the following json is sent as a progressive result:</p>
 <td>Amount of errors made.</td>
 </tr>
 <tr>
+<td>confidence</td>
+<td><code>float</code></td>
+<td>Confidence of the end of sentence detection.</td>
+</tr>
+<tr>
+<td>currentFrame</td>
+<td><code>int</code></td>
+<td>Audio frame of end of sentence detection.</td>
+</tr>
+<tr>
+<td>eosFrame</td>
+<td><code>int</code></td>
+<td>Audio frame of the end of sentence.</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td><code>string</code></td>
+<td>Session identifier.</td>
+</tr>
+<tr>
+<td>tokenType</td>
+<td><code>string</code></td>
+<td>The detected token.</td>
+</tr>
+<tr>
 <td>words</td>
 <td><code>list</code></td>
 <td>All expected and recognized words in the sentence.</td>
@@ -455,14 +491,14 @@ the following json is sent as a progressive result:</p>
 </thead>
 <tbody>
 <tr>
-<td>correct</td>
-<td><code>bool</code></td>
-<td>Whether the word was pronounced correctly.</td>
+<td>sentenceIndex</td>
+<td><code>int</code></td>
+<td>Index of the sentence.</td>
 </tr>
 <tr>
-<td>error</td>
-<td><code>string</code></td>
-<td>The kind of error that was detected.</td>
+<td>textIndex</td>
+<td><code>int</code></td>
+<td>Index of the whole text.</td>
 </tr>
 <tr>
 <td>expected</td>
@@ -474,28 +510,73 @@ the following json is sent as a progressive result:</p>
 <td><code>string</code></td>
 <td>The recognized result. If nothing is recognized this field is <code>null</code>.</td>
 </tr>
+<tr>
+<td>label</td>
+<td><code>string</code></td>
+<td>Label describing what was recognized.</td>
+</tr>
+<tr>
+<td>description</td>
+<td><code>string</code></td>
+<td>Description of the label.</td>
+</tr>
+<tr>
+<td>explanation</td>
+<td><code>string</code></td>
+<td>in-depth explanation of the label.</td>
+</tr>
+<tr>
+<td>startTiming</td>
+<td><code>int</code></td>
+<td>Beginning of the section in milliseconds.</td>
+</tr>
+<tr>
+<td>endTiming</td>
+<td><code>int</code></td>
+<td>End of a section in milliseconds.</td>
+</tr>
 </tbody>
 </table>
-<p>When an error is detected it is included as a string. Possible values are:</p>
+<p>Other than a correct word labels can indicate errors in the pronunciation. These
+are all the possible labels that can currently be assigned to a word.</p>
 <table>
 <thead>
 <tr>
-<th>Value</th>
+<th>Label</th>
 <th>Description</th>
+<th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>deletion</code></td>
-<td>Nothing was recognized.</td>
+<td><code>CW</code></td>
+<td>Correct</td>
+<td>The pronunction matches the expected text.</td>
 </tr>
 <tr>
-<td><code>substitution</code></td>
-<td>Something got recognized but not what was expected.</td>
+<td><code>SL</code></td>
+<td>Silence</td>
+<td>Anomalous silence in-between words.</td>
 </tr>
 <tr>
-<td><code>repetition</code></td>
-<td>The word was recognized correctly but multiple times.</td>
+<td><code>RW</code></td>
+<td>Repetition</td>
+<td>Expected word was repeated.</td>
+</tr>
+<tr>
+<td><code>OW</code></td>
+<td>Omission</td>
+<td>Expected word was omitted.</td>
+</tr>
+<tr>
+<td><code>PC</code></td>
+<td>Phonetic Change</td>
+<td>One or more phones are changed.</td>
+</tr>
+<tr>
+<td><code>FS</code></td>
+<td>False Start</td>
+<td>Partial in-prompt realisation.</td>
 </tr>
 </tbody>
 </table>
@@ -509,36 +590,66 @@ the following json is sent as a progressive result:</p>
     {
       &quot;sentence&quot;: 0,
       &quot;errors&quot;: 1,
+      &quot;confidence&quot;: -159.0,
+      &quot;currentFrame&quot;: 64,
+      &quot;eosFrame&quot;: 61,
+      &quot;sessionId&quot;: &quot;test&quot;,
+      &quot;tokenType&quot;: &quot;EOS&quot;
       &quot;words&quot;: [
         {
+          &quot;sentenceIndex&quot;: 0,
+          &quot;textIndex&quot;: 0,
           &quot;expected&quot;: &quot;hello&quot;,
           &quot;recognized&quot;: &quot;hello&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 10,
+          &quot;endTiming&quot;: 400
         },
         {
+          &quot;sentenceIndex&quot;: 0,
+          &quot;textIndex&quot;: 1,
           &quot;expected&quot;: &quot;there&quot;,
-          &quot;recognized&quot;: &quot;their&quot;,
-          &quot;error&quot;: &quot;substitution&quot;,
-          &quot;correct&quot;: false
+          &quot;recognized&quot;: &quot;there-ERR&quot;,
+          &quot;label&quot;: &quot;PC&quot;,
+          &quot;description&quot;: &quot;Phonetic Change&quot;,
+          &quot;explanation&quot;: &quot;One or more phones are changed.&quot;,
+          &quot;startTiming&quot;: 400,
+          &quot;endTiming&quot;: 620
         }
       ]
     },
     {
       &quot;sentence&quot;: 1,
       &quot;errors&quot;: 0,
+      &quot;confidence&quot;: -124.1,
+      &quot;currentFrame&quot;: 87,
+      &quot;eosFrame&quot;: 84,
+      &quot;sessionId&quot;: &quot;test&quot;,
+      &quot;tokenType&quot;: &quot;EOS&quot;
       &quot;words&quot;: [
         {
+          &quot;sentenceIndex&quot;: 1,
+          &quot;textIndex&quot;: 2,
           &quot;expected&quot;: &quot;general&quot;,
           &quot;recognized&quot;: &quot;general&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 40,
+          &quot;endTiming&quot;: 320
         },
         {
+          &quot;sentenceIndex&quot;: 1,
+          &quot;textIndex&quot;: 3,
           &quot;expected&quot;: &quot;kenobi&quot;,
           &quot;recognized&quot;: &quot;kenobi&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 320,
+          &quot;endTiming&quot;: 500
         }
       ]
     }

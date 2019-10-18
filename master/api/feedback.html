@@ -377,18 +377,33 @@ Content-Type: application/json
 {
   &quot;sentence&quot;: 0,
   &quot;errors&quot;: 1,
+  &quot;confidence&quot;: -159.0,
+  &quot;currentFrame&quot;: 64,
+  &quot;eosFrame&quot;: 61,
+  &quot;sessionId&quot;: &quot;test&quot;,
+  &quot;tokenType&quot;: &quot;EOS&quot;
   &quot;words&quot;: [
     {
+      &quot;sentenceIndex&quot;: 0,
+      &quot;textIndex&quot;: 0,
       &quot;expected&quot;: &quot;hello&quot;,
       &quot;recognized&quot;: &quot;hello&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
+      &quot;label&quot;: &quot;CW&quot;,
+      &quot;description&quot;: &quot;Correct&quot;,
+      &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+      &quot;startTiming&quot;: 10,
+      &quot;endTiming&quot;: 400
     },
     {
+      &quot;sentenceIndex&quot;: 0,
+      &quot;textIndex&quot;: 1,
       &quot;expected&quot;: &quot;there&quot;,
-      &quot;recognized&quot;: &quot;their&quot;,
-      &quot;error&quot;: &quot;substitution&quot;,
-      &quot;correct&quot;: false
+      &quot;recognized&quot;: &quot;there-ERR&quot;,
+      &quot;label&quot;: &quot;PC&quot;,
+      &quot;description&quot;: &quot;Phonetic Change&quot;,
+      &quot;explanation&quot;: &quot;One or more phones are changed.&quot;,
+      &quot;startTiming&quot;: 400,
+      &quot;endTiming&quot;: 620
     }
   ]
 }
@@ -399,18 +414,33 @@ Content-Type: application/json
 {
   &quot;sentence&quot;: 1,
   &quot;errors&quot;: 0,
+  &quot;confidence&quot;: -124.1,
+  &quot;currentFrame&quot;: 87,
+  &quot;eosFrame&quot;: 84,
+  &quot;sessionId&quot;: &quot;test&quot;,
+  &quot;tokenType&quot;: &quot;EOS&quot;
   &quot;words&quot;: [
     {
+      &quot;sentenceIndex&quot;: 1,
+      &quot;textIndex&quot;: 2,
       &quot;expected&quot;: &quot;general&quot;,
       &quot;recognized&quot;: &quot;general&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
+      &quot;label&quot;: &quot;CW&quot;,
+      &quot;description&quot;: &quot;Correct&quot;,
+      &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+      &quot;startTiming&quot;: 40,
+      &quot;endTiming&quot;: 320
     },
     {
+      &quot;sentenceIndex&quot;: 1,
+      &quot;textIndex&quot;: 3,
       &quot;expected&quot;: &quot;kenobi&quot;,
       &quot;recognized&quot;: &quot;kenobi&quot;,
-      &quot;error&quot;: null,
-      &quot;correct&quot;: true
+      &quot;label&quot;: &quot;CW&quot;,
+      &quot;description&quot;: &quot;Correct&quot;,
+      &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+      &quot;startTiming&quot;: 320,
+      &quot;endTiming&quot;: 500
     }
   ]
 }
@@ -442,36 +472,66 @@ Content-Type: application/json
     {
       &quot;sentence&quot;: 0,
       &quot;errors&quot;: 1,
+      &quot;confidence&quot;: -159.0,
+      &quot;currentFrame&quot;: 64,
+      &quot;eosFrame&quot;: 61,
+      &quot;sessionId&quot;: &quot;test&quot;,
+      &quot;tokenType&quot;: &quot;EOS&quot;
       &quot;words&quot;: [
         {
+          &quot;sentenceIndex&quot;: 0,
+          &quot;textIndex&quot;: 0,
           &quot;expected&quot;: &quot;hello&quot;,
           &quot;recognized&quot;: &quot;hello&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 10,
+          &quot;endTiming&quot;: 400
         },
         {
+          &quot;sentenceIndex&quot;: 0,
+          &quot;textIndex&quot;: 1,
           &quot;expected&quot;: &quot;there&quot;,
-          &quot;recognized&quot;: &quot;their&quot;,
-          &quot;error&quot;: &quot;substitution&quot;,
-          &quot;correct&quot;: false
+          &quot;recognized&quot;: &quot;there-ERR&quot;,
+          &quot;label&quot;: &quot;PC&quot;,
+          &quot;description&quot;: &quot;Phonetic Change&quot;,
+          &quot;explanation&quot;: &quot;One or more phones are changed.&quot;,
+          &quot;startTiming&quot;: 400,
+          &quot;endTiming&quot;: 620
         }
       ]
     },
     {
       &quot;sentence&quot;: 1,
       &quot;errors&quot;: 0,
+      &quot;confidence&quot;: -124.1,
+      &quot;currentFrame&quot;: 87,
+      &quot;eosFrame&quot;: 84,
+      &quot;sessionId&quot;: &quot;test&quot;,
+      &quot;tokenType&quot;: &quot;EOS&quot;
       &quot;words&quot;: [
         {
+          &quot;sentenceIndex&quot;: 1,
+          &quot;textIndex&quot;: 2,
           &quot;expected&quot;: &quot;general&quot;,
           &quot;recognized&quot;: &quot;general&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 40,
+          &quot;endTiming&quot;: 320
         },
         {
+          &quot;sentenceIndex&quot;: 1,
+          &quot;textIndex&quot;: 3,
           &quot;expected&quot;: &quot;kenobi&quot;,
           &quot;recognized&quot;: &quot;kenobi&quot;,
-          &quot;error&quot;: null,
-          &quot;correct&quot;: true
+          &quot;label&quot;: &quot;CW&quot;,
+          &quot;description&quot;: &quot;Correct&quot;,
+          &quot;explanation&quot;: &quot;The pronunciation matches the expected text.&quot;,
+          &quot;startTiming&quot;: 320,
+          &quot;endTiming&quot;: 500
         }
       ]
     }
