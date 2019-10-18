@@ -35,6 +35,7 @@ Content-Type: application/json
     "transcription": "You could take the baby with you",
     "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
     "status": "preparing",
+    "language": "eng",
     "alignment": null
   },
   {
@@ -44,6 +45,7 @@ Content-Type: application/json
     "transcription": "tap",
     "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
     "status": "prepared",
+    "language": "eng",
     "alignment": {
       "confidenceScore": -3.44,
       "words": [
@@ -121,6 +123,7 @@ Content-Type: application/json
   "transcription": "tap",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
   "status": "prepared",
+  "language": "eng",
   "alignment": {
     "confidenceScore": -3.44,
     "words": [
@@ -182,6 +185,7 @@ Name             | Type     | Description
 `id`             | `string` | **Optional** The pronunciation challenge identifier. If none is given, one is generated.
 `transcription`  | `string` | **Required** The spoken word or sentence as plain text.
 `referenceAudio` | `blob`   | **Required** The reference audio fragment.
+`language`       | `string` | **Required** The language of the challenge in ISO 639-2 format
 
 ### Request
 
@@ -216,6 +220,7 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   "transcription": "You could take the baby with you",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
   "status": "preparing",
+  "language": "eng",
   "alignment": null
 }
 ```
@@ -240,6 +245,7 @@ Name             | Type     | Description
 `transcription`  | `string` | **Optional** The spoken word or sentence in plain text.
 `referenceAudio` | `blob`   | **Optional** The reference audio fragment.
 `status`         | `string` | **Optional** The status of the challenge (unprepared, preparing, prepared).
+`language`       | `string` | **Optional** The language of the challenge in ISO 639-2 format
 `alignment`      | `object` | **Optional** The alignment of the challenge.
 
 
@@ -284,6 +290,7 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   "transcription": "You could take the baby with you",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-Abc",
   "status": "prepared",
+  "language": "eng",
   "alignment": {"confidenceScore": -3.44, "words": [....]}
 }
 ```

@@ -16,6 +16,7 @@ Name       | Type       | Description
 `choices`  | `string[]` | **Required** The sentences of which at most one may be recognised.
 `audio`    | `blob[]`   | **Optional** Audible sentences that match the ones in `choices` at the same index.
 `status`   | `string`   | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After creating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason.
+`language` | `string`   | **Required** The language of the challenge in ISO 639-2 format
 
 ## List all choice challenges
 
@@ -64,7 +65,8 @@ Content-Type: application/json
         "audioUrl": null
       }
     ],
-    "status": "prepared"
+    "status": "prepared",
+    "language": "eng"
   },
   {
     "id": "14",
@@ -77,7 +79,8 @@ Content-Type: application/json
         "audioUrl": null
       }
     ],
-    "status": "preparing"
+    "status": "preparing",
+    "language": "eng"
   }
 ]
 ```
@@ -125,7 +128,8 @@ Content-Type: application/json
       "audioUrl": null
     }
   ],
-  "status": "prepared"
+  "status": "prepared",
+  "language": "eng"
 }
 ```
 
@@ -187,7 +191,8 @@ Location: https://api.itslanguage.io/challenges/choice/4
       "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsK"
     }
   ],
-  "status": "preparing"
+  "status": "preparing",
+  "language", "eng"
 }
 ```
 
@@ -262,7 +267,8 @@ Location: https://api.itslanguage.io/challenges/choice/4
     "stationed",
     "settled"
   ],
-  "status": "preparing"
+  "status": "preparing",
+  "language": "eng"
 }
 ```
 
