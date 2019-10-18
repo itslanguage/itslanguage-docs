@@ -50,18 +50,33 @@ Content-Type: application/json
 {
   "sentence": 0,
   "errors": 1,
+  "confidence": -159.0,
+  "currentFrame": 64,
+  "eosFrame": 61,
+  "sessionId": "test",
+  "tokenType": "EOS"
   "words": [
     {
+      "sentenceIndex": 0,
+      "textIndex": 0,
       "expected": "hello",
       "recognized": "hello",
-      "error": null,
-      "correct": true
+      "label": "CW",
+      "description": "Correct",
+      "explanation": "The pronunciation matches the expected text.",
+      "startTiming": 10,
+      "endTiming": 400
     },
     {
+      "sentenceIndex": 0,
+      "textIndex": 1,
       "expected": "there",
-      "recognized": "their",
-      "error": "substitution",
-      "correct": false
+      "recognized": "there-ERR",
+      "label": "PC",
+      "description": "Phonetic Change",
+      "explanation": "One or more phones are changed.",
+      "startTiming": 400,
+      "endTiming": 620
     }
   ]
 }
@@ -72,18 +87,33 @@ Content-Type: application/json
 {
   "sentence": 1,
   "errors": 0,
+  "confidence": -124.1,
+  "currentFrame": 87,
+  "eosFrame": 84,
+  "sessionId": "test",
+  "tokenType": "EOS"
   "words": [
     {
+      "sentenceIndex": 1,
+      "textIndex": 2,
       "expected": "general",
       "recognized": "general",
-      "error": null,
-      "correct": true
+      "label": "CW",
+      "description": "Correct",
+      "explanation": "The pronunciation matches the expected text.",
+      "startTiming": 40,
+      "endTiming": 320
     },
     {
+      "sentenceIndex": 1,
+      "textIndex": 3,
       "expected": "kenobi",
       "recognized": "kenobi",
-      "error": null,
-      "correct": true
+      "label": "CW",
+      "description": "Correct",
+      "explanation": "The pronunciation matches the expected text.",
+      "startTiming": 320,
+      "endTiming": 500
     }
   ]
 }
@@ -118,36 +148,66 @@ Content-Type: application/json
     {
       "sentence": 0,
       "errors": 1,
+      "confidence": -159.0,
+      "currentFrame": 64,
+      "eosFrame": 61,
+      "sessionId": "test",
+      "tokenType": "EOS"
       "words": [
         {
+          "sentenceIndex": 0,
+          "textIndex": 0,
           "expected": "hello",
           "recognized": "hello",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 10,
+          "endTiming": 400
         },
         {
+          "sentenceIndex": 0,
+          "textIndex": 1,
           "expected": "there",
-          "recognized": "their",
-          "error": "substitution",
-          "correct": false
+          "recognized": "there-ERR",
+          "label": "PC",
+          "description": "Phonetic Change",
+          "explanation": "One or more phones are changed.",
+          "startTiming": 400,
+          "endTiming": 620
         }
       ]
     },
     {
       "sentence": 1,
       "errors": 0,
+      "confidence": -124.1,
+      "currentFrame": 87,
+      "eosFrame": 84,
+      "sessionId": "test",
+      "tokenType": "EOS"
       "words": [
         {
+          "sentenceIndex": 1,
+          "textIndex": 2,
           "expected": "general",
           "recognized": "general",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 40,
+          "endTiming": 320
         },
         {
+          "sentenceIndex": 1,
+          "textIndex": 3,
           "expected": "kenobi",
           "recognized": "kenobi",
-          "error": null,
-          "correct": true
+          "label": "CW",
+          "description": "Correct",
+          "explanation": "The pronunciation matches the expected text.",
+          "startTiming": 320,
+          "endTiming": 500
         }
       ]
     }
