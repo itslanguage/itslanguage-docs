@@ -15,7 +15,6 @@ Name       | Type       | Description
 `question` | `string`   | **Optional** A hint or question related to the choices.
 `choices`  | `string[]` | **Required** The sentences of which at most one may be recognised.
 `audio`    | `blob[]`   | **Optional** Audible sentences that match the ones in `choices` at the same index.
-`status`   | `string`   | **Required** The status of the challenge's preparation. Either 'unprepared', 'preparing' or 'prepared'. After creating a choice challenge, the status is 'preparing' for a short while, after it'll become 'prepared' to indicate the challenge is ready to perform a speech recognition on, or it'll be 'unprepared' in case the preparation failed for any reason.
 `language` | `string`   | **Required** The language of the challenge in ISO 639-2 format
 
 ## List all choice challenges
@@ -65,7 +64,6 @@ Content-Type: application/json
         "audioUrl": null
       }
     ],
-    "status": "prepared",
     "language": "eng"
   },
   {
@@ -79,7 +77,6 @@ Content-Type: application/json
         "audioUrl": null
       }
     ],
-    "status": "preparing",
     "language": "eng"
   }
 ]
@@ -128,7 +125,6 @@ Content-Type: application/json
       "audioUrl": null
     }
   ],
-  "status": "prepared",
   "language": "eng"
 }
 ```
@@ -191,7 +187,6 @@ Location: https://api.itslanguage.io/challenges/choice/4
       "audioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsK"
     }
   ],
-  "status": "preparing",
   "language", "eng"
 }
 ```
@@ -240,15 +235,6 @@ Content-Type: application/x-www-form-urlencoded
 choices=located&choices=sited&choices=stationed&choices=settled
 ```
 
-### Response fields
-
-For all fields see [Fields](#fields).
-Noteworthy things are below.
-
-Name     | Note
----------|------------
-`status` | Once a choice challenge has been updated, no speech recognitions can be performed on it until the status becomes 'prepared' again, even though the choice challenge was 'prepared' before the update.
-
 ### Response
 
 ```http
@@ -267,7 +253,6 @@ Location: https://api.itslanguage.io/challenges/choice/4
     "stationed",
     "settled"
   ],
-  "status": "preparing",
   "language": "eng"
 }
 ```

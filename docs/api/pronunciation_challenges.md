@@ -34,8 +34,6 @@ Content-Type: application/json
     "updated": "2014-01-28T21:25:10Z",
     "transcription": "You could take the baby with you",
     "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
-    "status": "preparing",
-    "language": "eng",
     "alignment": null
   },
   {
@@ -44,7 +42,6 @@ Content-Type: application/json
     "updated": "2014-01-28T21:25:10Z",
     "transcription": "tap",
     "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
-    "status": "prepared",
     "language": "eng",
     "alignment": {
       "confidenceScore": -3.44,
@@ -122,7 +119,6 @@ Content-Type: application/json
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "tap",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu6-Abq",
-  "status": "prepared",
   "language": "eng",
   "alignment": {
     "confidenceScore": -3.44,
@@ -219,7 +215,6 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "You could take the baby with you",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ",
-  "status": "preparing",
   "language": "eng",
   "alignment": null
 }
@@ -244,7 +239,6 @@ Name             | Type     | Description
 -----------------|----------|------------
 `transcription`  | `string` | **Optional** The spoken word or sentence in plain text.
 `referenceAudio` | `blob`   | **Optional** The reference audio fragment.
-`status`         | `string` | **Optional** The status of the challenge (unprepared, preparing, prepared).
 `language`       | `string` | **Optional** The language of the challenge in ISO 639-2 format
 `alignment`      | `object` | **Optional** The alignment of the challenge.
 
@@ -265,9 +259,6 @@ Content-Disposition: form-data; name="referenceAudio"; filename="blob"
 Content-Type: audio/ogg
 
 <blob>
-Content-Disposition: form-data; name="status"
-
-prepared
 --jhgd87g7Gy3d78
 Content-Disposition: form-data; name="aignment"
 Content-Type: application/json
@@ -289,7 +280,6 @@ Location: https://api.itslanguage.io/challenges/pronunciation/4
   "updated": "2014-01-28T21:25:10Z",
   "transcription": "You could take the baby with you",
   "referenceAudioUrl": "https://api.itslanguage.io/download/YsjdG37bUGseu8-Abc",
-  "status": "prepared",
   "language": "eng",
   "alignment": {"confidenceScore": -3.44, "words": [....]}
 }
