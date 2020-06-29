@@ -48,7 +48,7 @@ Content-Disposition: form-data; name="sentences"
 Content-Type: application/json
 
 {
-  "sentence": 0,
+  "sentence": 1,
   "errors": 1,
   "confidence": -159.0,
   "currentFrame": 64,
@@ -57,7 +57,7 @@ Content-Type: application/json
   "tokenType": "EOS"
   "words": [
     {
-      "sentenceIndex": 0,
+      "sentenceIndex": 1,
       "textIndex": 0,
       "expected": "hello",
       "recognized": "hello",
@@ -68,7 +68,7 @@ Content-Type: application/json
       "endTiming": 400
     },
     {
-      "sentenceIndex": 0,
+      "sentenceIndex": 1,
       "textIndex": 1,
       "expected": "there",
       "recognized": "there-ERR",
@@ -85,7 +85,7 @@ Content-Disposition: form-data; name="sentences"
 Content-Type: application/json
 
 {
-  "sentence": 1,
+  "sentence": 2,
   "errors": 0,
   "confidence": -124.1,
   "currentFrame": 87,
@@ -94,7 +94,7 @@ Content-Type: application/json
   "tokenType": "EOS"
   "words": [
     {
-      "sentenceIndex": 1,
+      "sentenceIndex": 2,
       "textIndex": 2,
       "expected": "general",
       "recognized": "general",
@@ -105,7 +105,7 @@ Content-Type: application/json
       "endTiming": 320
     },
     {
-      "sentenceIndex": 1,
+      "sentenceIndex": 2,
       "textIndex": 3,
       "expected": "kenobi",
       "recognized": "kenobi",
@@ -146,7 +146,7 @@ Content-Type: application/json
   "challengeId": "chal",
   "sentences": [
     {
-      "sentence": 0,
+      "sentence": 1,
       "errors": 1,
       "confidence": -159.0,
       "currentFrame": 64,
@@ -155,7 +155,7 @@ Content-Type: application/json
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 0,
+          "sentenceIndex": 1,
           "textIndex": 0,
           "expected": "hello",
           "recognized": "hello",
@@ -166,7 +166,7 @@ Content-Type: application/json
           "endTiming": 400
         },
         {
-          "sentenceIndex": 0,
+          "sentenceIndex": 1,
           "textIndex": 1,
           "expected": "there",
           "recognized": "there-ERR",
@@ -179,7 +179,7 @@ Content-Type: application/json
       ]
     },
     {
-      "sentence": 1,
+      "sentence": 2,
       "errors": 0,
       "confidence": -124.1,
       "currentFrame": 87,
@@ -188,7 +188,7 @@ Content-Type: application/json
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 1,
+          "sentenceIndex": 2,
           "textIndex": 2,
           "expected": "general",
           "recognized": "general",
@@ -199,7 +199,7 @@ Content-Type: application/json
           "endTiming": 320
         },
         {
-          "sentenceIndex": 1,
+          "sentenceIndex": 2,
           "textIndex": 3,
           "expected": "kenobi",
           "recognized": "kenobi",

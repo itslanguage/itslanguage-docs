@@ -72,7 +72,7 @@ the following json is sent as a progressive result:
 ```json
 {
   "feedback_id": "recording_1",
-  "sentence": 0,
+  "sentence": 1,
   "errors": 1,
   "confidence": -78.0,
   "currentFrame": 68,
@@ -81,7 +81,7 @@ the following json is sent as a progressive result:
   "tokenType": "EOS"
   "words": [
     {
-      "sentenceIndex": 0,
+      "sentenceIndex": 1,
       "textIndex": 1,
       "expected": "funny",
       "recognized": "funny",
@@ -90,7 +90,7 @@ the following json is sent as a progressive result:
       "explanation": "The pronunciation matches the expected text."
     },
     {
-      "sentenceIndex": 0,
+      "sentenceIndex": 1,
       "textIndex": 1,
       "expected": "gif",
       "recognized": "gif-ERR",
@@ -105,7 +105,7 @@ the following json is sent as a progressive result:
 Name         | Type     | Description
 -------------|----------|------------
 feedback_id  | `string` | The unique id of the feedback this results belongs to.
-sentence     | `int`    | The index of the sentence, starting at `0`.
+sentence     | `int`    | The index of the sentence, starting at `1`.
 errors       | `int`    | Amount of errors made.
 confidence   | `float`  | Confidence of the end of sentence detection.
 currentFrame | `int`    | Audio frame of end of sentence detection.
@@ -118,7 +118,7 @@ The list of words each contain the following fields:
 
 Name          | Type     | Description
 --------------|----------|------------
-sentenceIndex | `int`    | Index of the sentence.
+sentenceIndex | `int`    | Index of the sentence, starting at `1`.
 textIndex     | `int`    | Index of the whole text.
 expected      | `string` | The word as it was expected to be pronounced.
 recognized    | `string` | The recognized result. If nothing is recognized this field is `null`.
@@ -150,7 +150,7 @@ When the recording is finished a recording with feedback is returned:
   "audioUrl": "https://api.itslanguage.nl/download/audio.wav",
   "sentences": [
     {
-      "sentence": 0,
+      "sentence": 1,
       "errors": 1,
       "confidence": -159.0,
       "currentFrame": 64,
@@ -159,7 +159,7 @@ When the recording is finished a recording with feedback is returned:
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 0,
+          "sentenceIndex": 1,
           "textIndex": 0,
           "expected": "hello",
           "recognized": "hello",
@@ -170,7 +170,7 @@ When the recording is finished a recording with feedback is returned:
           "endTiming": 400
         },
         {
-          "sentenceIndex": 0,
+          "sentenceIndex": 1,
           "textIndex": 1,
           "expected": "there",
           "recognized": "there-ERR",
@@ -183,7 +183,7 @@ When the recording is finished a recording with feedback is returned:
       ]
     },
     {
-      "sentence": 1,
+      "sentence": 2,
       "errors": 0,
       "confidence": -124.1,
       "currentFrame": 87,
@@ -192,7 +192,7 @@ When the recording is finished a recording with feedback is returned:
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 1,
+          "sentenceIndex": 2,
           "textIndex": 2,
           "expected": "general",
           "recognized": "general",
@@ -203,7 +203,7 @@ When the recording is finished a recording with feedback is returned:
           "endTiming": 320
         },
         {
-          "sentenceIndex": 1,
+          "sentenceIndex": 2,
           "textIndex": 3,
           "expected": "kenobi",
           "recognized": "kenobi",
@@ -276,4 +276,4 @@ nl.itslanguage.feedback.resume
 Name        | Type     | Description
 ------------|----------|------------
 id          | `string` | **Required** The id of the feedback to resume.
-sentence_id | `int`    | **Required** The id of the sentence (starting with `0`) to resume on.
+sentence_id | `int`    | **Required** The id of the sentence (starting with `1`) to resume on.
