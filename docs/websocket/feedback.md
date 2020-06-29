@@ -91,7 +91,7 @@ the following json is sent as a progressive result:
     },
     {
       "sentenceIndex": 1,
-      "textIndex": 1,
+      "textIndex": 2,
       "expected": "gif",
       "recognized": "gif-ERR",
       "label": "PC",
@@ -119,7 +119,7 @@ The list of words each contain the following fields:
 Name          | Type     | Description
 --------------|----------|------------
 sentenceIndex | `int`    | Index of the sentence, starting at `1`.
-textIndex     | `int`    | Index of the whole text.
+textIndex     | `int`    | Index of word as position in the whole text, starting at `1`.
 expected      | `string` | The word as it was expected to be pronounced.
 recognized    | `string` | The recognized result. If nothing is recognized this field is `null`.
 label         | `string` | Label describing what was recognized.
@@ -160,7 +160,7 @@ When the recording is finished a recording with feedback is returned:
       "words": [
         {
           "sentenceIndex": 1,
-          "textIndex": 0,
+          "textIndex": 1,
           "expected": "hello",
           "recognized": "hello",
           "label": "CW",
@@ -171,7 +171,7 @@ When the recording is finished a recording with feedback is returned:
         },
         {
           "sentenceIndex": 1,
-          "textIndex": 1,
+          "textIndex": 2,
           "expected": "there",
           "recognized": "there-ERR",
           "label": "PC",
@@ -193,7 +193,7 @@ When the recording is finished a recording with feedback is returned:
       "words": [
         {
           "sentenceIndex": 2,
-          "textIndex": 2,
+          "textIndex": 3,
           "expected": "general",
           "recognized": "general",
           "label": "CW",
@@ -204,7 +204,7 @@ When the recording is finished a recording with feedback is returned:
         },
         {
           "sentenceIndex": 2,
-          "textIndex": 3,
+          "textIndex": 4,
           "expected": "kenobi",
           "recognized": "kenobi",
           "label": "CW",

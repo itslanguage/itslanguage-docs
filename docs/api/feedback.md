@@ -58,7 +58,7 @@ Content-Type: application/json
   "words": [
     {
       "sentenceIndex": 1,
-      "textIndex": 0,
+      "textIndex": 1,
       "expected": "hello",
       "recognized": "hello",
       "label": "CW",
@@ -69,7 +69,7 @@ Content-Type: application/json
     },
     {
       "sentenceIndex": 1,
-      "textIndex": 1,
+      "textIndex": 2,
       "expected": "there",
       "recognized": "there-ERR",
       "label": "PC",
@@ -95,7 +95,7 @@ Content-Type: application/json
   "words": [
     {
       "sentenceIndex": 2,
-      "textIndex": 2,
+      "textIndex": 3,
       "expected": "general",
       "recognized": "general",
       "label": "CW",
@@ -106,7 +106,7 @@ Content-Type: application/json
     },
     {
       "sentenceIndex": 2,
-      "textIndex": 3,
+      "textIndex": 4,
       "expected": "kenobi",
       "recognized": "kenobi",
       "label": "CW",
@@ -156,7 +156,7 @@ Content-Type: application/json
       "words": [
         {
           "sentenceIndex": 1,
-          "textIndex": 0,
+          "textIndex": 1,
           "expected": "hello",
           "recognized": "hello",
           "label": "CW",
@@ -167,7 +167,7 @@ Content-Type: application/json
         },
         {
           "sentenceIndex": 1,
-          "textIndex": 1,
+          "textIndex": 2,
           "expected": "there",
           "recognized": "there-ERR",
           "label": "PC",
@@ -189,7 +189,7 @@ Content-Type: application/json
       "words": [
         {
           "sentenceIndex": 2,
-          "textIndex": 2,
+          "textIndex": 3,
           "expected": "general",
           "recognized": "general",
           "label": "CW",
@@ -200,7 +200,7 @@ Content-Type: application/json
         },
         {
           "sentenceIndex": 2,
-          "textIndex": 3,
+          "textIndex": 4,
           "expected": "kenobi",
           "recognized": "kenobi",
           "label": "CW",
