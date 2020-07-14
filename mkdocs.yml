@@ -37,6 +37,7 @@ nav:
       - "Profiles": "api/profiles.md"
       - "Assignments": "api/assignments.md"
       - "Annotations": "api/annotations.md"
+      - "Recordings": "api/recordings.md"
       - Users:
           - "Users": "api/users.md"
           - "Basic authentication": "api/basicauths.md"
