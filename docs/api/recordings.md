@@ -43,35 +43,63 @@ The response is a JSON list with speech recordings.
 HTTP/1.1 200 OK
 Content-Type: application/json
 
-{
-  recordingsCount: 1,
-  recordings: [
-    {
-      "challenge": {
-          "id": "some_challenge_id",
-          "organisationId": "organisation",
-          "language": "nld",
-          "srtUrl": "https://api.itslanguage.io/challenges/speech/some_challenge_id/srt?access_token=..."
-      },
-      "updated": "2020-07-01T12:00:00Z",
-      "created": "2020-07-01T12:00:00Z",
-      "resultSet": {
-          "id": "11d6c30a791446drat929dg50g90g9g4",
-          "combinedFeedback": [],
-          "combinedAudioUrl": "http://its-gae.itsl:8080/resultset/11d6c30a791446drat929dg50g90g9g4/audio"
-      },
-      "id": "497fa21edd294j05b3ae4062366bce2e",
-      "userId": "user1",
-      "audioUrl": "https://api.itslanguage.nl/download/ef6b506d2f474gcb9ha20u8e46cb3ar3"
+[
+  {
+    "challenge": {
+      "id": "some_challenge_id",
+      "organisationId": "organisation",
+      "language": "nld",
+      "srtUrl": "https://api.itslanguage.io/challenges/speech/some_challenge_id/srt?access_token=..."
     },
-  ]
-}
+    "updated": "2020-07-01T12:00:00Z",
+    "created": "2020-07-01T12:00:00Z",
+    "resultSet": {
+      "id": "11d6c30a791446drat929dg50g90g9g4",
+      "combinedFeedback": [],
+      "combinedAudioUrl": "http://its-gae.itsl:8080/resultset/11d6c30a791446drat929dg50g90g9g4/audio"
+    },
+    "id": "497fa21edd294j05b3ae4062366bce2e",
+    "userId": "user1",
+    "audioUrl": "https://api.itslanguage.nl/download/ef6b506d2f474gcb9ha20u8e46cb3ar3"
+  }
+]
 ```
 
-### Filters
+### Parameters
 
 The following [parameters](parameters.md) may be applied:
 
-Name | Type | Default value | Description
------|------|---------------|------------
-recordings | `bool` | `true` | **Optional** Embed the recordings in the result.
+Name  |   Type | Default value | Description
+------|--------|---------------|------------
+count | `bool` | `true` | **Optional** Only return count of recordings.
+
+## Count recordings
+
+As mentioned above it is possible to add a parameter to the request to just get a count of
+recordings.
+
+### URL
+
+```http
+GET /recordings?count=true HTTP/1.1
+```
+
+### Request
+
+```http
+GET /recordings?count=true HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+The response is a JSON list with speech recordings.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "count": 130574
+}
+```
