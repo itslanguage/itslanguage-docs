@@ -27,7 +27,7 @@ nav:
           - "Pronunciation": "api/pronunciation_challenges.md"
           - "Choice": "api/choice_challenges.md"
       - "Progress": "api/progress.md"
-      - "Speech Recordings": "api/recordings.md"
+      - "Speech Recordings": "api/speech_recordings.md"
       - "Speech Feedback": "api/feedback.md"
       - "Speech Analysis": "api/analyses.md"
       - "Speech Recognition": "api/recognitions.md"
@@ -37,6 +37,7 @@ nav:
       - "Profiles": "api/profiles.md"
       - "Assignments": "api/assignments.md"
       - "Annotations": "api/annotations.md"
+      - "Recordings": "api/recordings.md"
       - Users:
           - "Users": "api/users.md"
           - "Basic authentication": "api/basicauths.md"
