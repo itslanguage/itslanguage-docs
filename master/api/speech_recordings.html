@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>URLs - ITSLanguage API</title>
+  <title>Speech Recordings - ITSLanguage API</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "URLs";
-    var mkdocs_page_input_path = "api/urls.md";
+    var mkdocs_page_name = "Speech Recordings";
+    var mkdocs_page_input_path = "api/speech_recordings.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -117,15 +117,9 @@
                     
     <a class="" href="filters.html">Filters</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="urls.html">URLs</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#urls">URLs</a></li>
-    
-
-    </ul>
+    <a class="" href="urls.html">URLs</a>
                 </li>
     </ul>
 	    </li>
@@ -164,9 +158,28 @@
                     
     <a class="" href="progress.html">Progress</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="speech_recordings.html">Speech Recordings</a>
+    <a class="current" href="speech_recordings.html">Speech Recordings</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#recordings">Recordings</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#list-all-speech-recordings">List all speech recordings</a></li>
+        
+            <li><a class="toctree-l4" href="#get-a-single-speech-recording">Get a single speech recording</a></li>
+        
+            <li><a class="toctree-l4" href="#create-a-speech-recording">Create a speech recording</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#recording-result-set">Recording result set</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -282,14 +295,14 @@
     
       
         
-          <li>REST API basics &raquo;</li>
+          <li>REST API &raquo;</li>
         
       
     
-    <li>URLs</li>
+    <li>Speech Recordings</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/urls.md"
+        <a href="https://github.com/itslanguage/itslanguage-docs/edit/master/docs/api/speech_recordings.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -299,23 +312,181 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="urls"><a class="toclink" href="#urls">URLs</a></h1>
-<p>API actions are usually performed by accessing our production servers on the <code>api.itslanguage.io</code> domain.
-For example:</p>
-<pre><code class="sh">curl -i https://api.itslanguage.io/organisations
+                <h1 id="recordings"><a class="toclink" href="#recordings">Recordings</a></h1>
+<p>Audio can be stored using the ITSLanguage Speech API.
+It can optionally be retrieved for processing or playback at a later time.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>speech</code></td>
+<td>Record user submitted audio for a speech challenge.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-all-speech-recordings"><a class="toclink" href="#list-all-speech-recordings">List all speech recordings</a></h2>
+<h3 id="url"><a class="toclink" href="#url">URL</a></h3>
+<pre><code class="http">GET /challenges/speech/:challenge/recordings HTTP/1.1
 </code></pre>
 
+<ul>
+<li>challenge - <strong>Required</strong> The challenge identifier.</li>
+</ul>
+<h3 id="request"><a class="toclink" href="#request">Request</a></h3>
+<pre><code class="http">GET /challenges/speech/test/recordings HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="response"><a class="toclink" href="#response">Response</a></h3>
+<p>The response is a JSON list with speech recordings.</p>
 <pre><code class="http">HTTP/1.1 200 OK
-Cache-Control: no-cache
-Content-Type: application/json; charset=utf-8
-Vary: Accept-Encoding
-Date: Wed, 20 Nov 2013 17:10:22 GMT
-Server: Google Frontend
-Alternate-Protocol: 443:quic
-Transfer-Encoding: chunked
+Content-Type: application/json
 
-[]
+[
+  {
+    &quot;id&quot;: &quot;recording_1&quot;,
+    &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+    &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+    &quot;audioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
+    &quot;resultSet&quot;: {
+      &quot;id&quot;: &quot;923848397208945&quot;,
+      &quot;combinedAudioUrl&quot;: &quot;https://api.itslanguage.io/download/lhsdb78333y78d&quot;
+    },
+    &quot;userId&quot;: &quot;24&quot;
+  },
+  {
+    &quot;id&quot;: &quot;14&quot;,
+    &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+    &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+    &quot;audioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-Xaq&quot;,
+    &quot;resultSet&quot;: {
+      &quot;id&quot;: &quot;923848397208945&quot;,
+      &quot;combinedAudioUrl&quot;: &quot;https://api.itslanguage.io/download/ksd83gdiuhs7cs&quot;
+    },
+    &quot;userId&quot;: &quot;24&quot;
+  }
+]
 </code></pre>
+
+<h2 id="get-a-single-speech-recording"><a class="toclink" href="#get-a-single-speech-recording">Get a single speech recording</a></h2>
+<h3 id="url_1"><a class="toclink" href="#url_1">URL</a></h3>
+<pre><code class="http">GET /challenges/speech/:challenge/recordings/:recording HTTP/1.1
+</code></pre>
+
+<ul>
+<li>challenge - <strong>Required</strong> The challenge identifier.</li>
+<li>recording - <strong>Required</strong> The recording identifier.</li>
+</ul>
+<h3 id="request_1"><a class="toclink" href="#request_1">Request</a></h3>
+<pre><code class="http">GET /challenges/speech/speech_1/recordings/recording_1 HTTP/1.1
+Accept: application/json
+</code></pre>
+
+<h3 id="response_1"><a class="toclink" href="#response_1">Response</a></h3>
+<pre><code class="http">HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;id&quot;: &quot;speech_1&quot;,
+  &quot;created&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;updated&quot;: &quot;2014-01-28T21:25:10Z&quot;,
+  &quot;audioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
+  &quot;resultSet&quot;: {
+    &quot;id&quot;: &quot;923848397208945&quot;,
+    &quot;combinedAudioUrl&quot;: &quot;https://api.itslanguage.io/download/lhsdb78333y78d&quot;
+  },
+  &quot;userId&quot;: &quot;24&quot;
+}
+</code></pre>
+
+<h2 id="create-a-speech-recording"><a class="toclink" href="#create-a-speech-recording">Create a speech recording</a></h2>
+<p>Submit a new audio recording to persist without immediate analysis.
+The recording is created as the current user.</p>
+<h3 id="url_2"><a class="toclink" href="#url_2">URL</a></h3>
+<pre><code class="http">POST /challenges/speech/:challenge/recordings HTTP/1.1
+</code></pre>
+
+<ul>
+<li>challenge - <strong>Required</strong> The challenge identifier.</li>
+</ul>
+<h3 id="request-parameters"><a class="toclink" href="#request-parameters">Request parameters</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+<td><strong>Optional</strong> The recording identifier. If none is given, one is generated.</td>
+</tr>
+<tr>
+<td>audio</td>
+<td><code>blob</code></td>
+<td><strong>Required</strong> The actual audio. (Ogg Opus or WAV)</td>
+</tr>
+<tr>
+<td>resultSetId</td>
+<td><code>string</code></td>
+<td><strong>Required</strong> The unique id of the result set the recording belongs to. See <a href="#recording-result-set">Recording result set</a>. If this doesn't exist one is created.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request_2"><a class="toclink" href="#request_2">Request</a></h3>
+<p>The request should be a <code>multipart/form-data</code>.</p>
+<pre><code class="http">POST /challenges/speech/test/recordings HTTP/1.1
+Accept: application/json
+Content-Type: multipart/form-data; boundary=&quot;YvHKkjjzXfysYJVHMoOAoNczae&quot;
+
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name=&quot;audio&quot;; filename=&quot;blob&quot;
+Content-Type: audio/ogg
+
+&lt;audio blob&gt;
+--YvHKkjjzXfysYJVHMoOAoNczae
+Content-Disposition: form-data; name=&quot;resultSetId&quot;
+
+iohfg78h37fgy3ho84
+--YvHKkjjzXfysYJVHMoOAoNczae--
+</code></pre>
+
+<h3 id="response_2"><a class="toclink" href="#response_2">Response</a></h3>
+<p>If the audio was persisted correctly:</p>
+<pre><code class="http">HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  &quot;id&quot;: &quot;34&quot;,
+  &quot;updated&quot;: &quot;2014-02-13T09:39:40Z&quot;,
+  &quot;created&quot;: &quot;2014-02-13T09:39:37Z&quot;,
+  &quot;audioUrl&quot;: &quot;https://api.itslanguage.io/download/YsjdG37bUGseu8-bsJ&quot;,
+  &quot;resultSet&quot;: {
+    &quot;id&quot;: &quot;iohfg78h37fgy3ho84&quot;,
+    &quot;combinedAudioUrl&quot;: &quot;https://api.itslanguage.io/download/kljhiusdhwhe811&quot;
+  },
+  &quot;userId&quot;: &quot;24&quot;
+}
+</code></pre>
+
+<h1 id="recording-result-set"><a class="toclink" href="#recording-result-set">Recording result set</a></h1>
+<p>In order to group recordings together a result set is used. The result set
+contains multiple recordings and an audio file containing all the audio files
+of its recordings combined.</p>
+<p>A result set is created automatically whenever a recording is created with
+a non-existing <code>resultSetId</code>. When the <code>resultSetId</code> does exist the recording
+is added to this set and the audio of the recording is appended to the audio
+of the result set.</p>
+<p>The result set cannot be queried directly but it can be seen when getting
+<a href="progress.html">progress</a>.</p>
               
             </div>
           </div>
@@ -323,10 +494,10 @@ Transfer-Encoding: chunked
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="oauth2.html" class="btn btn-neutral float-right" title="OAuth2">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="feedback.html" class="btn btn-neutral float-right" title="Speech Feedback">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="filters.html" class="btn btn-neutral" title="Filters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="progress.html" class="btn btn-neutral" title="Progress"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -356,10 +527,10 @@ Transfer-Encoding: chunked
           <a href="https://github.com/itslanguage/itslanguage-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="filters.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="progress.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="oauth2.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="feedback.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
