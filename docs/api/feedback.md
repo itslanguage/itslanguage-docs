@@ -48,7 +48,7 @@ Content-Disposition: form-data; name="sentences"
 Content-Type: application/json
 
 {
-  "sentence": 0,
+  "sentence": 1,
   "errors": 1,
   "confidence": -159.0,
   "currentFrame": 64,
@@ -57,8 +57,8 @@ Content-Type: application/json
   "tokenType": "EOS"
   "words": [
     {
-      "sentenceIndex": 0,
-      "textIndex": 0,
+      "sentenceIndex": 1,
+      "textIndex": 1,
       "expected": "hello",
       "recognized": "hello",
       "label": "CW",
@@ -68,8 +68,8 @@ Content-Type: application/json
       "endTiming": 400
     },
     {
-      "sentenceIndex": 0,
-      "textIndex": 1,
+      "sentenceIndex": 1,
+      "textIndex": 2,
       "expected": "there",
       "recognized": "there-ERR",
       "label": "PC",
@@ -85,7 +85,7 @@ Content-Disposition: form-data; name="sentences"
 Content-Type: application/json
 
 {
-  "sentence": 1,
+  "sentence": 2,
   "errors": 0,
   "confidence": -124.1,
   "currentFrame": 87,
@@ -94,8 +94,8 @@ Content-Type: application/json
   "tokenType": "EOS"
   "words": [
     {
-      "sentenceIndex": 1,
-      "textIndex": 2,
+      "sentenceIndex": 2,
+      "textIndex": 3,
       "expected": "general",
       "recognized": "general",
       "label": "CW",
@@ -105,8 +105,8 @@ Content-Type: application/json
       "endTiming": 320
     },
     {
-      "sentenceIndex": 1,
-      "textIndex": 3,
+      "sentenceIndex": 2,
+      "textIndex": 4,
       "expected": "kenobi",
       "recognized": "kenobi",
       "label": "CW",
@@ -146,7 +146,7 @@ Content-Type: application/json
   "challengeId": "chal",
   "sentences": [
     {
-      "sentence": 0,
+      "sentence": 1,
       "errors": 1,
       "confidence": -159.0,
       "currentFrame": 64,
@@ -155,8 +155,8 @@ Content-Type: application/json
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 0,
-          "textIndex": 0,
+          "sentenceIndex": 1,
+          "textIndex": 1,
           "expected": "hello",
           "recognized": "hello",
           "label": "CW",
@@ -166,8 +166,8 @@ Content-Type: application/json
           "endTiming": 400
         },
         {
-          "sentenceIndex": 0,
-          "textIndex": 1,
+          "sentenceIndex": 1,
+          "textIndex": 2,
           "expected": "there",
           "recognized": "there-ERR",
           "label": "PC",
@@ -179,7 +179,7 @@ Content-Type: application/json
       ]
     },
     {
-      "sentence": 1,
+      "sentence": 2,
       "errors": 0,
       "confidence": -124.1,
       "currentFrame": 87,
@@ -188,8 +188,8 @@ Content-Type: application/json
       "tokenType": "EOS"
       "words": [
         {
-          "sentenceIndex": 1,
-          "textIndex": 2,
+          "sentenceIndex": 2,
+          "textIndex": 3,
           "expected": "general",
           "recognized": "general",
           "label": "CW",
@@ -199,8 +199,8 @@ Content-Type: application/json
           "endTiming": 320
         },
         {
-          "sentenceIndex": 1,
-          "textIndex": 3,
+          "sentenceIndex": 2,
+          "textIndex": 4,
           "expected": "kenobi",
           "recognized": "kenobi",
           "label": "CW",
